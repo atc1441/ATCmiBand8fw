@@ -1,0 +1,1126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="AmbiqMicro" />
+    <title>Apollo4b VCOMP</title>
+    <link href="../resources/tabs.css" rel="stylesheet" type="text/css" />
+    <link href="../resources/bootstrap.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../resources/jquery.js"></script>
+    <script type="text/javascript" src="../resources/dynsections.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css" />
+    <link href="../resources/customdoxygen.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="top">
+        <!-- do not remove this div, it is closed by doxygen! -->
+        <div id="titlearea">
+            <table cellspacing="0" cellpadding="0">
+                <tbody>
+                    <tr style="height: 56px;">
+                        <td id="projectlogo">
+                            <img alt="Logo" src="../resources/am_logo.png" />
+                        </td>
+                        <td style="padding-left: 0.5em;">
+                            <div id="projectname">Apollo4b  Register Documentation &#160;<span id="projectnumber">R4.4.1</span></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- end header part -->
+        <div id="navrow1" class="tabs">
+            <ul class="tablist">
+                <li class="current"><a href="../index.html"><span>Main&#160;Page</span></a>
+                </li>
+        </div>
+        </li>
+        </ul>
+    </div>
+    </div>
+    <!-- top -->
+    <!-- window showing the filter options -->
+    <div class="header">
+        <div class="headertitle">
+            <div class="title">VCOMP - Voltage Comparator</div>
+        </div>
+    </div>
+    <!--header-->
+    <body>
+        <br>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> VCOMP Register Index</h3>
+            </div>
+            <div class="panel-body">
+                <table>
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000000:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#CFG" target="_self">CFG - Configuration</a>
+                        </td>
+                    </tr>
+
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000004:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#STAT" target="_self">STAT - Status</a>
+                        </td>
+                    </tr>
+
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000008:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#PWDKEY" target="_self">PWDKEY - Key Register for Powering Down the Voltage Comparator</a>
+                        </td>
+                    </tr>
+
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000200:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#INTEN" target="_self">INTEN - Voltage Comparator Interrupts: Enable</a>
+                        </td>
+                    </tr>
+
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000204:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#INTSTAT" target="_self">INTSTAT - Voltage Comparator Interrupts: Status</a>
+                        </td>
+                    </tr>
+
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000208:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#INTCLR" target="_self">INTCLR - Voltage Comparator Interrupts: Clear</a>
+                        </td>
+                    </tr>
+
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x0000020C:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#INTSET" target="_self">INTSET - Voltage Comparator Interrupts: Set</a>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="CFG" class="panel-title">CFG - Configuration</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x4000C000</span>
+                        </td>
+                    </tr>
+
+                </table>
+                <h3>Description:</h3>
+                <p>The Voltage Comparator Configuration Register contains the software control for selecting beween the 4 options for the positive input as well as the multiple options for the reference input.</p>
+                <h3>Example Macro Usage:</h3>
+                <pre style="margin:10px" class="language-pascal"><span style='color:#3f7f59; '>//
+// Register access is all performed through the standard CMSIS structure-based
+// interface. This includes module-level structure definitions with members and
+// bitfields corresponding to the physical registers and bitfields within each
+// module. In addition, Ambiq has provided instance-level macros for modules
+// that have more than one physical instance and a generic AM_REGVAL() macro
+// for directly accessing memory by address.
+//
+// The following examples show how to use these structures and macros:
+
+// Setting the ADC configuration register...</span>
+AM_REGVAL(0x50010000) = 0x1234;              <span style='color:#3f7f59; '>// by address.</span>
+ADC-&gt;CFG = 0x1234;                           <span style='color:#3f7f59; '>// by structure pointer.</span>
+ADCn(0)-&gt;CFG = 0x1234;                       <span style='color:#3f7f59; '>// by structure pointer (with instance number).</span>
+
+<span style='color:#3f7f59; '>// Changing the ADC clock...</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = 0x2;                 <span style='color:#3f7f59; '>// by raw value.</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = ADC_CFG_CLKSEL_HFRC; <span style='color:#3f7f59; '>// using an enumerated value.</span></pre>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th>
+                            <th>30</th>
+                            <th>29</th>
+                            <th>28</th>
+                            <th>27</th>
+                            <th>26</th>
+                            <th>25</th>
+                            <th>24</th>
+                            <th>23</th>
+                            <th>22</th>
+                            <th>21</th>
+                            <th>20</th>
+                            <th>19</th>
+                            <th>18</th>
+                            <th>17</th>
+                            <th>16</th>
+                            <th>15</th>
+                            <th>14</th>
+                            <th>13</th>
+                            <th>12</th>
+                            <th>11</th>
+                            <th>10</th>
+                            <th>9</th>
+                            <th>8</th>
+                            <th>7</th>
+                            <th>6</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="12">RSVD
+                                <br>0x0</td>
+
+                            <td align="center" colspan="4">LVLSEL
+                                <br>0x0</td>
+
+                            <td align="center" colspan="6">RSVD
+                                <br>0x0</td>
+
+                            <td align="center" colspan="2">NSEL
+                                <br>0x0</td>
+
+                            <td align="center" colspan="6">RSVD
+                                <br>0x0</td>
+
+                            <td align="center" colspan="2">PSEL
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:20</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>This bitfield is reserved for future use.<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>19:16</td>
+                            <td>LVLSEL</td>
+                            <td>RW</td>
+                            <td>When the reference input NSEL is set to NSEL_DAC, this bitfield selects the voltage level for the negative input to the comparator.<br><br>
+                                 0P58V                = 0x0 - Set Reference input to 0.58 Volts.<br>
+                             0P77V                = 0x1 - Set Reference input to 0.77 Volts.<br>
+                             0P97V                = 0x2 - Set Reference input to 0.97 Volts.<br>
+                             1P16V                = 0x3 - Set Reference input to 1.16 Volts.<br>
+                             1P35V                = 0x4 - Set Reference input to 1.35 Volts.<br>
+                             1P55V                = 0x5 - Set Reference input to 1.55 Volts.<br>
+                             1P74V                = 0x6 - Set Reference input to 1.74 Volts.<br>
+                             1P93V                = 0x7 - Set Reference input to 1.93 Volts.<br>
+                             2P13V                = 0x8 - Set Reference input to 2.13 Volts.<br>
+                             2P32V                = 0x9 - Set Reference input to 2.32 Volts.<br>
+                             2P51V                = 0xA - Set Reference input to 2.51 Volts.<br>
+                             2P71V                = 0xB - Set Reference input to 2.71 Volts.<br>
+                             2P90V                = 0xC - Set Reference input to 2.90 Volts.<br>
+                             3P09V                = 0xD - Set Reference input to 3.09 Volts.<br>
+                             3P29V                = 0xE - Set Reference input to 3.29 Volts.<br>
+                             3P48V                = 0xF - Set Reference input to 3.48 Volts.</td>
+                        </tr>
+
+                        <tr>
+                            <td>15:10</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>This bitfield is reserved for future use.<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>9:8</td>
+                            <td>NSEL</td>
+                            <td>RW</td>
+                            <td>This bitfield selects the negative input to the comparator.<br><br>
+                                 VREFEXT1             = 0x0 - Use external reference 1 for reference input.<br>
+                             VREFEXT2             = 0x1 - Use external reference 2 for reference input.<br>
+                             VREFEXT3             = 0x2 - Use external reference 3 for reference input.<br>
+                             DAC                  = 0x3 - Use DAC output selected by LVLSEL for reference input.</td>
+                        </tr>
+
+                        <tr>
+                            <td>7:2</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>This bitfield is reserved for future use.<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>1:0</td>
+                            <td>PSEL</td>
+                            <td>RW</td>
+                            <td>This bitfield selects the positive input to the comparator.<br><br>
+                                 VDDADJ               = 0x0 - Use VDDADJ for the positive input.<br>
+                             VTEMP                = 0x1 - Use the temperature sensor output for the positive input. Note: If this channel is selected for PSEL, the bandap circuit required for temperature comparisons will automatically turn on. The bandgap circuit requires 11us to stabalize.<br>
+                             VEXT1                = 0x2 - Use external voltage 0 for positive input.<br>
+                             VEXT2                = 0x3 - Use external voltage 1 for positive input.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="STAT" class="panel-title">STAT - Status</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x4000C004</span>
+                        </td>
+                    </tr>
+
+                </table>
+                <h3>Description:</h3>
+                <p>Status</p>
+                <h3>Example Macro Usage:</h3>
+                <pre style="margin:10px" class="language-pascal"><span style='color:#3f7f59; '>//
+// Register access is all performed through the standard CMSIS structure-based
+// interface. This includes module-level structure definitions with members and
+// bitfields corresponding to the physical registers and bitfields within each
+// module. In addition, Ambiq has provided instance-level macros for modules
+// that have more than one physical instance and a generic AM_REGVAL() macro
+// for directly accessing memory by address.
+//
+// The following examples show how to use these structures and macros:
+
+// Setting the ADC configuration register...</span>
+AM_REGVAL(0x50010000) = 0x1234;              <span style='color:#3f7f59; '>// by address.</span>
+ADC-&gt;CFG = 0x1234;                           <span style='color:#3f7f59; '>// by structure pointer.</span>
+ADCn(0)-&gt;CFG = 0x1234;                       <span style='color:#3f7f59; '>// by structure pointer (with instance number).</span>
+
+<span style='color:#3f7f59; '>// Changing the ADC clock...</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = 0x2;                 <span style='color:#3f7f59; '>// by raw value.</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = ADC_CFG_CLKSEL_HFRC; <span style='color:#3f7f59; '>// using an enumerated value.</span></pre>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th>
+                            <th>30</th>
+                            <th>29</th>
+                            <th>28</th>
+                            <th>27</th>
+                            <th>26</th>
+                            <th>25</th>
+                            <th>24</th>
+                            <th>23</th>
+                            <th>22</th>
+                            <th>21</th>
+                            <th>20</th>
+                            <th>19</th>
+                            <th>18</th>
+                            <th>17</th>
+                            <th>16</th>
+                            <th>15</th>
+                            <th>14</th>
+                            <th>13</th>
+                            <th>12</th>
+                            <th>11</th>
+                            <th>10</th>
+                            <th>9</th>
+                            <th>8</th>
+                            <th>7</th>
+                            <th>6</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="30">RSVD
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">PWDSTAT
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">CMPOUT
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:2</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>This bitfield is reserved for future use.<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>PWDSTAT</td>
+                            <td>RO</td>
+                            <td>This bit indicates the power down state of the voltage comparator.<br><br>
+                                 POWERED_DOWN         = 0x1 - The voltage comparator is powered down.</td>
+                        </tr>
+
+                        <tr>
+                            <td>0</td>
+                            <td>CMPOUT</td>
+                            <td>RO</td>
+                            <td>This bit is 1 if the positive input of the comparator is greater than the negative input.<br><br>
+                                 VOUT_LOW             = 0x0 - The negative input of the comparator is greater than the positive input.<br>
+                             VOUT_HIGH            = 0x1 - The positive input of the comparator is greater than the negative input.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="PWDKEY" class="panel-title">PWDKEY - Key Register for Powering Down the Voltage Comparator</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x4000C008</span>
+                        </td>
+                    </tr>
+
+                </table>
+                <h3>Description:</h3>
+                <p>Write a value of 0x37 to unlock, write any other value to lock. This register also indicates lock status when read. When in the unlccked state (i.e. 0x37 has been written), it reads as 1. When in the locked state, it reads as 0.</p>
+                <h3>Example Macro Usage:</h3>
+                <pre style="margin:10px" class="language-pascal"><span style='color:#3f7f59; '>//
+// Register access is all performed through the standard CMSIS structure-based
+// interface. This includes module-level structure definitions with members and
+// bitfields corresponding to the physical registers and bitfields within each
+// module. In addition, Ambiq has provided instance-level macros for modules
+// that have more than one physical instance and a generic AM_REGVAL() macro
+// for directly accessing memory by address.
+//
+// The following examples show how to use these structures and macros:
+
+// Setting the ADC configuration register...</span>
+AM_REGVAL(0x50010000) = 0x1234;              <span style='color:#3f7f59; '>// by address.</span>
+ADC-&gt;CFG = 0x1234;                           <span style='color:#3f7f59; '>// by structure pointer.</span>
+ADCn(0)-&gt;CFG = 0x1234;                       <span style='color:#3f7f59; '>// by structure pointer (with instance number).</span>
+
+<span style='color:#3f7f59; '>// Changing the ADC clock...</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = 0x2;                 <span style='color:#3f7f59; '>// by raw value.</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = ADC_CFG_CLKSEL_HFRC; <span style='color:#3f7f59; '>// using an enumerated value.</span></pre>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th>
+                            <th>30</th>
+                            <th>29</th>
+                            <th>28</th>
+                            <th>27</th>
+                            <th>26</th>
+                            <th>25</th>
+                            <th>24</th>
+                            <th>23</th>
+                            <th>22</th>
+                            <th>21</th>
+                            <th>20</th>
+                            <th>19</th>
+                            <th>18</th>
+                            <th>17</th>
+                            <th>16</th>
+                            <th>15</th>
+                            <th>14</th>
+                            <th>13</th>
+                            <th>12</th>
+                            <th>11</th>
+                            <th>10</th>
+                            <th>9</th>
+                            <th>8</th>
+                            <th>7</th>
+                            <th>6</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="32">PWDKEY
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:0</td>
+                            <td>PWDKEY</td>
+                            <td>RW</td>
+                            <td>Key register value.<br><br>
+                                 Key                  = 0x37 - Key value to unlock the register.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="INTEN" class="panel-title">INTEN - Voltage Comparator Interrupts: Enable</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x4000C200</span>
+                        </td>
+                    </tr>
+
+                </table>
+                <h3>Description:</h3>
+                <p>Set bits in this register to allow this module to generate the corresponding interrupt.</p>
+                <h3>Example Macro Usage:</h3>
+                <pre style="margin:10px" class="language-pascal"><span style='color:#3f7f59; '>//
+// Register access is all performed through the standard CMSIS structure-based
+// interface. This includes module-level structure definitions with members and
+// bitfields corresponding to the physical registers and bitfields within each
+// module. In addition, Ambiq has provided instance-level macros for modules
+// that have more than one physical instance and a generic AM_REGVAL() macro
+// for directly accessing memory by address.
+//
+// The following examples show how to use these structures and macros:
+
+// Setting the ADC configuration register...</span>
+AM_REGVAL(0x50010000) = 0x1234;              <span style='color:#3f7f59; '>// by address.</span>
+ADC-&gt;CFG = 0x1234;                           <span style='color:#3f7f59; '>// by structure pointer.</span>
+ADCn(0)-&gt;CFG = 0x1234;                       <span style='color:#3f7f59; '>// by structure pointer (with instance number).</span>
+
+<span style='color:#3f7f59; '>// Changing the ADC clock...</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = 0x2;                 <span style='color:#3f7f59; '>// by raw value.</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = ADC_CFG_CLKSEL_HFRC; <span style='color:#3f7f59; '>// using an enumerated value.</span></pre>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th>
+                            <th>30</th>
+                            <th>29</th>
+                            <th>28</th>
+                            <th>27</th>
+                            <th>26</th>
+                            <th>25</th>
+                            <th>24</th>
+                            <th>23</th>
+                            <th>22</th>
+                            <th>21</th>
+                            <th>20</th>
+                            <th>19</th>
+                            <th>18</th>
+                            <th>17</th>
+                            <th>16</th>
+                            <th>15</th>
+                            <th>14</th>
+                            <th>13</th>
+                            <th>12</th>
+                            <th>11</th>
+                            <th>10</th>
+                            <th>9</th>
+                            <th>8</th>
+                            <th>7</th>
+                            <th>6</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="30">RSVD
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">OUTHI
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">OUTLOW
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:2</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>This bitfield is reserved for future use.<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>OUTHI</td>
+                            <td>RW</td>
+                            <td>This bit is the vcompout high interrupt.<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>0</td>
+                            <td>OUTLOW</td>
+                            <td>RW</td>
+                            <td>This bit is the vcompout low interrupt.<br><br>
+                                </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="INTSTAT" class="panel-title">INTSTAT - Voltage Comparator Interrupts: Status</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x4000C204</span>
+                        </td>
+                    </tr>
+
+                </table>
+                <h3>Description:</h3>
+                <p>Read bits from this register to discover the cause of a recent interrupt.</p>
+                <h3>Example Macro Usage:</h3>
+                <pre style="margin:10px" class="language-pascal"><span style='color:#3f7f59; '>//
+// Register access is all performed through the standard CMSIS structure-based
+// interface. This includes module-level structure definitions with members and
+// bitfields corresponding to the physical registers and bitfields within each
+// module. In addition, Ambiq has provided instance-level macros for modules
+// that have more than one physical instance and a generic AM_REGVAL() macro
+// for directly accessing memory by address.
+//
+// The following examples show how to use these structures and macros:
+
+// Setting the ADC configuration register...</span>
+AM_REGVAL(0x50010000) = 0x1234;              <span style='color:#3f7f59; '>// by address.</span>
+ADC-&gt;CFG = 0x1234;                           <span style='color:#3f7f59; '>// by structure pointer.</span>
+ADCn(0)-&gt;CFG = 0x1234;                       <span style='color:#3f7f59; '>// by structure pointer (with instance number).</span>
+
+<span style='color:#3f7f59; '>// Changing the ADC clock...</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = 0x2;                 <span style='color:#3f7f59; '>// by raw value.</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = ADC_CFG_CLKSEL_HFRC; <span style='color:#3f7f59; '>// using an enumerated value.</span></pre>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th>
+                            <th>30</th>
+                            <th>29</th>
+                            <th>28</th>
+                            <th>27</th>
+                            <th>26</th>
+                            <th>25</th>
+                            <th>24</th>
+                            <th>23</th>
+                            <th>22</th>
+                            <th>21</th>
+                            <th>20</th>
+                            <th>19</th>
+                            <th>18</th>
+                            <th>17</th>
+                            <th>16</th>
+                            <th>15</th>
+                            <th>14</th>
+                            <th>13</th>
+                            <th>12</th>
+                            <th>11</th>
+                            <th>10</th>
+                            <th>9</th>
+                            <th>8</th>
+                            <th>7</th>
+                            <th>6</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="30">RSVD
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">OUTHI
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">OUTLOW
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:2</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>This bitfield is reserved for future use.<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>OUTHI</td>
+                            <td>RW</td>
+                            <td>This bit is the vcompout high interrupt.<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>0</td>
+                            <td>OUTLOW</td>
+                            <td>RW</td>
+                            <td>This bit is the vcompout low interrupt.<br><br>
+                                </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="INTCLR" class="panel-title">INTCLR - Voltage Comparator Interrupts: Clear</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x4000C208</span>
+                        </td>
+                    </tr>
+
+                </table>
+                <h3>Description:</h3>
+                <p>Write a 1 to a bit in this register to clear the interrupt status associated with that bit.</p>
+                <h3>Example Macro Usage:</h3>
+                <pre style="margin:10px" class="language-pascal"><span style='color:#3f7f59; '>//
+// Register access is all performed through the standard CMSIS structure-based
+// interface. This includes module-level structure definitions with members and
+// bitfields corresponding to the physical registers and bitfields within each
+// module. In addition, Ambiq has provided instance-level macros for modules
+// that have more than one physical instance and a generic AM_REGVAL() macro
+// for directly accessing memory by address.
+//
+// The following examples show how to use these structures and macros:
+
+// Setting the ADC configuration register...</span>
+AM_REGVAL(0x50010000) = 0x1234;              <span style='color:#3f7f59; '>// by address.</span>
+ADC-&gt;CFG = 0x1234;                           <span style='color:#3f7f59; '>// by structure pointer.</span>
+ADCn(0)-&gt;CFG = 0x1234;                       <span style='color:#3f7f59; '>// by structure pointer (with instance number).</span>
+
+<span style='color:#3f7f59; '>// Changing the ADC clock...</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = 0x2;                 <span style='color:#3f7f59; '>// by raw value.</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = ADC_CFG_CLKSEL_HFRC; <span style='color:#3f7f59; '>// using an enumerated value.</span></pre>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th>
+                            <th>30</th>
+                            <th>29</th>
+                            <th>28</th>
+                            <th>27</th>
+                            <th>26</th>
+                            <th>25</th>
+                            <th>24</th>
+                            <th>23</th>
+                            <th>22</th>
+                            <th>21</th>
+                            <th>20</th>
+                            <th>19</th>
+                            <th>18</th>
+                            <th>17</th>
+                            <th>16</th>
+                            <th>15</th>
+                            <th>14</th>
+                            <th>13</th>
+                            <th>12</th>
+                            <th>11</th>
+                            <th>10</th>
+                            <th>9</th>
+                            <th>8</th>
+                            <th>7</th>
+                            <th>6</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="30">RSVD
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">OUTHI
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">OUTLOW
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:2</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>This bitfield is reserved for future use.<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>OUTHI</td>
+                            <td>RW</td>
+                            <td>This bit is the vcompout high interrupt.<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>0</td>
+                            <td>OUTLOW</td>
+                            <td>RW</td>
+                            <td>This bit is the vcompout low interrupt.<br><br>
+                                </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="INTSET" class="panel-title">INTSET - Voltage Comparator Interrupts: Set</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x4000C20C</span>
+                        </td>
+                    </tr>
+
+                </table>
+                <h3>Description:</h3>
+                <p>Write a 1 to a bit in this register to instantly generate an interrupt from this module. (Generally used for testing purposes).</p>
+                <h3>Example Macro Usage:</h3>
+                <pre style="margin:10px" class="language-pascal"><span style='color:#3f7f59; '>//
+// Register access is all performed through the standard CMSIS structure-based
+// interface. This includes module-level structure definitions with members and
+// bitfields corresponding to the physical registers and bitfields within each
+// module. In addition, Ambiq has provided instance-level macros for modules
+// that have more than one physical instance and a generic AM_REGVAL() macro
+// for directly accessing memory by address.
+//
+// The following examples show how to use these structures and macros:
+
+// Setting the ADC configuration register...</span>
+AM_REGVAL(0x50010000) = 0x1234;              <span style='color:#3f7f59; '>// by address.</span>
+ADC-&gt;CFG = 0x1234;                           <span style='color:#3f7f59; '>// by structure pointer.</span>
+ADCn(0)-&gt;CFG = 0x1234;                       <span style='color:#3f7f59; '>// by structure pointer (with instance number).</span>
+
+<span style='color:#3f7f59; '>// Changing the ADC clock...</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = 0x2;                 <span style='color:#3f7f59; '>// by raw value.</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = ADC_CFG_CLKSEL_HFRC; <span style='color:#3f7f59; '>// using an enumerated value.</span></pre>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th>
+                            <th>30</th>
+                            <th>29</th>
+                            <th>28</th>
+                            <th>27</th>
+                            <th>26</th>
+                            <th>25</th>
+                            <th>24</th>
+                            <th>23</th>
+                            <th>22</th>
+                            <th>21</th>
+                            <th>20</th>
+                            <th>19</th>
+                            <th>18</th>
+                            <th>17</th>
+                            <th>16</th>
+                            <th>15</th>
+                            <th>14</th>
+                            <th>13</th>
+                            <th>12</th>
+                            <th>11</th>
+                            <th>10</th>
+                            <th>9</th>
+                            <th>8</th>
+                            <th>7</th>
+                            <th>6</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="30">RSVD
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">OUTHI
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">OUTLOW
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:2</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>This bitfield is reserved for future use.<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>OUTHI</td>
+                            <td>RW</td>
+                            <td>This bit is the vcompout high interrupt.<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>0</td>
+                            <td>OUTLOW</td>
+                            <td>RW</td>
+                            <td>This bit is the vcompout low interrupt.<br><br>
+                                </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+    </body>
+
+    <hr size="1">
+    <body>
+        <div id="footer" align="right">
+            <small>
+                AmbiqSuite Register Documentation&nbsp;
+                <a href="http://www.ambiqmicro.com">
+                <img class="footer" src="../resources/ambiqmicro_logo.png" alt="Ambiq Micro"/></a>&nbsp&nbsp Copyright &copy; 2023&nbsp&nbsp<br />
+                This documentation is licensed and distributed under the <a rel="license" href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause License</a>.&nbsp&nbsp<br/>
+            </small>
+        </div>
+    </body>
+</html>
+

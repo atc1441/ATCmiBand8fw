@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>5</fileVersion>
+    <fileChecksum>3044935515</fileChecksum>
+    <configuration>
+        <name>FlashApollo4l_RAM2816K</name>
+        <outputs>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
+            <file>$PROJ_DIR$\FlashApollo4l_RAM2816K\List\framework\flash_loader.lst</file>
+            <file>$PROJ_DIR$\Apollo4lRAM2816K.icf</file>
+            <file>$PROJ_DIR$\FlashApollo4l_RAM2816K\List\FlashApollo4l_RAM2816K.map</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+            <file>$TOOLKIT_DIR$\src\flashloader\framework2\flash_loader.h</file>
+            <file>$TOOLKIT_DIR$\src\flashloader\framework2\flash_loader.c</file>
+            <file>$TOOLKIT_DIR$\src\flashloader\framework2\flash_loader_asm.s</file>
+            <file>$PROJ_DIR$\FlashApollo4l.c</file>
+            <file>$PROJ_DIR$\readme.txt</file>
+            <file>$PROJ_DIR$\FlashApollo4l_RAM2816K\List\framework\flash_loader.s</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$PROJ_DIR$\FlashApollo4l_RAM2816K\Obj\framework\flash_loader.o</file>
+            <file>$TOOLKIT_DIR$\src\flashloader\framework2\flash_loader_extra.h</file>
+            <file>$PROJ_DIR$\am_hal_mram.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$PROJ_DIR$\FlashApollo4l_RAM2816K\Exe\FlashApollo4l_RAM2816K.out</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+            <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+            <file>$TOOLKIT_DIR$\lib\m7M_tls.a</file>
+            <file>$PROJ_DIR$\FlashApollo4l_RAM2816K\List\FlashApollo4l.s</file>
+            <file>$PROJ_DIR$\flash_config.h</file>
+            <file>$PROJ_DIR$\FlashApollo4l_RAM2816K\List\FlashApollo4l.lst</file>
+            <file>$PROJ_DIR$\FlashApollo4l_RAM2816K\Obj\FlashApollo4l.o</file>
+            <file>$PROJ_DIR$\FlashApollo4l_RAM2816K\Obj\framework\flash_loader_asm.o</file>
+            <file>$PROJ_DIR$\am_hal_bootrom_helper.h</file>
+        </outputs>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\..\..\..\Program Files\IAR Systems\Embedded Workbench 9.1\arm\src\flashloader\framework2\flash_loader.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 12 2 14</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 7 25 5 17 0 13 20 19 15</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\..\..\..\Program Files\IAR Systems\Embedded Workbench 9.1\arm\src\flashloader\framework2\flash_loader_asm.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 28</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\FlashApollo4l.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 24 26 27</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 7 25 5 17 0 13 20 19 15 16 1 29</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\FlashApollo4l_RAM2816K\Exe\FlashApollo4l_RAM2816K.out</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 4</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 3 14 28 27 22 6 23 21</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 4 18</file>
+                </tool>
+            </outputs>
+        </file>
+        <forcedrebuild>
+            <name>[REBUILD_ALL]</name>
+        </forcedrebuild>
+    </configuration>
+</project>

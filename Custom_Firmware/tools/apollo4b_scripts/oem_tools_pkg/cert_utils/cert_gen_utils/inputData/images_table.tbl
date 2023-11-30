@@ -1,0 +1,14 @@
+# Data structure for the SW images table:
+##############################################################################################################
+# ImageName	RAMloadAdd  flashStoreAdd Maxsize  enc-Scheme	WriteProtect	CopyProtect	ExtendedFormat
+##############################################################################################################
+# ImageName 		:- SW binary image name 
+# RAMloadAdd 		:- Start address of the SW image in MRAM (Execute-in-place)
+# flashStoreAdd		:- Should be set to 0xFFFFFFFF for Execute-in-place option set in config file
+# Maxsize		:- Must be set to a value equal to or greater than the image size   
+# enc-Scheme		:- 0x0 (SW image in plain text) 0x1 ( SW image AES encrypted - NOT SUPPORTED, invalid for Execute-in-place)
+# WriteProtect  	:- When set to 0x1, Ambiq Bootloader will write protect the image (in 16K increments) as part of secure boot. Set it to 0, if no write protection is needed 
+# CopyProtect   	:- When set to 0x1, Ambiq Bootloader will copy protect the image (in 16K increments) as part of secure boot. Set it to 0, if no copy protection is needed. 
+# 			   Please note that, if enabled - the executable image must be built with no literals in the code area, as it will otherwise fail because of copy-protection. 
+# ExtendedFormat	:- Not Supported. Must be set to 0
+./inputData/hello_world_0x18000_chip_enable_debugger.bin 0x00018000 0xFFFFFFFF 0x00020000 0x0 0x0 0x0 0x0

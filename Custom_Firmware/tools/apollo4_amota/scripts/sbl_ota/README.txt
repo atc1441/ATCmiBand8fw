@@ -1,0 +1,3 @@
+1. Check the latest SBL binary under the SDK/tools/apollo4x_scripts/sbl_updates, configure the correct path of ENCRYPTED_SBL0 and SBL_OTA in Makefile. 
+2. Execute gcc make to generate the final update_sbl_apollo4.bin with OTA header for the SBL upgrading.
+3. Load the binary to the AMOTA application running on iOS or Android, connect the Apollo4 device running ble_freertos_amota example to start the upgrade.

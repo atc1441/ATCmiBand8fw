@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<flash_device>
+  <exe>$TOOLKIT_DIR$\config\flashloader\AmbiqMicro\FlashApollo4l_RAM2816K.out</exe>
+  <page>4</page>
+
+  <!--  Production Apollo4 Plus, we'll pick nn 0xxxxx, base=0x0.        -->
+  <!--  Apollo4 MRAM is not page based, so the breakdown is somewhat arbitrary.
+        Several combinations were tested with an almost 2MB-sized binary using
+          EWARM v8.5 including: 1 0x200000, 16 0x20000, 32 0x10000, 64 0x8000,
+          and finally 256 0x2000 (which was Apollo3's page size).
+        None were radically better than the others, but the 32 0x10000 was
+          slightly better overall.
+        Second best was 64 0x8000 (64 x 32KB pages). I suspect 128 0x4000 would
+          be next.
+        Depending on the ultimate size of SBL, either 0x8000 or 0x4000 page
+          sizes may work well for RevB.
+        0x18000 + 0x1E8000 = 0x200000
+        0x1E8000 / 0x8000 = 61
+  -->
+  <block>61 0x8000</block>
+  <flash_base>0x00018000</flash_base>
+
+  <aggregate>1</aggregate>
+</flash_device>

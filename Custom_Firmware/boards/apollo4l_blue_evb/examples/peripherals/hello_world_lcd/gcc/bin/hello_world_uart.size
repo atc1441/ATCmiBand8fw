@@ -1,0 +1,55 @@
+   text	   data	    bss	    dec	    hex	filename
+    132	     64	      0	    196	     c4	bin/am_resources.o
+    170	      0	      0	    170	     aa	bin/gpios.o
+   3744	    101	     44	   3889	    f31	bin/mspi_raydium.o
+2074810	    132	 189075	2264017	 228bd1	bin/display.o
+    460	      8	    262	    730	    2da	bin/uart_output.o
+    395	      0	      0	    395	    18b	bin/hello_world_uart.o
+     94	      0	      0	     94	     5e	bin/am_util_delay.o
+    356	      0	    512	    868	    364	bin/am_util_faultisr.o
+    420	      0	      0	    420	    1a4	bin/am_util_id.o
+   3975	      0	   1029	   5004	   138c	bin/am_util_stdio.o
+    878	      0	      0	    878	    36e	bin/am_util_string.o
+    628	   4096	      0	   4724	   1274	bin/startup_gcc.o
+     40	      0	      0	     40	     28	am_hal_bootrom_helper.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+    872	      5	      0	    877	    36d	am_hal_cachectrl.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+   6128	      0	      0	   6128	   17f0	am_hal_card.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+    252	    148	      0	    400	    190	am_hal_card_host.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+    832	      0	      0	    832	    340	am_hal_clkgen.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+   2024	      0	    484	   2508	    9cc	am_hal_cmdq.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+    112	      0	      0	    112	     70	am_hal_fault.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+     24	      0	      0	     24	     18	am_hal_interrupt.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+   8828	      0	  17728	  26556	   67bc	am_hal_iom.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+   2300	      0	     72	   2372	    944	am_hal_ios.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+    504	      0	      0	    504	    1f8	am_hal_itm.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+   1264	      8	     12	   1284	    504	am_hal_mcuctrl.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+    256	      0	      0	    256	    100	am_hal_mpu.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+    372	      0	      0	    372	    174	am_hal_mram.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+   9016	      0	   6732	  15748	   3d84	am_hal_mspi.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+    363	      0	      4	    367	    16f	am_hal_reset.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+   1336	      0	      0	   1336	    538	am_hal_rtc.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+   4156	      0	    212	   4368	   1110	am_hal_sdhc.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+    292	      0	     12	    304	    130	am_hal_secure_ota.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+    472	      0	      0	    472	    1d8	am_hal_sysctrl.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+    144	      0	      0	    144	     90	am_hal_systick.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+    140	      0	      0	    140	     8c	am_hal_tpiu.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+   2764	      0	    736	   3500	    dac	am_hal_uart.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+    284	      0	      0	    284	    11c	am_hal_utils.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+    188	      0	      0	    188	     bc	am_hal_access.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+   2644	      0	    105	   2749	    abd	am_hal_adc.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+    600	     32	      4	    636	    27c	am_hal_dcu.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+     70	      0	      0	     70	     46	am_hal_global.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+   2140	      0	   2056	   4196	   1064	am_hal_gpio.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+   2452	      0	     76	   2528	    9e0	am_hal_i2s.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+    160	      0	      0	    160	     a0	am_hal_otp.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+   1568	      0	     24	   1592	    638	am_hal_pdm.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+   4096	      0	      0	   4096	   1000	am_hal_pin.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+   4236	      9	     34	   4279	   10b7	am_hal_pwrctrl.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+    276	      0	      0	    276	    114	am_hal_queue.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+    396	      0	      0	    396	    18c	am_hal_security.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+   1024	     32	      1	   1057	    421	am_hal_stimer.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+   2728	      0	      0	   2728	    aa8	am_hal_timer.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+    336	      0	      0	    336	    150	am_hal_wdt.o (ex ../../../../../../mcu/apollo4l/hal/mcu/gcc/bin/libam_hal.a)
+   6420	     96	   2053	   8569	   2179	am_bsp.o (ex ../../../../bsp/gcc/bin/libam_bsp.a)
+      0	    588	     28	    616	    268	am_bsp_pins.o (ex ../../../../bsp/gcc/bin/libam_bsp.a)
+1912680	    260	 204868	2117808	 2050b0	bin/hello_world_uart.axf

@@ -1,0 +1,45 @@
+#******************************************************************************
+#
+# Default memory map for Apollo4b
+#
+#******************************************************************************
+MemorySections:
+    MCU_MRAM:
+        start:  0x00018000
+        length: 0x001E8000
+
+    DSP0_MRAM:
+        start:  0x00000000
+        length: 0x00000000
+
+    DSP1_MRAM:
+        start:  0x00000000
+        length: 0x00000000
+
+    MCU_TCM:
+        start:  0x10000000
+        length: 0x00060000
+
+    DSP0_TCM:
+        start:  0x10008000
+        length: 0x00008000
+
+    DSP1_TCM:
+        start:  0x10010000
+        length: 0x00008000
+
+    SHARED_SRAM:
+        start:  0x10060000
+        length: 0x00100000
+
+    MCU_SRAM:
+        start:  0x00000000
+        length: 0x00000000
+
+    DSP0_SRAM:
+        start:  0x10028000
+        length: 0x00008000
+
+    DSP1_SRAM:
+        start:  0x10030000
+        length: 0x00008000

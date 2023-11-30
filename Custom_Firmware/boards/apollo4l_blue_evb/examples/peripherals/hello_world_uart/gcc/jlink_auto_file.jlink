@@ -1,0 +1,7 @@
+Power off
+Sleep 500
+Power on
+Sleep 100
+connect
+loadfile C:\Users\pc\Desktop\Mi_Band8\AmbiqSuite_R4.4.1\boards\apollo4l_blue_evb\examples\peripherals\hello_world_uart\gcc\bin/hello_world_uart.bin 0x18000 reset
+exit

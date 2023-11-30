@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\FlashApollo4l.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>All</name>
+      <member>
+        <project>FlashApollo4l</project>
+        <configuration>FlashApollo4l_2048</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+

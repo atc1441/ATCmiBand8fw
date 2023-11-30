@@ -1,0 +1,14 @@
+C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\FlashApollo4l_RAM2816K\BrowseInfo\FlashApollo4l.pbi: \
+  C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\FlashApollo4l.c \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\src\flashloader\framework2\flash_loader.h \
+  C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\flash_config.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\stdint.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\ycheck.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\yvals.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\DLib_Defaults.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\DLib_Config_Normal.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\DLib_Product.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\src\flashloader\framework2\flash_loader_extra.h \
+  C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\am_hal_mram.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\stdbool.h \
+  C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\am_hal_bootrom_helper.h

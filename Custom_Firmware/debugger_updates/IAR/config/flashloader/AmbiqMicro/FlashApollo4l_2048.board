@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<flash_board>
+  <pass>
+    <!--  For the production Apollo4 Plus, this will be 0x00018000 0x001FFFFF -->
+    <loader>$TOOLKIT_DIR$\config\flashloader\AmbiqMicro\FlashApollo4l_2048.flash</loader>
+    <range>CODE 0x00018000 0x001FFFFF</range>
+  </pass>
+</flash_board>
+
+

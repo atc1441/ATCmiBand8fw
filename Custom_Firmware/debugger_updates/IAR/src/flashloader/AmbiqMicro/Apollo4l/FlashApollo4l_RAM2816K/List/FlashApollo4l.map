@@ -1,0 +1,187 @@
+###############################################################################
+#
+# IAR ELF Linker V9.20.2.320/W64 for ARM                  31/May/2023  12:48:54
+# Copyright 2007-2021 IAR Systems AB.
+#
+#    Output file  =
+#        C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\FlashApollo4l_RAM2816K\Exe\FlashApollo4l.out
+#    Map file     =
+#        C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\FlashApollo4l_RAM2816K\List\FlashApollo4l.map
+#    Command line =
+#        -f
+#        C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\FlashApollo4l_RAM2816K\Exe\FlashApollo4l.out.rsp
+#        (C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\FlashApollo4l_RAM2816K\Obj\framework\flash_loader.o
+#        C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\FlashApollo4l_RAM2816K\Obj\framework\flash_loader_asm.o
+#        C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\FlashApollo4l_RAM2816K\Obj\FlashApollo4l.o
+#        --no_out_extension -o
+#        C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\FlashApollo4l_RAM2816K\Exe\FlashApollo4l.out
+#        --map
+#        C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\FlashApollo4l_RAM2816K\List\FlashApollo4l.map
+#        --config "C:\Program Files\IAR Systems\Embedded Workbench
+#        9.0_2\arm\CONFIG\generic_cortex.icf" --entry __iar_program_start
+#        --inline --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** MESSAGES
+***
+
+Error[Li005]: no definition for "main" [referenced from cmain.o(rt7M_tl.a)]
+
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__CPP_Runtime   = 1
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x7'ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block PROC_STACK with size = 0, alignment = 8 { };
+define block HEAP with size = 2K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'ffff] {
+          rw, block CSTACK, block PROC_STACK, block HEAP };
+
+  Section    Kind         Address   Size  Object
+  -------    ----         -------   ----  ------
+"A0":                               0x20
+  .intvec    ro code          0x0   0x20  flash_loader_asm.o [2]
+                           - 0x20   0x20
+
+"P1":                              0x174
+  .text      ro code         0x20   0x90  FlashApollo4l.o [1]
+  .text      ro code         0xb0   0x72  flash_loader.o [2]
+  .rodata    const          0x122    0x2  flash_loader.o [2]
+  .text      ro code        0x124   0x1e  cmain.o [4]
+  .text      ro code        0x142    0x4  exit.o [3]
+  .text      ro code        0x148    0xa  cexit.o [4]
+  .text      ro code        0x154    0xc  XXexit.o [4]
+  .text      ro code        0x160   0x1c  cstartup_M.o [4]
+  .text      ro code        0x17c   0x18  flash_loader_asm.o [2]
+                          - 0x194  0x174
+
+"P2", part 1 of 2:                   0x0
+  HIGHSTART  rw data  0x2000'0000    0x0  flash_loader_asm.o [2]
+  LOWEND     rw data  0x2000'0000    0x0  flash_loader_asm.o [2]
+
+"P2", part 2 of 2:                 0x418
+  .noinit    uninit   0x2000'0000   0x14  flash_loader.o [2]
+  CSTACK              0x2000'0018  0x400  <Block>
+    CSTACK   uninit   0x2000'0018  0x400  <Block tail>
+                    - 0x2000'0418  0x418
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+        0x194     0x7'ffff  0x7'fe6c
+  0x2000'0418  0x2000'ffff    0xfbe8
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module              ro code  ro data  rw data
+    ------              -------  -------  -------
+command line/config:
+    ---------------------------------------------
+    Total:
+
+C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\FlashApollo4l_RAM2816K\Obj: [1]
+    FlashApollo4l.o         144
+    ---------------------------------------------
+    Total:                  144
+
+C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\FlashApollo4l_RAM2816K\Obj\framework: [2]
+    flash_loader.o          114        2       20
+    flash_loader_asm.o       56
+    ---------------------------------------------
+    Total:                  170        2       20
+
+dl7M_tln.a: [3]
+    exit.o                    4
+    ---------------------------------------------
+    Total:                    4
+
+rt7M_tl.a: [4]
+    XXexit.o                 12
+    cexit.o                  10
+    cmain.o                  30
+    cstartup_M.o             28
+    ---------------------------------------------
+    Total:                   80
+
+    Gaps                      4
+    Linker created                          1'024
+-------------------------------------------------
+    Grand Total:            402        2    1'044
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address  Size  Type      Object
+-----                       -------  ----  ----      ------
+?main                         0x125        Code  Gb  cmain.o [4]
+CSTACK$$Base            0x2000'0018         --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'0418         --   Gb  - Linker created -
+Fl2FlashEraseWriteEntry
+                               0xd9  0x42  Code  Gb  flash_loader.o [2]
+Fl2FlashInitEntry              0xb1  0x14  Code  Gb  flash_loader.o [2]
+Fl2FlashWriteEntry             0xc5  0x14  Code  Gb  flash_loader.o [2]
+FlashBreak                    0x121   0x2  Code  Gb  flash_loader.o [2]
+FlashBufferEnd          0x2000'0000        Data  Gb  flash_loader_asm.o [2]
+FlashBufferStart        0x2000'0000        Data  Gb  flash_loader_asm.o [2]
+FlashErase                     0x7b  0x2c  Code  Gb  FlashApollo4l.o [1]
+FlashEraseWriteEntry          0x18d        Code  Gb  flash_loader_asm.o [2]
+FlashInit                      0x21  0x30  Code  Gb  FlashApollo4l.o [1]
+FlashInitEntry                0x17d        Code  Gb  flash_loader_asm.o [2]
+FlashWrite                     0x51  0x2a  Code  Gb  FlashApollo4l.o [1]
+FlashWriteEntry               0x185        Code  Gb  flash_loader_asm.o [2]
+Region$$Table$$Base             0x0         --   Gb  - Linker created -
+Region$$Table$$Limit            0x0         --   Gb  - Linker created -
+__cmain                       0x125        Code  Gb  cmain.o [4]
+__exit                        0x155        Code  Gb  XXexit.o [4]
+__iar_program_start           0x161        Code  Gb  cstartup_M.o [4]
+__vector_table                  0x0        Data  Gb  flash_loader_asm.o [2]
+_call_main                    0x131        Code  Gb  cmain.o [4]
+_exit                         0x149        Code  Gb  cexit.o [4]
+exit                          0x143   0x4  Code  Gb  exit.o [3]
+frameworkVersion              0x122   0x2  Data  Gb  flash_loader.o [2]
+theFlashParams          0x2000'0000  0x14  Data  Gb  flash_loader.o [2]
+
+
+[1] = C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\FlashApollo4l_RAM2816K\Obj
+[2] = C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\FlashApollo4l_RAM2816K\Obj\framework
+[3] = dl7M_tln.a
+[4] = rt7M_tl.a
+
+    402 bytes of readonly  code memory
+      2 bytes of readonly  data memory
+  1'044 bytes of readwrite data memory
+
+Errors: 1
+Warnings: none

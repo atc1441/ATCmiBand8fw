@@ -1,0 +1,380 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V9.32.1.338/W64 for ARM         01/Jun/2023  10:14:36
+# Copyright 1999-2022 IAR Systems AB.
+#
+#    Cpu mode          =  thumb
+#    Endian            =  little
+#    Source file       =
+#        C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\FlashApollo4l.c
+#    Command line      =
+#        -f
+#        C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\FlashApollo4l_RAM2816K\Obj\FlashApollo4l.o.rsp
+#        (C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\FlashApollo4l.c
+#        -lCN
+#        C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\FlashApollo4l_RAM2816K\List\
+#        -la
+#        C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\FlashApollo4l_RAM2816K\List\
+#        -o
+#        C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\FlashApollo4l_RAM2816K\Obj\
+#        --no_clustering --debug --endian=little --cpu=Cortex-M4 -e
+#        --fpu=VFPv4_sp --dlib_config "C:\Program Files\IAR Systems\Embedded
+#        Workbench 9.1\arm\inc\c\DLib_Config_Normal.h" -I "C:\Program Files\IAR
+#        Systems\Embedded Workbench 9.1\arm\src\flashloader\framework2\\" -I
+#        C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\
+#        -Ohs --use_c++_inline) --dependencies=n
+#        C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\FlashApollo4l_RAM2816K\Obj\FlashApollo4l.o.iar_deps
+#    Locale            =  C
+#    List file         =
+#        C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\FlashApollo4l_RAM2816K\List\FlashApollo4l.lst
+#    Object file       =
+#        C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\FlashApollo4l_RAM2816K\Obj\FlashApollo4l.o
+#    Runtime model:       
+#      __CPP_Runtime   =  1
+#      __SystemLibrary =  DLib
+#      __dlib_version  =  6
+#
+###############################################################################
+
+C:\code\gitlab\ide\ide-support\interim_releases\Apollo4l\IAR\src\flashloader\AmbiqMicro\Apollo4l\FlashApollo4l.c
+      1          //*****************************************************************************
+      2          //
+      3          //! @file FlashApollo4p.c
+      4          //!
+      5          //! @brief The flash loader for IAR Embedded Workbench for Apollo4 Plus.
+      6          //!
+      7          //! This modules contains the functions necessary for programming applications
+      8          //! to the Apollo4 non-volatile memory.
+      9          //
+     10          //*****************************************************************************
+     11          
+     12          //*****************************************************************************
+     13          //
+     14          // ${copyright}
+     15          //
+     16          // This is part of revision ${version} of the AmbiqSuite Development Package.
+     17          //
+     18          //*****************************************************************************
+     19          
+     20          //*****************************************************************************
+     21          //
+     22          // Includes
+     23          //
+     24          //*****************************************************************************
+     25          #include "flash_loader.h"
+     26          #include "flash_loader_extra.h"
+     27          
+     28          
+     29          //*****************************************************************************
+     30          //
+     31          // From am_reg_base_addresses.h
+     32          //
+     33          //*****************************************************************************
+     34          //
+     35          // SRAM address space
+     36          //
+     37          #define SRAM_BASEADDR                           (0x10000000UL)
+     38          
+     39          //
+     40          // Flash address space
+     41          //
+     42          #define MRAM_BASEADDR                           (0x00000000UL)
+     43          
+     44          
+     45          //*****************************************************************************
+     46          //
+     47          // Ambiq Micro includes
+     48          //
+     49          //*****************************************************************************
+     50          #include "am_hal_mram.h"
+     51          #include "am_hal_bootrom_helper.h"
+     52          
+     53          
+     54          //*****************************************************************************
+     55          //
+     56          // Local defines
+     57          //
+     58          //*****************************************************************************
+     59          #define NV_WIPE     0       // nv_program_main2() Program_nWipe parameter
+     60          #define NV_PROGRAM  1       //  "
+     61          
+     62          //*****************************************************************************
+     63          // Select SBL or nbl
+     64          //*****************************************************************************
+     65          #define AM_DEV_SBL  1
+     66          #if AM_DEV_SBL  // SBL is the normal case
+     67          #define AM_STARTADDR    (AM_HAL_MRAM_ADDR + 0x00018000)
+     68          #define AM_NVSIZE       (AM_HAL_MRAM_TOTAL_SIZE - AM_STARTADDR)
+     69          #else           // NBL
+     70          #define AM_STARTADDR    0x00000000
+     71          #define AM_NVSIZE       AM_HAL_MRAM_TOTAL_SIZE
+     72          #endif
+     73          
+     74          
+     75          //*****************************************************************************
+     76          //
+     77          // Prototypes
+     78          //
+     79          //*****************************************************************************
+     80          
+     81          
+     82          //*****************************************************************************
+     83          //
+     84          // Globals
+     85          //
+     86          //*****************************************************************************
+     87          
+
+   \                                 In section .rodata, align 4
+     88          const am_hal_bootrom_helper_t g_am_hal_bootrom_helper =
+   \                     g_am_hal_bootrom_helper:
+   \        0x0   0x0800'004D        DC32 0x800'004d, 0x800'0051, 0x800'0055, 0x800'0059, 0x800'006d
+
+   \              0x0800'0051  
+
+   \              0x0800'0055  
+
+   \              0x0800'0059  
+
+   \              0x0800'006D
+   \       0x14   0x0800'0075        DC32 0x800'0075, 0x800'0079, 0x800'0081, 0x800'0099, 0x800'009d
+
+   \              0x0800'0079  
+
+   \              0x0800'0081  
+
+   \              0x0800'0099  
+
+   \              0x0800'009D
+     89          {
+     90                   ((int  (*)(uint32_t, uint32_t))                                    0x0800004D),    // nv_mass_erase
+     91                   ((int  (*)(uint32_t, uint32_t, uint32_t))                          0x08000051),    // nv_page_erase
+     92                   ((int  (*)(uint32_t, uint32_t *, uint32_t *, uint32_t))            0x08000055),    // nv_program_main
+     93                   ((int  (*)(uint32_t, uint32_t *, uint32_t, uint32_t))              0x08000059),    // nv_program_info_area
+     94                   ((int  (*)(uint32_t, uint32_t, uint32_t, uint32_t, uint32_t))      0x0800006D),    // nv_program_main2
+     95                   ((uint32_t (*)(uint32_t *))                                        0x08000075),    // br_util_read_word
+     96                   ((void (*)( uint32_t *, uint32_t))                                 0x08000079),    // br_util_write_word
+     97                   ((int  (*)( uint32_t))                                             0x08000081),    // nv_info_erase
+     98                   ((int  (*)( uint32_t ))                                            0x08000099),    // nv_recovery
+     99                   ((void (*)(uint32_t ))                                             0x0800009D),    // br_util_delay_cycles
+    100          };
+    101          
+    102          
+    103          
+    104          //*****************************************************************************
+    105          //
+    106          // FlashInit()
+    107          //
+    108          //*****************************************************************************
+    109          #if USE_ARGC_ARGV
+    110          uint32_t FlashInit(void *base_of_flash, uint32_t image_size,
+    111                             uint32_t link_address, uint32_t flags,
+    112                             int argc, char const *argv[])
+    113          #else
+
+   \                                 In section .text, align 2, keep-with-next
+    114          uint32_t FlashInit(void *base_of_flash, uint32_t image_size,
+    115                             uint32_t link_address, uint32_t flags)
+    116          #endif
+    117          {
+   \                     FlashInit: (+1)
+   \        0x0   0xB510             PUSH     {R4,LR}
+    118              uint32_t ui32Retval;
+    119          
+    120              if ( flags & FLAG_ERASE_ONLY )
+   \        0x2   0x07D8             LSLS     R0,R3,#+31
+   \        0x4   0xB082             SUB      SP,SP,#+8
+   \        0x6   0xD510             BPL.N    ??FlashInit_0
+    121              {
+    122                  ui32Retval = g_am_hal_bootrom_helper.nv_program_main2(
+    123                                  AM_HAL_MRAM_PROGRAM_KEY,
+    124                                  NV_WIPE,            // Fill
+    125                                  0xFFFFFFFF,         // Fill value
+    126                                  AM_STARTADDR / 4,   // Word offset
+    127                                  AM_NVSIZE / 4);     // Number of words
+    128          
+    129                  return ui32Retval ? RESULT_ERROR : RESULT_ERASE_DONE;
+   \        0x8   0xF44F 0x24F4      MOV      R4,#+499712
+   \        0xC   0x9400             STR      R4,[SP, #+0]
+   \        0xE   0xF44F 0x43C0      MOV      R3,#+24576
+   \       0x12   0xF04F 0x32FF      MOV      R2,#+4294967295
+   \       0x16   0x2100             MOVS     R1,#+0
+   \       0x18   0x....             LDR.N    R0,??DataTable2
+   \       0x1A   0x....             LDR.N    R4,??DataTable2_1
+   \       0x1C   0x47A0             BLX      R4
+   \       0x1E   0x2800             CMP      R0,#+0
+   \       0x20   0xBF0C             ITE      EQ
+   \       0x22   0x2003             MOVEQ    R0,#+3
+   \       0x24   0x2001             MOVNE    R0,#+1
+   \       0x26   0xB002             ADD      SP,SP,#+8
+   \       0x28   0xBD10             POP      {R4,PC}
+    130              }
+    131          
+    132              return RESULT_OK;
+   \                     ??FlashInit_0: (+1)
+   \       0x2A   0x2000             MOVS     R0,#+0
+   \       0x2C   0xB002             ADD      SP,SP,#+8
+   \       0x2E   0xBD10             POP      {R4,PC}
+    133          } // FlashInit()
+    134          
+    135          
+    136          //*****************************************************************************
+    137          //
+    138          // FlashWrite()
+    139          //
+    140          //*****************************************************************************
+
+   \                                 In section .text, align 2, keep-with-next
+    141          uint32_t FlashWrite(void *block_start,
+    142                              uint32_t offset_into_block,
+    143                              uint32_t count,
+    144                              char const *buffer)
+    145          {
+   \                     FlashWrite: (+1)
+   \        0x0   0xB510             PUSH     {R4,LR}
+   \        0x2   0x461C             MOV      R4,R3
+    146              uint32_t ui32Retval;
+    147              uint32_t ui32Addr = (uint32_t)block_start + offset_into_block;
+   \        0x4   0x1808             ADDS     R0,R1,R0
+   \        0x6   0xB082             SUB      SP,SP,#+8
+    148          
+    149              //
+    150              // Both source and destination addresses must be word-aligned.
+    151              // Note: We may want to also check for ui32Addr of 0xC000 or larger.
+    152              //
+    153              if ( ((uint32_t)buffer & 0x3) || (ui32Addr & 0x3) )
+   \        0x8   0xF014 0x0103      ANDS     R1,R4,#0x3
+   \        0xC   0xBF0C             ITE      EQ
+   \        0xE   0xF010 0x0F03      TSTEQ    R0,#0x3
+   \       0x12   0x2001             MOVNE    R0,#+1
+    154              {
+    155                  return RESULT_ERROR;
+   \       0x14   0xD107             BNE.N    ??FlashWrite_0
+    156              }
+    157          
+    158              ui32Retval = g_am_hal_bootrom_helper.nv_program_main2(
+    159                              AM_HAL_MRAM_PROGRAM_KEY,
+    160                              NV_PROGRAM,             // Program MRAM
+    161                              (uint32_t)buffer,       // Byte address to begin programming
+    162                              ui32Addr / 4,           // Word offset
+    163                              count / 4);             // Number of words
+    164          
+    165          //  return ui32Retval ? RESULT_ERROR : RESULT_OK;
+    166              return ui32Retval;
+   \       0x16   0x0892             LSRS     R2,R2,#+2
+   \       0x18   0x9200             STR      R2,[SP, #+0]
+   \       0x1A   0x0883             LSRS     R3,R0,#+2
+   \       0x1C   0x4622             MOV      R2,R4
+   \       0x1E   0x2101             MOVS     R1,#+1
+   \       0x20   0x....             LDR.N    R0,??DataTable2
+   \       0x22   0x....             LDR.N    R4,??DataTable2_1
+   \       0x24   0x47A0             BLX      R4
+   \                     ??FlashWrite_0: (+1)
+   \       0x26   0xB002             ADD      SP,SP,#+8
+   \       0x28   0xBD10             POP      {R4,PC}
+    167          
+    168          } // FlashWrite()
+    169          
+    170          
+    171          //*****************************************************************************
+    172          //
+    173          // FlashErase()
+    174          //
+    175          //*****************************************************************************
+
+   \                                 In section .text, align 2, keep-with-next
+    176          uint32_t FlashErase(void *block_start,
+    177                              uint32_t block_size)
+    178          {
+   \                     FlashErase: (+1)
+   \        0x0   0xB510             PUSH     {R4,LR}
+    179              uint32_t ui32Addr = (uint32_t)block_start;
+    180              uint32_t ui32Retval;
+    181          
+    182              if ( ui32Addr & 0x3 )
+   \        0x2   0xF010 0x0F03      TST      R0,#0x3
+   \        0x6   0xB082             SUB      SP,SP,#+8
+   \        0x8   0xD102             BNE.N    ??FlashErase_0
+    183              {
+    184                  return RESULT_ERROR;
+    185              }
+    186          
+    187          #if AM_DEV_SBL != 0
+    188              //
+    189              // Check that the starting address is outside the SBL region.
+    190              //
+    191              if ( (ui32Addr < AM_STARTADDR) || (ui32Addr & 0x3) )
+   \        0xA   0xF5B0 0x3FC0      CMP      R0,#+98304
+   \        0xE   0xD202             BCS.N    ??FlashErase_1
+    192              {
+    193                  return RESULT_ERROR;
+   \                     ??FlashErase_0: (+1)
+   \       0x10   0x2001             MOVS     R0,#+1
+   \       0x12   0xB002             ADD      SP,SP,#+8
+   \       0x14   0xBD10             POP      {R4,PC}
+    194              }
+    195          #endif
+    196          
+    197              ui32Retval = g_am_hal_bootrom_helper.nv_program_main2(
+    198                              AM_HAL_MRAM_PROGRAM_KEY,
+    199                              NV_WIPE,                // Fill
+    200                              0xFFFFFFFF,             // Fill value
+    201                              ui32Addr / 4,           // Word offset
+    202                              block_size / 4);        // Number of words
+    203          
+    204          //  return ui32Retval ? RESULT_ERROR : RESULT_OK;
+    205              return ui32Retval;
+   \                     ??FlashErase_1: (+1)
+   \       0x16   0x0889             LSRS     R1,R1,#+2
+   \       0x18   0x9100             STR      R1,[SP, #+0]
+   \       0x1A   0x0883             LSRS     R3,R0,#+2
+   \       0x1C   0xF04F 0x32FF      MOV      R2,#+4294967295
+   \       0x20   0x2100             MOVS     R1,#+0
+   \       0x22   0x....             LDR.N    R0,??DataTable2
+   \       0x24   0x....             LDR.N    R4,??DataTable2_1
+   \       0x26   0x47A0             BLX      R4
+   \       0x28   0xB002             ADD      SP,SP,#+8
+   \       0x2A   0xBD10             POP      {R4,PC}
+    206          
+    207          } // FlashErase()
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2:
+   \        0x0   0x1234'4321        DC32     0x12344321
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_1:
+   \        0x0   0x0800'006D        DC32     0x800006d
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   FlashErase
+        16   -- Indirect call
+      16   FlashInit
+        16   -- Indirect call
+      16   FlashWrite
+        16   -- Indirect call
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       4  ??DataTable2_1
+      44  FlashErase
+      48  FlashInit
+      42  FlashWrite
+      40  g_am_hal_bootrom_helper
+
+ 
+  40 bytes in section .rodata
+ 142 bytes in section .text
+ 
+ 142 bytes of CODE  memory
+  40 bytes of CONST memory
+
+Errors: none
+Warnings: none

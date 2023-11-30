@@ -1,0 +1,30 @@
+
+;; Architecture extensions
+#include weak "..\ARM\ARMv7-M-TPIU.ddf"
+#include weak "..\ARM\ARMv7-M-MPU.ddf"
+
+;; Memory information ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Used to define address zones within the ARM address space (Memory).
+;;
+;;   Name      may be almost anything
+;;   AdrSpace  must be Memory
+;;   StartAdr  start of memory block
+;;   EndAdr    end of memory block
+;;   AccType   type of access, read-only (R), read-write (RW) or SFR (W)
+
+[Memory]
+;;         Name             AdrSpace    StartAdr    EndAdr      AccType   Width
+Memory =  BootROM          Memory      0x08000000  0x08000FFF  R
+Memory =  Periph0          Memory      0x40000000  0x4FFFFFFF  W
+Memory =  Periph1          Memory      0x50000000  0x50014FFF  W
+Memory =  SystemSFR        Memory      0xE0000000  0xE00FFFFF  W
+Memory =  CoreSightROM     Memory      0xF0000000  0xF0000FFF  R
+Memory =  Flash            Memory      0x00018000  0x001FFFFF  R
+Memory =  RAM              Memory      0x10000000  0x102BFFFF  RW
+
+TrustedRanges = true
+UseSfrFilter = true
+
+[SfrInclude]
+File = apollo4l.svd

@@ -1,0 +1,72 @@
+
+Last updated: Jun 09 2023
+
+This file contains origination information about the various
+CMSIS header and library files located in this folder.
+Prebuilt libraries are no longer provided by Arm beginning with CMSIS v5.8.0.
+These Ambiq-built libraries were built from source code provided in the CMSIS
+pack indicated below, and are provided here for convenience only.
+Ambiq urges the user to obtain the library source directly from their preferred
+CMSIS pack version and build their own libraries.
+
+
+ARM/Include/:
+AmbiqSuite SDK file:                Pack Origination:
+cmsis*.h                            CMSIS/5.9.0/CMSIS/Core/Include/
+core_cm4.h                          CMSIS/5.9.0/CMSIS/Core/Include/
+arm_math.h                          CMSIS/5.9.0/CMSIS/Include/
+arm_math_memory.h                   CMSIS/5.9.0/CMSIS/DSP/Include/
+arm_math_types.h                    CMSIS/5.9.0/CMSIS/DSP/Include/
+arm_math_types_f16.h                CMSIS/5.9.0/CMSIS/DSP/Include/
+cachel1_armv7.h                     CMSIS/5.9.0/CMSIS/Core/Include/
+core_armv81mml.h                    CMSIS/5.9.0/CMSIS/Core/Include/
+core_cm4.h                          CMSIS/5.9.0/CMSIS/Core/Include/
+core_cm55.h                         CMSIS/5.9.0/CMSIS/Core/Include/
+dsp/                                CMSIS/5.9.0/CMSIS/DSP/Include/
+mpu_armv7.h                         CMSIS/5.9.0/CMSIS/Core/Include/
+mpu_armv8.h                         CMSIS/5.9.0/CMSIS/Core/Include/
+pac_armv81.h                        CMSIS/5.9.0/CMSIS/Core/Include/
+pmu_armv8.h                         CMSIS/5.9.0/CMSIS/Core/Include/
+
+ARM/Lib/ARM/:
+AmbiqSuite SDK file:                Pack Origination:
+
+arm_cortexM4lf_math.lib             Built from CMSIS 5.9.0 in cmsis-dsp repo
+arm_cortexM4l_math.lib              Built from CMSIS 5.9.0 in cmsis-dsp repo
+libarm_cortexM4lf_math.a            Built from CMSIS 5.9.0 in cmsis-dsp repo
+libarm_cortexM4l_math.a             Built from CMSIS 5.9.0 in cmsis-dsp repo
+iar_cortexM4lf_math.a               Built from CMSIS 5.9.0 in cmsis-dsp repo
+iar_cortexM4l_math.a                Built from CMSIS 5.9.0 in cmsis-dsp repo
+libCMSISDSP_m4.a                    Built from CMSIS 5.9.0 in cmsis-dsp repo
+libCMSISDSP_m55.a                   Built from CMSIS 5.9.0 in cmsis-dsp repo
+
+
+
+History:
+
+06/05/20 Updated Ambiq SDK to CMSIS v5.7.0.
+CMSIS v5.7.0 released by ARM on 04/09/2020
+Synopsis of changes from v5.6.0:
+All .lib and .a libraries were updated, refer to ARM documentation for details.
+arm_math.h:
+    Introduction comments were heavily modified, cplusplus delimiter,
+    local define name changes, new defines include __ARM_FEATURE_UNALIGNED,
+    ARM_MATH_MVEF, ARM_MATH_AUTOVECTORIZE, ARM_MATH_MVEI
+cmsis_armcc.h:
+    __ISB, __DSB, __DMB macros remove calls to schedule_barrier().
+cmsis_armclang.h:
+    Mostly adds support for ARM_ARCH_8_1M_MAIN.
+    Adds __SXTBL16_RORn() macro.
+cmsis_compiler.h:
+    No changes.
+cmsis_gcc.h:
+    Updates various macros, add and remove volatile directives, etc.
+cmsis_iccarm.h:
+    Updates various macros, add and remove volatile directives, etc.
+cmsis_version.h:
+    Bump version number.
+core_cm4.h:
+    Updates ptr handling in NVIC_SetVector() and NVIC_GetVector() functions.
+mpu_armv7.h:
+    Update ARM_MPU_Enable() with DMB(), and ARM_MPU_Disable() with DSB() and
+    ISB() instructions.

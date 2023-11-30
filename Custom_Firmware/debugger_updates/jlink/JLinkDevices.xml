@@ -1,0 +1,17 @@
+<DataBase>
+
+  <!--                   -->
+  <!-- Ambiq             -->
+  <!--                   -->
+
+  <Device>
+    <ChipInfo Vendor="AmbiqMicro" Name="AMAP42KL-KBR" WorkRAMAddr="0x10000000" WorkRAMSize="0x8000" Core="JLINK_CORE_CORTEX_M4" JLinkScriptFile="Devices/AmbiqMicro/AMAP42KK-KBR.JLinkScript"/>
+    <FlashBankInfo Name="Apollo4 Lite" BaseAddr="0x00018000" MaxSize="0x1E8000" Loader="Devices\AmbiqMicro\Apollo4.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1" />
+  </Device>
+
+  <Device>
+    <ChipInfo Vendor="AmbiqMicro" Name="AMA4B2KL-KXR" WorkRAMAddr="0x10000000" WorkRAMSize="0x8000" Core="JLINK_CORE_CORTEX_M4" JLinkScriptFile="Devices/AmbiqMicro/AMAP42KK-KBR.JLinkScript"/>
+    <FlashBankInfo Name="Apollo4 Blue Lite" BaseAddr="0x00018000" MaxSize="0x1E8000" Loader="Devices\AmbiqMicro\Apollo4.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1" />
+  </Device>
+
+</DataBase>

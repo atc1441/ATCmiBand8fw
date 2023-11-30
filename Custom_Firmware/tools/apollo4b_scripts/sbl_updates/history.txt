@@ -1,0 +1,54 @@
+SBL_rc0:
+Initial Production release for first samples
+
+SBL_v1_rc0:
+- Timing issue in reset-halt
+- Enable Cache
+- Add pullup/pulldown for GPIO override to take care of floating pins
+- Changes in error handling if Crypto is inaccessible for some reason
+
+SBL_v1.1_rc0:
+- Bug fix for Fastboot
+- Add support for Key revocation
+- RMA exception mode support
+- Letting normal processing resume after OVERRIDE, if the host never connects
+
+SBL_v2.1:
+- Bug fixes in RMA exception mode handling
+- Stronger pull up for GPIO Override
+- Using higher timeout of 10s in the RMA override case
+
+SBL_v3.0:
+- Add graceful sequencing for Crypto power down and POI
+- Add checks in SBL for Content Cert verification
+- Secure OTA – add check to fail Authentication if not in SecureBoot mode (as there is no valid cert chain)
+- Tested Cert Chain update OTA – and fixed issues discovered
+- Trim patch support
+- Added new feature to allow MRAM protection attributes to be specified in the Content Cert Image record
+- Updated code to not enable cache for security reasons
+- Numerous optimizations in code as well as logging messages
+
+SBL_v5_rc0: 
+- Workaround for issues related to Crypto and MRAM interactions
+- Added Reset of MCUCTRL DEBUGGER lockouts in SBL at the beginning
+- RMA Exception processing needed only for partial RMA state
+- Fixed the broken SBL OTA over wired interface
+- Fix INFO0 Update via SBL
+- Added some delays before reset to allow logs to flush out
+- Added protective check in the Secure Firmware OTA to make sure Content Cert version matches
+- Bug fix to OEM keyrevoke update
+- Added code to disable HW key masking
+- Changes to overcome limitation of <64K for SHA and AES functions
+
+SBL_v6_rc1:
+- Bug fixes:
+  - Fix in the INFO read workaround
+  - Fix clearing of original ResetStat if subjected to SBL OTA
+  - Moved MCUCTRL_DEBUGGER setting to the end of processing, as otherwise we might lock ourselves out (e.g. if SWO is disabled).
+- Diagnostic enhancements:
+  - Dump additional diagnostics from SBR (only applicable to SBRv5 onwards)
+  - Additional diagnostic prints for the ARM lib error codes
+- Functional Changes
+  - Change extreme locking on error conditions to allow the chip to boot back to SBL. Also it would allow error recovery if there is an SD cert preinstalled.
+  - Change to use SNVR3 instead of INFO1 to store resetStatus. 
+    This makes SBLv6 incompatible with previous versions - and hence needs a corresponding SDK HAL change

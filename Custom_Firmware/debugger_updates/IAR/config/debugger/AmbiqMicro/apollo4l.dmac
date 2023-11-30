@@ -1,0 +1,278 @@
+// Trace control
+// macro for Apollo4 Lite devices
+__param swo_route = 4; // swo_route parameter specifies the SWO Port route (0:PAD3, 1:PAD22, 2:PAD23, 3:PAD24, 4:PAD28, 5:PAD34, 6:PAD35, 7:PAD36, 8:PAD41, 9:PAD44, 10:PAD56, 11:PAD57, 12:PAD64, 13:PAD65, 14:PAD66, 15:PAD67, 16:PAD68, 17:PAD69, 18:PAD79)
+__var message_shown;
+
+// 0x1 - HFRCDIV2 : Selects HFRC divided by 2 as the source TPIU clk
+// 0x2 - HFRCDIV8 : Selects HFRC divided by 8 as the source TPIU clk
+// 0x3 - HFRCDIV16: Selects HFRC divided by 16 as the source TPIU clk
+// 0x4 - HFRCDIV32: Selects HFRC divided by 32 as the source TPIU clk
+__param tpiu_clksel = 0x1;
+
+execConfigureTraceSWO()
+{
+    __var tmp;
+    __var func;
+    __var addr;
+    __var padnum;
+
+    /* Preparing TPIU divider on CM4 TPIU */
+    tmp = (tpiu_clksel<<1) | 0x1;
+
+    /* Enable TPIU and select (HFRC / DIVx) TPIU clock */
+    __writeMemory32(tmp,0x40020250,"Memory");
+
+    /* Select SWO function for route PAD */
+    /* SWO for most pins is function 2 */
+	/* The pins with functions other than 2 are: */
+    /* Pad 28 = Func 0, swo_route=4 */
+    /* Pad 41 = Func 9, swo_route=8 */
+    /* Pad 68 = Func 1, swo_route=16 */
+    /* Pad 79 = Func 4, swo_route=18 */
+
+    /* Default to function 2 */
+    func = 2;
+    if (0 == swo_route)
+    {
+        padnum = 3;
+    }
+    else if (1 == swo_route)
+    {
+        padnum = 22;
+    }
+    else if (2 == swo_route)
+    {
+        padnum = 23;
+    }
+    else if (3 == swo_route)
+    {
+        padnum = 24;
+    }
+    else if (4 == swo_route)
+    {
+        padnum = 28;
+		func   = 0;
+    }
+    else if (5 == swo_route)
+    {
+        padnum = 34;
+    }
+    else if (6 == swo_route)
+    {
+        padnum = 35;
+    }
+    else if (7 == swo_route)
+    {
+        padnum = 36;
+    }
+    else if (8 == swo_route)
+    {
+        padnum = 41;
+        func   = 9;
+    }
+    else if (9 == swo_route)
+    {
+        padnum = 44;
+    }
+    else if (10 == swo_route)
+    {
+        padnum = 56;
+    }
+    else if (11 == swo_route)
+    {
+        padnum = 57;
+    }
+    else if (12 == swo_route)
+    {
+        padnum = 64;
+    }
+    else if (13 == swo_route)
+    {
+        padnum = 65;
+    }
+    else if (14 == swo_route)
+    {
+        padnum = 66;
+    }
+    else if (15 == swo_route)
+    {
+        padnum = 67;
+    }
+    else if (16 == swo_route)
+    {
+        padnum = 68;
+        func   = 1;
+    }
+    else if (17 == swo_route)
+    {
+        padnum = 69;
+    }
+    else if (18 == swo_route)
+    {
+        padnum = 79;
+        func   = 4;
+    }
+    else
+    {
+        /* Default to a virtual gpio */
+        padnum = 105;
+        func   = 0;
+    }
+
+    if ( padnum < 105 )
+    {
+        /* Enable pad configuration registers */
+        /* Apollo4 PADKEY register */
+        __writeMemory32(0x00000073, 0x40010200, "Memory");
+
+        addr = 0x40010000 + (padnum * 4);
+
+        __writeMemory32(func, addr, "Memory");
+
+        /* Disable pad configuration registers */
+        /* Apollo4 PADKEY register */
+        __writeMemory32(0x00000000, 0x40010200, "Memory");
+    }
+
+
+    /* Show the message only once */
+    if (!message_shown)
+    {
+        message_shown = 1;
+        if (0 == swo_route)
+        {
+            __message "DMAC: ** SWO Enabled on PAD3 **";
+        }
+        else if (1 == swo_route)
+        {
+            __message "DMAC: ** SWO Enabled on PAD22 **";
+        }
+        else if (2 == swo_route)
+        {
+            __message "DMAC: ** SWO Enabled on PAD23 **";
+        }
+        else if (3 == swo_route)
+        {
+            __message "DMAC: ** SWO Enabled on PAD24 **";
+        }
+        else if (4 == swo_route)
+        {
+            __message "DMAC: ** SWO Enabled on PAD28 **";
+        }
+        else if (5 == swo_route)
+        {
+            __message "DMAC: ** SWO Enabled on PAD34 **";
+        }
+
+        else if (6 == swo_route)
+        {
+            __message "DMAC: ** SWO Enabled on PAD35 **";
+        }
+        else if (7 == swo_route)
+        {
+            __message "DMAC: ** SWO Enabled on PAD36 **";
+        }
+        else if (8 == swo_route)
+        {
+            __message "DMAC: ** SWO Enabled on PAD41 **";
+        }
+        else if (9 == swo_route)
+        {
+            __message "DMAC: ** SWO Enabled on PAD44 **";
+        }
+        else if (10 == swo_route)
+        {
+            __message "DMAC: ** SWO Enabled on PAD56 **";
+        }
+        else if (11 == swo_route)
+        {
+            __message "DMAC: ** SWO Enabled on PAD57 **";
+        }
+        else if (12 == swo_route)
+        {
+            __message "DMAC: ** SWO Enabled on PAD64 **";
+        }
+        else if (13 == swo_route)
+        {
+            __message "DMAC: ** SWO Enabled on PAD65 **";
+        }
+        else if (14 == swo_route)
+        {
+            __message "DMAC: ** SWO Enabled on PAD66 **";
+        }
+        else if (15 == swo_route)
+        {
+            __message "DMAC: ** SWO Enabled on PAD67 **";
+        }
+        else if (16 == swo_route)
+        {
+            __message "DMAC: ** SWO Enabled on PAD68 **";
+        }
+        else if (17 == swo_route)
+        {
+            __message "DMAC: ** SWO Enabled on PAD69 **";
+        }
+        else if (18 == swo_route)
+        {
+            __message "DMAC: ** SWO Enabled on PAD79 **";
+        }
+        else
+        {
+            __message "DMAC: ** SWO Not Enabled (invalid swo_route) **";
+        }
+    }
+}
+
+SystemReset()
+    //@RESET_DRIVER=cmsisdap,ijet
+    //@reset_index=4
+    //@reset_default=true
+{
+    __message "DMAC/Reset: Custom System Reset Strategy";
+    __var MCUCTRL_SCRATCH0;
+    __var result, DEMCR, bootldr, halted;
+    // Read MCUCTRL_BOOTLDR to determine if it is a secure or non-secure chip
+    bootldr = __probeCmd("dap.r 0x400401A0 0x0");
+
+    halted = 0;
+    if ((bootldr & 0x0C000000) == 0x04000000)
+    {
+        __message "DMAC/Reset: Secure part." ;
+
+        /* Preparing scratch register, MCU will halt after SBL */
+        MCUCTRL_SCRATCH0 = __probeCmd("dap.r 0x400401B0 0x0");
+        MCUCTRL_SCRATCH0|=1;
+        DEMCR = __probeCmd("dap.r 0xE000EDFC 0x0");
+        DEMCR &=0xFFFFFFFE;
+        __probeCmd("dap.w 0xE000EDFC", DEMCR, 0x0);
+        __probeCmd("dap.w 0x400401B0",MCUCTRL_SCRATCH0,0x0);
+        __probeCmd("dap.w 0xE000ED0C 0x05FA0004 0x0");
+        __var i;
+        do{
+            __delay(100);
+            result = __probeCmd("/noerror dap.r 0xE000EDF0 0");
+            if( (__smessage result) != ""){
+                if(result&0x00020000){
+                    __message "DMAC/Reset: Device halted after ", i, " tries.";
+                    halted=1;
+                    i=30;
+                }
+            }
+            i++;
+        } while(i<=30);
+        if(!halted)
+        {
+            __message "DMAC/Reset: CPU did not halt!";
+        }
+    }else
+    {
+        __message "DMAC/Reset: Non-secure part.";
+    }
+    if( !halted ){
+    __message "DMAC/Reset: Calling normal system reset.";
+    __probeCmd("reset system /halt");
+    }
+
+    __probeCmd("refresh");
+    __probeCmd("refresh");
+}

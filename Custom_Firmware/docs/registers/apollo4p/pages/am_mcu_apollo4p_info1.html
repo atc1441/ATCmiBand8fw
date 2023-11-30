@@ -1,0 +1,3659 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>INFO1 (Apollo4)</TITLE>
+</HEAD>
+<BODY>
+<H1 align="center">Apollo4 INFO1</H1>
+<P align="center"><FONT size="+2"><B>Ambiq Micro Inc. INFO1 Registers</B></FONT></P>
+<P align="center"><FONT size="+2"></FONT></P>
+<HR>
+<P align="left"><FONT face="Helvetica" size="-1"><B>Copyright 2023 Ambiq Micro Inc.</B></FONT></P>
+<HR>
+<P align="left"><FONT size="+2"><B>Description:</B></FONT></P>
+<P align="left"><FONT size="+1">This document details the contents of the Apollo4 Plus INFO1 registers.</FONT></P>
+<HR>
+<H2 id="index"> INFO1 Index</H2>
+<P><B> INFO Base Address = </B><TT>0x42002000</TT><BR>
+</P>  <B><TT>0x00001200: </TT></B>
+  <A id="SBL_VERSION_0index" href="#SBL_VERSION_0"><B>INFO1_SBL_VERSION_0</B> - SBL Version Number and date code</A><BR>
+  <B><TT>0x00001204: </TT></B>
+  <A id="SBL_VERSION_1index" href="#SBL_VERSION_1"><B>INFO1_SBL_VERSION_1</B> - Contains the SBL Date Code.</A><BR>
+  <B><TT>0x00001208: </TT></B>
+  <A id="SBR_VERSION_0index" href="#SBR_VERSION_0"><B>INFO1_SBR_VERSION_0</B> - SBR Version Number and date code</A><BR>
+  <B><TT>0x00001210: </TT></B>
+  <A id="MAINPTRindex" href="#MAINPTR"><B>INFO1_MAINPTR</B> - Pointer to the main application.</A><BR>
+  <B><TT>0x00001214: </TT></B>
+  <A id="RESETSTATUSindex" href="#RESETSTATUS"><B>INFO1_RESETSTATUS</B> - Actual reset status</A><BR>
+  <B><TT>0x00001218: </TT></B>
+  <A id="SBLOTAindex" href="#SBLOTA"><B>INFO1_SBLOTA</B> - Address of upgrade staging area.</A><BR>
+  <B><TT>0x00001220: </TT></B>
+  <A id="SOCID0index" href="#SOCID0"><B>INFO1_SOCID0</B> - Secure Boot ROM certificate identifier word 0 [31:0]</A><BR>
+  <B><TT>0x00001224: </TT></B>
+  <A id="SOCID1index" href="#SOCID1"><B>INFO1_SOCID1</B> - Secure Boot ROM certificate identifier word 1 [63:32]</A><BR>
+  <B><TT>0x00001228: </TT></B>
+  <A id="SOCID2index" href="#SOCID2"><B>INFO1_SOCID2</B> - Secure Boot ROM certificate identifier word 2 [95:64]</A><BR>
+  <B><TT>0x0000122C: </TT></B>
+  <A id="SOCID3index" href="#SOCID3"><B>INFO1_SOCID3</B> - Secure Boot ROM certificate identifier word 3 [127:96]</A><BR>
+  <B><TT>0x00001230: </TT></B>
+  <A id="SOCID4index" href="#SOCID4"><B>INFO1_SOCID4</B> - Secure Boot ROM certificate identifier word 4 [159:128]</A><BR>
+  <B><TT>0x00001234: </TT></B>
+  <A id="SOCID5index" href="#SOCID5"><B>INFO1_SOCID5</B> - Secure Boot ROM certificate identifier word 5 [191:160]</A><BR>
+  <B><TT>0x00001238: </TT></B>
+  <A id="SOCID6index" href="#SOCID6"><B>INFO1_SOCID6</B> - Secure Boot ROM certificate identifier word 6 [223:192]</A><BR>
+  <B><TT>0x0000123C: </TT></B>
+  <A id="SOCID7index" href="#SOCID7"><B>INFO1_SOCID7</B> - Secure Boot ROM certificate identifier word 7 [255:224]</A><BR>
+  <B><TT>0x00001240: </TT></B>
+  <A id="PATCH_TRACKER0index" href="#PATCH_TRACKER0"><B>INFO1_PATCH_TRACKER0</B> - SBL Patch Tracker</A><BR>
+  <B><TT>0x00001244: </TT></B>
+  <A id="PATCH_TRACKER1index" href="#PATCH_TRACKER1"><B>INFO1_PATCH_TRACKER1</B> - SBL Patch Tracker</A><BR>
+  <B><TT>0x00001248: </TT></B>
+  <A id="PATCH_TRACKER2index" href="#PATCH_TRACKER2"><B>INFO1_PATCH_TRACKER2</B> - SBL Patch Tracker</A><BR>
+  <B><TT>0x0000124C: </TT></B>
+  <A id="PATCH_TRACKER3index" href="#PATCH_TRACKER3"><B>INFO1_PATCH_TRACKER3</B> - SBL Patch Tracker</A><BR>
+  <B><TT>0x00001250: </TT></B>
+  <A id="SBR_SDCERT_ADDRindex" href="#SBR_SDCERT_ADDR"><B>INFO1_SBR_SDCERT_ADDR</B> - SBR address of SDCERT</A><BR>
+  <B><TT>0x00001258: </TT></B>
+  <A id="SBR_IPT_ADDRindex" href="#SBR_IPT_ADDR"><B>INFO1_SBR_IPT_ADDR</B> - SBR address of IPT</A><BR>
+  <B><TT>0x0000125C: </TT></B>
+  <A id="SBR_OPT_ADDRindex" href="#SBR_OPT_ADDR"><B>INFO1_SBR_OPT_ADDR</B> - SBR address of OPT</A><BR>
+  <B><TT>0x00001300: </TT></B>
+  <A id="TEMP_CAL_ATEindex" href="#TEMP_CAL_ATE"><B>INFO1_TEMP_CAL_ATE</B> - The temperature of the test for temperature calibration.</A><BR>
+  <B><TT>0x00001304: </TT></B>
+  <A id="TEMP_CAL_MEASUREDindex" href="#TEMP_CAL_MEASURED"><B>INFO1_TEMP_CAL_MEASURED</B> - The voltage measured from the temperature sensor for temperature calibration.</A><BR>
+  <B><TT>0x00001308: </TT></B>
+  <A id="TEMP_CAL_ADC_OFFSETindex" href="#TEMP_CAL_ADC_OFFSET"><B>INFO1_TEMP_CAL_ADC_OFFSET</B> - The ADC offset voltage measured for temperature calibration.</A><BR>
+  <B><TT>0x0000130C: </TT></B>
+  <A id="CHIPSUBREVindex" href="#CHIPSUBREV"><B>INFO1_CHIPSUBREV</B> - This register is reserved for use on Apollo4B.</A><BR>
+  <B><TT>0x00001310: </TT></B>
+  <A id="TRIM_REVindex" href="#TRIM_REV"><B>INFO1_TRIM_REV</B> - Trim revision number</A><BR>
+  <B><TT>0x00001314: </TT></B>
+  <A id="FT1_GDR1index" href="#FT1_GDR1"><B>INFO1_FT1_GDR1</B> - FT1 GDR1</A><BR>
+  <B><TT>0x00001318: </TT></B>
+  <A id="FT2_GDR1index" href="#FT2_GDR1"><B>INFO1_FT2_GDR1</B> - FT2 GDR1</A><BR>
+  <B><TT>0x0000131C: </TT></B>
+  <A id="LVT_TRIMCODEindex" href="#LVT_TRIMCODE"><B>INFO1_LVT_TRIMCODE</B> - AMQ LVT trim code</A><BR>
+  <B><TT>0x00001320: </TT></B>
+  <A id="EHVT_TRIMCODEindex" href="#EHVT_TRIMCODE"><B>INFO1_EHVT_TRIMCODE</B> - AMQ EHVT trim code</A><BR>
+  <B><TT>0x00001324: </TT></B>
+  <A id="AUDADC_BINNINGindex" href="#AUDADC_BINNING"><B>INFO1_AUDADC_BINNING</B> - This register is reserved for use on Apollo4B.</A><BR>
+  <B><TT>0x00001328: </TT></B>
+  <A id="ADC_GAIN_ERRindex" href="#ADC_GAIN_ERR"><B>INFO1_ADC_GAIN_ERR</B> - ADC gain error</A><BR>
+  <B><TT>0x0000132C: </TT></B>
+  <A id="ADC_OFFSET_ERRindex" href="#ADC_OFFSET_ERR"><B>INFO1_ADC_OFFSET_ERR</B> - ADC offset</A><BR>
+  <B><TT>0x00001340: </TT></B>
+  <A id="AUDADC_A0_LG_OFFSETindex" href="#AUDADC_A0_LG_OFFSET"><B>INFO1_AUDADC_A0_LG_OFFSET</B> - Audio ADC low gain offset</A><BR>
+  <B><TT>0x00001344: </TT></B>
+  <A id="AUDADC_A0_HG_SLOPEindex" href="#AUDADC_A0_HG_SLOPE"><B>INFO1_AUDADC_A0_HG_SLOPE</B> - Audio ADC high gain slope</A><BR>
+  <B><TT>0x00001348: </TT></B>
+  <A id="AUDADC_A0_HG_INTERCEPTindex" href="#AUDADC_A0_HG_INTERCEPT"><B>INFO1_AUDADC_A0_HG_INTERCEPT</B> - Audio ADC high gain intercept</A><BR>
+  <B><TT>0x0000134C: </TT></B>
+  <A id="AUDADC_A1_LG_OFFSETindex" href="#AUDADC_A1_LG_OFFSET"><B>INFO1_AUDADC_A1_LG_OFFSET</B> - Audio ADC low gain offset</A><BR>
+  <B><TT>0x00001350: </TT></B>
+  <A id="AUDADC_A1_HG_SLOPEindex" href="#AUDADC_A1_HG_SLOPE"><B>INFO1_AUDADC_A1_HG_SLOPE</B> - Audio ADC high gain slope</A><BR>
+  <B><TT>0x00001354: </TT></B>
+  <A id="AUDADC_A1_HG_INTERCEPTindex" href="#AUDADC_A1_HG_INTERCEPT"><B>INFO1_AUDADC_A1_HG_INTERCEPT</B> - Audio ADC high gain intercept</A><BR>
+  <B><TT>0x00001358: </TT></B>
+  <A id="AUDADC_B0_LG_OFFSETindex" href="#AUDADC_B0_LG_OFFSET"><B>INFO1_AUDADC_B0_LG_OFFSET</B> - Audio ADC low gain offset</A><BR>
+  <B><TT>0x0000135C: </TT></B>
+  <A id="AUDADC_B0_HG_SLOPEindex" href="#AUDADC_B0_HG_SLOPE"><B>INFO1_AUDADC_B0_HG_SLOPE</B> - Audio ADC high gain slope</A><BR>
+  <B><TT>0x00001360: </TT></B>
+  <A id="AUDADC_B0_HG_INTERCEPTindex" href="#AUDADC_B0_HG_INTERCEPT"><B>INFO1_AUDADC_B0_HG_INTERCEPT</B> - Audio ADC high gain intercept</A><BR>
+  <B><TT>0x00001364: </TT></B>
+  <A id="AUDADC_B1_LG_OFFSETindex" href="#AUDADC_B1_LG_OFFSET"><B>INFO1_AUDADC_B1_LG_OFFSET</B> - Audio ADC low gain offset</A><BR>
+  <B><TT>0x00001368: </TT></B>
+  <A id="AUDADC_B1_HG_SLOPEindex" href="#AUDADC_B1_HG_SLOPE"><B>INFO1_AUDADC_B1_HG_SLOPE</B> - Audio ADC high gain slope</A><BR>
+  <B><TT>0x0000136C: </TT></B>
+  <A id="AUDADC_B1_HG_INTERCEPTindex" href="#AUDADC_B1_HG_INTERCEPT"><B>INFO1_AUDADC_B1_HG_INTERCEPT</B> - Audio ADC high gain intercept</A><BR>
+<BR><HR><BR>
+<H2 id="bigpictureINFO1">Register Format Summary</H2>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR valign="top" bgcolor="#888888">
+<TD bgcolor="#E6E8F2"><SMALL><B>Register</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SBL_VERSION_0"> INFO1_SBL_VERSION_0</A><BR>
+    <TT>0x1200</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">VERSION<BR><TT>0x00000000</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SBL_VERSION_1"> INFO1_SBL_VERSION_1</A><BR>
+    <TT>0x1204</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">DATECODE<BR><TT>0x00000000</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SBR_VERSION_0"> INFO1_SBR_VERSION_0</A><BR>
+    <TT>0x1208</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">VERSION<BR><TT>0x00000000</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#MAINPTR"> INFO1_MAINPTR</A><BR>
+    <TT>0x1210</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">ADDRESS<BR><TT>0x00018000</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#RESETSTATUS"> INFO1_RESETSTATUS</A><BR>
+    <TT>0x1214</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">STATUS<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SBLOTA"> INFO1_SBLOTA</A><BR>
+    <TT>0x1218</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">ADDRESS<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SOCID0"> INFO1_SOCID0</A><BR>
+    <TT>0x1220</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">ID<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SOCID1"> INFO1_SOCID1</A><BR>
+    <TT>0x1224</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">ID<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SOCID2"> INFO1_SOCID2</A><BR>
+    <TT>0x1228</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">ID<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SOCID3"> INFO1_SOCID3</A><BR>
+    <TT>0x122C</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">ID<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SOCID4"> INFO1_SOCID4</A><BR>
+    <TT>0x1230</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">ID<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SOCID5"> INFO1_SOCID5</A><BR>
+    <TT>0x1234</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">ID<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SOCID6"> INFO1_SOCID6</A><BR>
+    <TT>0x1238</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">ID<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SOCID7"> INFO1_SOCID7</A><BR>
+    <TT>0x123C</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">ID<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#PATCH_TRACKER0"> INFO1_PATCH_TRACKER0</A><BR>
+    <TT>0x1240</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">RSVD0<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#PATCH_TRACKER1"> INFO1_PATCH_TRACKER1</A><BR>
+    <TT>0x1244</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">RSVD1<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#PATCH_TRACKER2"> INFO1_PATCH_TRACKER2</A><BR>
+    <TT>0x1248</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">RSVD2<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#PATCH_TRACKER3"> INFO1_PATCH_TRACKER3</A><BR>
+    <TT>0x124C</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">RSVD3<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SBR_SDCERT_ADDR"> INFO1_SBR_SDCERT_ADDR</A><BR>
+    <TT>0x1250</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">ICV<BR><TT>0x001FF400</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SBR_IPT_ADDR"> INFO1_SBR_IPT_ADDR</A><BR>
+    <TT>0x1258</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">ADDRESS<BR><TT>0x10027000</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SBR_OPT_ADDR"> INFO1_SBR_OPT_ADDR</A><BR>
+    <TT>0x125C</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">ADDRESS<BR><TT>0x10037000</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#TEMP_CAL_ATE"> INFO1_TEMP_CAL_ATE</A><BR>
+    <TT>0x1300</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">TEMPERATURE<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#TEMP_CAL_MEASURED"> INFO1_TEMP_CAL_MEASURED</A><BR>
+    <TT>0x1304</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">VOLTS<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#TEMP_CAL_ADC_OFFSET"> INFO1_TEMP_CAL_ADC_OFFSET</A><BR>
+    <TT>0x1308</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">VOLTS<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#CHIPSUBREV"> INFO1_CHIPSUBREV</A><BR>
+    <TT>0x130C</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">VOLTS<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#TRIM_REV"> INFO1_TRIM_REV</A><BR>
+    <TT>0x1310</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">REVNUM<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#FT1_GDR1"> INFO1_FT1_GDR1</A><BR>
+    <TT>0x1314</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">FTVAL<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#FT2_GDR1"> INFO1_FT2_GDR1</A><BR>
+    <TT>0x1318</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">FTVAL<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#LVT_TRIMCODE"> INFO1_LVT_TRIMCODE</A><BR>
+    <TT>0x131C</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">TRIMCODE<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#EHVT_TRIMCODE"> INFO1_EHVT_TRIMCODE</A><BR>
+    <TT>0x1320</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">TRIMCODE<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#AUDADC_BINNING"> INFO1_AUDADC_BINNING</A><BR>
+    <TT>0x1324</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">STATUS<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#ADC_GAIN_ERR"> INFO1_ADC_GAIN_ERR</A><BR>
+    <TT>0x1328</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">ERROR<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#ADC_OFFSET_ERR"> INFO1_ADC_OFFSET_ERR</A><BR>
+    <TT>0x132C</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">OFFSET<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#AUDADC_A0_LG_OFFSET"> INFO1_AUDADC_A0_LG_OFFSET</A><BR>
+    <TT>0x1340</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">LGOFFSET<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#AUDADC_A0_HG_SLOPE"> INFO1_AUDADC_A0_HG_SLOPE</A><BR>
+    <TT>0x1344</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">HGSLOPE<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#AUDADC_A0_HG_INTERCEPT"> INFO1_AUDADC_A0_HG_INTERCEPT</A><BR>
+    <TT>0x1348</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">HGINTERCEPT<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#AUDADC_A1_LG_OFFSET"> INFO1_AUDADC_A1_LG_OFFSET</A><BR>
+    <TT>0x134C</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">LGOFFSET<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#AUDADC_A1_HG_SLOPE"> INFO1_AUDADC_A1_HG_SLOPE</A><BR>
+    <TT>0x1350</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">HGSLOPE<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#AUDADC_A1_HG_INTERCEPT"> INFO1_AUDADC_A1_HG_INTERCEPT</A><BR>
+    <TT>0x1354</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">HGINTERCEPT<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#AUDADC_B0_LG_OFFSET"> INFO1_AUDADC_B0_LG_OFFSET</A><BR>
+    <TT>0x1358</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">LGOFFSET<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#AUDADC_B0_HG_SLOPE"> INFO1_AUDADC_B0_HG_SLOPE</A><BR>
+    <TT>0x135C</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">HGSLOPE<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#AUDADC_B0_HG_INTERCEPT"> INFO1_AUDADC_B0_HG_INTERCEPT</A><BR>
+    <TT>0x1360</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">HGINTERCEPT<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#AUDADC_B1_LG_OFFSET"> INFO1_AUDADC_B1_LG_OFFSET</A><BR>
+    <TT>0x1364</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">LGOFFSET<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#AUDADC_B1_HG_SLOPE"> INFO1_AUDADC_B1_HG_SLOPE</A><BR>
+    <TT>0x1368</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">HGSLOPE<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#AUDADC_B1_HG_INTERCEPT"> INFO1_AUDADC_B1_HG_INTERCEPT</A><BR>
+    <TT>0x136C</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">HGINTERCEPT<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+</TABLE>
+<BR><HR>
+<H2 id="SBL_VERSION_0"><A href="#index">INFO1_SBL_VERSION_0</A></H2>
+<TABLE><TR><TD><B>SBL Version Number and date code</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1200 (word offset 0x0480)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_SBL_VERSION_0 ADDRESS:</B></TD>
+<TD><TT>0x42003200</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">VERSION<BR><TT>0x00000000</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VERSION</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Contains the SBL version number.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>Contains the SBL Version number encoding.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SBL_VERSION_1"><A href="#index">INFO1_SBL_VERSION_1</A></H2>
+<TABLE><TR><TD><B>Contains the SBL Date Code.</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1204 (word offset 0x0481)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_SBL_VERSION_1 ADDRESS:</B></TD>
+<TD><TT>0x42003204</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">DATECODE<BR><TT>0x00000000</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>DATECODE</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Contains the SBL date code.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>Contains the SBL date code encoding.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SBR_VERSION_0"><A href="#index">INFO1_SBR_VERSION_0</A></H2>
+<TABLE><TR><TD><B>SBR Version Number and date code</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1208 (word offset 0x0482)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_SBR_VERSION_0 ADDRESS:</B></TD>
+<TD><TT>0x42003208</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">VERSION<BR><TT>0x00000000</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VERSION</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>This field is the SBR version number and date code.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>Contains the SBR version number and date code.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="MAINPTR"><A href="#index">INFO1_MAINPTR</A></H2>
+<TABLE><TR><TD><B>Pointer to the main application.</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1210 (word offset 0x0484)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_MAINPTR ADDRESS:</B></TD>
+<TD><TT>0x42003210</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">ADDRESS<BR><TT>0x00018000</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>ADDRESS</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Contains the location of the main application.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>The location of the vector table of the main program. This value is read-only.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="RESETSTATUS"><A href="#index">INFO1_RESETSTATUS</A></H2>
+<TABLE><TR><TD><B>Actual reset status</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1214 (word offset 0x0485)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_RESETSTATUS ADDRESS:</B></TD>
+<TD><TT>0x42003214</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">STATUS<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>STATUS</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Contains the actual reset status.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>The actual hardware reset status is maintained at this location by the Secure Boot Loader. This value is read only.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SBLOTA"><A href="#index">INFO1_SBLOTA</A></H2>
+<TABLE><TR><TD><B>Address of upgrade staging area.</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1218 (word offset 0x0486)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_SBLOTA ADDRESS:</B></TD>
+<TD><TT>0x42003218</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">ADDRESS<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>ADDRESS</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Contains the actual reset status.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>This is the address of the slot to be used by the Secure Boot Loader for staging an upgrade.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SOCID0"><A href="#index">INFO1_SOCID0</A></H2>
+<TABLE><TR><TD><B>Secure Boot ROM certificate identifier word 0 [31:0]</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1220 (word offset 0x0488)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_SOCID0 ADDRESS:</B></TD>
+<TD><TT>0x42003220</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">ID<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>ID</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Contains SOC_ID0 [31:0].
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>SoC_ID is a statistically unique identification for the device required for the creation of debug certificates.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SOCID1"><A href="#index">INFO1_SOCID1</A></H2>
+<TABLE><TR><TD><B>Secure Boot ROM certificate identifier word 1 [63:32]</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1224 (word offset 0x0489)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_SOCID1 ADDRESS:</B></TD>
+<TD><TT>0x42003224</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">ID<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>ID</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Contains SOC_ID1 [63:32].
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>SoC_ID is a statistically unique identification for the device required for the creation of debug certificates.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SOCID2"><A href="#index">INFO1_SOCID2</A></H2>
+<TABLE><TR><TD><B>Secure Boot ROM certificate identifier word 2 [95:64]</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1228 (word offset 0x048A)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_SOCID2 ADDRESS:</B></TD>
+<TD><TT>0x42003228</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">ID<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>ID</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Contains SOC_ID2 [95:64].
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>SoC_ID is a statistically unique identification for the device required for the creation of debug certificates.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SOCID3"><A href="#index">INFO1_SOCID3</A></H2>
+<TABLE><TR><TD><B>Secure Boot ROM certificate identifier word 3 [127:96]</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x122C (word offset 0x048B)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_SOCID3 ADDRESS:</B></TD>
+<TD><TT>0x4200322C</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">ID<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>ID</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Contains SOC_ID3 [127:96].
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>SoC_ID is a statistically unique identification for the device required for the creation of debug certificates.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SOCID4"><A href="#index">INFO1_SOCID4</A></H2>
+<TABLE><TR><TD><B>Secure Boot ROM certificate identifier word 4 [159:128]</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1230 (word offset 0x048C)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_SOCID4 ADDRESS:</B></TD>
+<TD><TT>0x42003230</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">ID<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>ID</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Contains SOC_ID4 [159:128].
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>SoC_ID is a statistically unique identification for the device required for the creation of debug certificates.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SOCID5"><A href="#index">INFO1_SOCID5</A></H2>
+<TABLE><TR><TD><B>Secure Boot ROM certificate identifier word 5 [191:160]</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1234 (word offset 0x048D)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_SOCID5 ADDRESS:</B></TD>
+<TD><TT>0x42003234</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">ID<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>ID</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Contains SOC_ID5 [191:160].
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>SoC_ID is a statistically unique identification for the device required for the creation of debug certificates.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SOCID6"><A href="#index">INFO1_SOCID6</A></H2>
+<TABLE><TR><TD><B>Secure Boot ROM certificate identifier word 6 [223:192]</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1238 (word offset 0x048E)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_SOCID6 ADDRESS:</B></TD>
+<TD><TT>0x42003238</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">ID<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>ID</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Contains SOC_ID6 [223:192].
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>SoC_ID is a statistically unique identification for the device required for the creation of debug certificates.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SOCID7"><A href="#index">INFO1_SOCID7</A></H2>
+<TABLE><TR><TD><B>Secure Boot ROM certificate identifier word 7 [255:224]</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x123C (word offset 0x048F)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_SOCID7 ADDRESS:</B></TD>
+<TD><TT>0x4200323C</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">ID<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>ID</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Contains SOC_ID7 [255:224].
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>SoC_ID is a statistically unique identification for the device required for the creation of debug certificates.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="PATCH_TRACKER0"><A href="#index">INFO1_PATCH_TRACKER0</A></H2>
+<TABLE><TR><TD><B>SBL Patch Tracker</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1240 (word offset 0x0490)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_PATCH_TRACKER0 ADDRESS:</B></TD>
+<TD><TT>0x42003240</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">RSVD0<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>RSVD0</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>SBL Patch Tracker bitfield, bits reserved for future use.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>Apollo4 SBL patch tracking [31:0]</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="PATCH_TRACKER1"><A href="#index">INFO1_PATCH_TRACKER1</A></H2>
+<TABLE><TR><TD><B>SBL Patch Tracker</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1244 (word offset 0x0491)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_PATCH_TRACKER1 ADDRESS:</B></TD>
+<TD><TT>0x42003244</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">RSVD1<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>SBL Patch Tracker bitfield, bits reserved for future use.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>Apollo4 SBL patch tracking [63:32]</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="PATCH_TRACKER2"><A href="#index">INFO1_PATCH_TRACKER2</A></H2>
+<TABLE><TR><TD><B>SBL Patch Tracker</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1248 (word offset 0x0492)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_PATCH_TRACKER2 ADDRESS:</B></TD>
+<TD><TT>0x42003248</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">RSVD2<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>SBL Patch Tracker bitfield, bits reserved for future use.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>Apollo4 SBL patch tracking [95:64]</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="PATCH_TRACKER3"><A href="#index">INFO1_PATCH_TRACKER3</A></H2>
+<TABLE><TR><TD><B>SBL Patch Tracker</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x124C (word offset 0x0493)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_PATCH_TRACKER3 ADDRESS:</B></TD>
+<TD><TT>0x4200324C</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">RSVD3<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>RSVD3</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>SBL Patch Tracker bitfield, bits reserved for future use.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>Apollo4 SBL patch tracking [127:96]</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SBR_SDCERT_ADDR"><A href="#index">INFO1_SBR_SDCERT_ADDR</A></H2>
+<TABLE><TR><TD><B>SBR address of SDCERT</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1250 (word offset 0x0494)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_SBR_SDCERT_ADDR ADDRESS:</B></TD>
+<TD><TT>0x42003250</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">ICV<BR><TT>0x001FF400</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>ICV</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Address of the SD certificate.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>A pointer to the SD certificate.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SBR_IPT_ADDR"><A href="#index">INFO1_SBR_IPT_ADDR</A></H2>
+<TABLE><TR><TD><B>SBR address of IPT</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1258 (word offset 0x0496)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_SBR_IPT_ADDR ADDRESS:</B></TD>
+<TD><TT>0x42003258</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">ADDRESS<BR><TT>0x10027000</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>ADDRESS</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Pointer to the SBR IPT.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>A pointer to the SBR IPT.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SBR_OPT_ADDR"><A href="#index">INFO1_SBR_OPT_ADDR</A></H2>
+<TABLE><TR><TD><B>SBR address of OPT</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x125C (word offset 0x0497)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_SBR_OPT_ADDR ADDRESS:</B></TD>
+<TD><TT>0x4200325C</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">ADDRESS<BR><TT>0x10037000</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>ADDRESS</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Pointer to the SBR OPT.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>A pointer to the SBR OPT.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="TEMP_CAL_ATE"><A href="#index">INFO1_TEMP_CAL_ATE</A></H2>
+<TABLE><TR><TD><B>The temperature of the test for temperature calibration.</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1300 (word offset 0x04C0)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_TEMP_CAL_ATE ADDRESS:</B></TD>
+<TD><TT>0x42003300</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">TEMPERATURE<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>TEMPERATURE</TD>
+<TD nowrap>float</TD>
+<TD nowrap> </TD>
+<TD>Temperature in degrees C.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>The temperature measured on the ATE test head when the part's temperature sensor was calibrated.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="TEMP_CAL_MEASURED"><A href="#index">INFO1_TEMP_CAL_MEASURED</A></H2>
+<TABLE><TR><TD><B>The voltage measured from the temperature sensor for temperature calibration.</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1304 (word offset 0x04C1)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_TEMP_CAL_MEASURED ADDRESS:</B></TD>
+<TD><TT>0x42003304</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">VOLTS<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VOLTS</TD>
+<TD nowrap>float</TD>
+<TD nowrap> </TD>
+<TD>Voltage on analog test mux.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>The voltage measured on the analog test mux output when the part's temperature sensor was calibrated.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="TEMP_CAL_ADC_OFFSET"><A href="#index">INFO1_TEMP_CAL_ADC_OFFSET</A></H2>
+<TABLE><TR><TD><B>The ADC offset voltage measured for temperature calibration.</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1308 (word offset 0x04C2)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_TEMP_CAL_ADC_OFFSET ADDRESS:</B></TD>
+<TD><TT>0x42003308</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">VOLTS<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VOLTS</TD>
+<TD nowrap>float</TD>
+<TD nowrap> </TD>
+<TD>Offset Voltage for the ADC .
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>The offset voltage measured on for the ADC when the part's temperature sensor was calibrated.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="CHIPSUBREV"><A href="#index">INFO1_CHIPSUBREV</A></H2>
+<TABLE><TR><TD><B>This register is reserved for use on Apollo4B.</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x130C (word offset 0x04C3)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_CHIPSUBREV ADDRESS:</B></TD>
+<TD><TT>0x4200330C</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">VOLTS<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VOLTS</TD>
+<TD nowrap>float</TD>
+<TD nowrap> </TD>
+<TD>This register is reserved for use on Apollo4B.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>To be provided.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="TRIM_REV"><A href="#index">INFO1_TRIM_REV</A></H2>
+<TABLE><TR><TD><B>Trim revision number</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1310 (word offset 0x04C4)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_TRIM_REV ADDRESS:</B></TD>
+<TD><TT>0x42003310</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">REVNUM<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>REVNUM</TD>
+<TD nowrap>uint_32</TD>
+<TD nowrap> </TD>
+<TD>TBD
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>Contains the trim revision number.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="FT1_GDR1"><A href="#index">INFO1_FT1_GDR1</A></H2>
+<TABLE><TR><TD><B>FT1 GDR1</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1314 (word offset 0x04C5)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_FT1_GDR1 ADDRESS:</B></TD>
+<TD><TT>0x42003314</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">FTVAL<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>FTVAL</TD>
+<TD nowrap>uint_32</TD>
+<TD nowrap> </TD>
+<TD>TBD
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>Copy of FT1 GDR1</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="FT2_GDR1"><A href="#index">INFO1_FT2_GDR1</A></H2>
+<TABLE><TR><TD><B>FT2 GDR1</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1318 (word offset 0x04C6)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_FT2_GDR1 ADDRESS:</B></TD>
+<TD><TT>0x42003318</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">FTVAL<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>FTVAL</TD>
+<TD nowrap>uint_32</TD>
+<TD nowrap> </TD>
+<TD>TBD
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>Copy of FT2 GDR1</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="LVT_TRIMCODE"><A href="#index">INFO1_LVT_TRIMCODE</A></H2>
+<TABLE><TR><TD><B>AMQ LVT trim code</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x131C (word offset 0x04C7)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_LVT_TRIMCODE ADDRESS:</B></TD>
+<TD><TT>0x4200331C</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">TRIMCODE<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>TRIMCODE</TD>
+<TD nowrap>uint_32</TD>
+<TD nowrap> </TD>
+<TD>TBD
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>LVT trim code value.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="EHVT_TRIMCODE"><A href="#index">INFO1_EHVT_TRIMCODE</A></H2>
+<TABLE><TR><TD><B>AMQ EHVT trim code</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1320 (word offset 0x04C8)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_EHVT_TRIMCODE ADDRESS:</B></TD>
+<TD><TT>0x42003320</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">TRIMCODE<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>TRIMCODE</TD>
+<TD nowrap>uint_32</TD>
+<TD nowrap> </TD>
+<TD>TBD
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>EHVT trim code value.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="AUDADC_BINNING"><A href="#index">INFO1_AUDADC_BINNING</A></H2>
+<TABLE><TR><TD><B>This register is reserved for use on Apollo4B.</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1324 (word offset 0x04C9)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_AUDADC_BINNING ADDRESS:</B></TD>
+<TD><TT>0x42003324</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">STATUS<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>STATUS</TD>
+<TD nowrap>uint_32</TD>
+<TD nowrap> </TD>
+<TD>This register is reserved for use on Apollo4B.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>Audio ADC binning value</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="ADC_GAIN_ERR"><A href="#index">INFO1_ADC_GAIN_ERR</A></H2>
+<TABLE><TR><TD><B>ADC gain error</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1328 (word offset 0x04CA)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_ADC_GAIN_ERR ADDRESS:</B></TD>
+<TD><TT>0x42003328</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">ERROR<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>ERROR</TD>
+<TD nowrap>uint_32</TD>
+<TD nowrap> </TD>
+<TD>TBD
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>This float value is the ADC gain error used for correcting the error from ADC measurement.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="ADC_OFFSET_ERR"><A href="#index">INFO1_ADC_OFFSET_ERR</A></H2>
+<TABLE><TR><TD><B>ADC offset</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x132C (word offset 0x04CB)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_ADC_OFFSET_ERR ADDRESS:</B></TD>
+<TD><TT>0x4200332C</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">OFFSET<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>OFFSET</TD>
+<TD nowrap>uint_32</TD>
+<TD nowrap> </TD>
+<TD>TBD
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>This float value is the ADC offset (volts).</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="AUDADC_A0_LG_OFFSET"><A href="#index">INFO1_AUDADC_A0_LG_OFFSET</A></H2>
+<TABLE><TR><TD><B>Audio ADC low gain offset</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1340 (word offset 0x04D0)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_AUDADC_A0_LG_OFFSET ADDRESS:</B></TD>
+<TD><TT>0x42003340</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">LGOFFSET<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>LGOFFSET</TD>
+<TD nowrap>uint_32</TD>
+<TD nowrap> </TD>
+<TD>Low Gain (LG) Offset
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>This is the float value for low gain offset (less than 12dB). A0 maps to Slot 0</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="AUDADC_A0_HG_SLOPE"><A href="#index">INFO1_AUDADC_A0_HG_SLOPE</A></H2>
+<TABLE><TR><TD><B>Audio ADC high gain slope</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1344 (word offset 0x04D1)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_AUDADC_A0_HG_SLOPE ADDRESS:</B></TD>
+<TD><TT>0x42003344</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">HGSLOPE<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>HGSLOPE</TD>
+<TD nowrap>uint_32</TD>
+<TD nowrap> </TD>
+<TD>High Gain (HG) Slope
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>This is the float value for high gain slope (more than 12dB). A0 maps to Slot 0</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="AUDADC_A0_HG_INTERCEPT"><A href="#index">INFO1_AUDADC_A0_HG_INTERCEPT</A></H2>
+<TABLE><TR><TD><B>Audio ADC high gain intercept</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1348 (word offset 0x04D2)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_AUDADC_A0_HG_INTERCEPT ADDRESS:</B></TD>
+<TD><TT>0x42003348</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">HGINTERCEPT<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>HGINTERCEPT</TD>
+<TD nowrap>uint_32</TD>
+<TD nowrap> </TD>
+<TD>High Gain (HG) Intercept
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>This is the float value for high gain intercept (more than 12dB). A0 maps to Slot 0</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="AUDADC_A1_LG_OFFSET"><A href="#index">INFO1_AUDADC_A1_LG_OFFSET</A></H2>
+<TABLE><TR><TD><B>Audio ADC low gain offset</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x134C (word offset 0x04D3)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_AUDADC_A1_LG_OFFSET ADDRESS:</B></TD>
+<TD><TT>0x4200334C</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">LGOFFSET<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>LGOFFSET</TD>
+<TD nowrap>uint_32</TD>
+<TD nowrap> </TD>
+<TD>Low Gain (LG) Offset
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>This is the float value for low gain offset (less than 12dB). A1 maps to Slot 1</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="AUDADC_A1_HG_SLOPE"><A href="#index">INFO1_AUDADC_A1_HG_SLOPE</A></H2>
+<TABLE><TR><TD><B>Audio ADC high gain slope</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1350 (word offset 0x04D4)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_AUDADC_A1_HG_SLOPE ADDRESS:</B></TD>
+<TD><TT>0x42003350</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">HGSLOPE<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>HGSLOPE</TD>
+<TD nowrap>uint_32</TD>
+<TD nowrap> </TD>
+<TD>High Gain (HG) Slope
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>This is the float value for high gain slope (more than 12dB). A1 maps to Slot 1</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="AUDADC_A1_HG_INTERCEPT"><A href="#index">INFO1_AUDADC_A1_HG_INTERCEPT</A></H2>
+<TABLE><TR><TD><B>Audio ADC high gain intercept</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1354 (word offset 0x04D5)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_AUDADC_A1_HG_INTERCEPT ADDRESS:</B></TD>
+<TD><TT>0x42003354</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">HGINTERCEPT<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>HGINTERCEPT</TD>
+<TD nowrap>uint_32</TD>
+<TD nowrap> </TD>
+<TD>High Gain (HG) Intercept
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>This is the float value for high gain intercept (more than 12dB). A1 maps to Slot 1</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="AUDADC_B0_LG_OFFSET"><A href="#index">INFO1_AUDADC_B0_LG_OFFSET</A></H2>
+<TABLE><TR><TD><B>Audio ADC low gain offset</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1358 (word offset 0x04D6)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_AUDADC_B0_LG_OFFSET ADDRESS:</B></TD>
+<TD><TT>0x42003358</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">LGOFFSET<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>LGOFFSET</TD>
+<TD nowrap>uint_32</TD>
+<TD nowrap> </TD>
+<TD>Low Gain (LG) Offset
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>This is the float value for low gain offset (less than 12dB). B0 maps to Slot 2</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="AUDADC_B0_HG_SLOPE"><A href="#index">INFO1_AUDADC_B0_HG_SLOPE</A></H2>
+<TABLE><TR><TD><B>Audio ADC high gain slope</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x135C (word offset 0x04D7)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_AUDADC_B0_HG_SLOPE ADDRESS:</B></TD>
+<TD><TT>0x4200335C</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">HGSLOPE<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>HGSLOPE</TD>
+<TD nowrap>uint_32</TD>
+<TD nowrap> </TD>
+<TD>High Gain (HG) Slope
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>This is the float value for high gain slope (more than 12dB). B0 maps to Slot 2</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="AUDADC_B0_HG_INTERCEPT"><A href="#index">INFO1_AUDADC_B0_HG_INTERCEPT</A></H2>
+<TABLE><TR><TD><B>Audio ADC high gain intercept</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1360 (word offset 0x04D8)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_AUDADC_B0_HG_INTERCEPT ADDRESS:</B></TD>
+<TD><TT>0x42003360</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">HGINTERCEPT<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>HGINTERCEPT</TD>
+<TD nowrap>uint_32</TD>
+<TD nowrap> </TD>
+<TD>High Gain (HG) Intercept
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>This is the float value for high gain intercept (more than 12dB). B0 maps to Slot 2</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="AUDADC_B1_LG_OFFSET"><A href="#index">INFO1_AUDADC_B1_LG_OFFSET</A></H2>
+<TABLE><TR><TD><B>Audio ADC low gain offset</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1364 (word offset 0x04D9)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_AUDADC_B1_LG_OFFSET ADDRESS:</B></TD>
+<TD><TT>0x42003364</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">LGOFFSET<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>LGOFFSET</TD>
+<TD nowrap>uint_32</TD>
+<TD nowrap> </TD>
+<TD>Low Gain (LG) Offset
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>This is the float value for low gain offset (less than 12dB). B1 maps to Slot 3</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="AUDADC_B1_HG_SLOPE"><A href="#index">INFO1_AUDADC_B1_HG_SLOPE</A></H2>
+<TABLE><TR><TD><B>Audio ADC high gain slope</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x1368 (word offset 0x04DA)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_AUDADC_B1_HG_SLOPE ADDRESS:</B></TD>
+<TD><TT>0x42003368</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">HGSLOPE<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>HGSLOPE</TD>
+<TD nowrap>uint_32</TD>
+<TD nowrap> </TD>
+<TD>High Gain (HG) Slope
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>This is the float value for high gain slope (more than 12dB). B1 maps to Slot 3</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="AUDADC_B1_HG_INTERCEPT"><A href="#index">INFO1_AUDADC_B1_HG_INTERCEPT</A></H2>
+<TABLE><TR><TD><B>Audio ADC high gain intercept</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x136C (word offset 0x04DB)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO1_AUDADC_B1_HG_INTERCEPT ADDRESS:</B></TD>
+<TD><TT>0x4200336C</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">HGINTERCEPT<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>HGINTERCEPT</TD>
+<TD nowrap>uint_32</TD>
+<TD nowrap> </TD>
+<TD>High Gain (HG) Intercept
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>This is the float value for high gain intercept (more than 12dB). B1 maps to Slot 3</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>

@@ -1,0 +1,1714 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>INFO0 (Apollo4)</TITLE>
+</HEAD>
+<BODY>
+<H1 align="center">Apollo4 INFO0</H1>
+<P align="center"><FONT size="+2"><B>Ambiq Micro Inc. Customer INFO Space</B></FONT></P>
+<P align="center"><FONT size="+2"></FONT></P>
+<HR>
+<P align="left"><FONT face="Helvetica" size="-1"><B>Copyright 2023 Ambiq Micro Inc.</B></FONT></P>
+<HR>
+<P align="left"><FONT size="+2"><B>Description:</B></FONT></P>
+<P align="left"><FONT size="+1">This document details the contents of the Apollo4 Plus Customer INFO registers.</FONT></P>
+<HR>
+<H2 id="index"> INFO0 Index</H2>
+<P><B> INFO Base Address = </B><TT>0x42000000</TT><BR>
+</P>  <B><TT>0x00000000: </TT></B>
+  <A id="SIGNATURE0index" href="#SIGNATURE0"><B>INFO0_SIGNATURE0</B> - INFO0 Signature</A><BR>
+  <B><TT>0x00000004: </TT></B>
+  <A id="SIGNATURE1index" href="#SIGNATURE1"><B>INFO0_SIGNATURE1</B> - INFO0 Signature</A><BR>
+  <B><TT>0x00000008: </TT></B>
+  <A id="SIGNATURE2index" href="#SIGNATURE2"><B>INFO0_SIGNATURE2</B> - INFO0 Signature</A><BR>
+  <B><TT>0x0000000C: </TT></B>
+  <A id="SIGNATURE3index" href="#SIGNATURE3"><B>INFO0_SIGNATURE3</B> - INFO0 Signature</A><BR>
+  <B><TT>0x00000014: </TT></B>
+  <A id="CUSTOMER_TRIMindex" href="#CUSTOMER_TRIM"><B>INFO0_CUSTOMER_TRIM</B> - Customer trim values</A><BR>
+  <B><TT>0x00000028: </TT></B>
+  <A id="SECURITY_WIRED_IFC_CFG0index" href="#SECURITY_WIRED_IFC_CFG0"><B>INFO0_SECURITY_WIRED_IFC_CFG0</B> - Security Wired Interface configuration word0</A><BR>
+  <B><TT>0x0000002C: </TT></B>
+  <A id="SECURITY_WIRED_IFC_CFG1index" href="#SECURITY_WIRED_IFC_CFG1"><B>INFO0_SECURITY_WIRED_IFC_CFG1</B> - Security Wired Interface configuration word1</A><BR>
+  <B><TT>0x00000030: </TT></B>
+  <A id="SECURITY_WIRED_IFC_CFG2index" href="#SECURITY_WIRED_IFC_CFG2"><B>INFO0_SECURITY_WIRED_IFC_CFG2</B> - Security Wired Interface configuration word2</A><BR>
+  <B><TT>0x00000034: </TT></B>
+  <A id="SECURITY_WIRED_IFC_CFG3index" href="#SECURITY_WIRED_IFC_CFG3"><B>INFO0_SECURITY_WIRED_IFC_CFG3</B> - Security Wired Interface configuration word3</A><BR>
+  <B><TT>0x00000038: </TT></B>
+  <A id="SECURITY_WIRED_IFC_CFG4index" href="#SECURITY_WIRED_IFC_CFG4"><B>INFO0_SECURITY_WIRED_IFC_CFG4</B> - Security Wired Interface configuration word4</A><BR>
+  <B><TT>0x0000003C: </TT></B>
+  <A id="SECURITY_WIRED_IFC_CFG5index" href="#SECURITY_WIRED_IFC_CFG5"><B>INFO0_SECURITY_WIRED_IFC_CFG5</B> - Security Wired Interface configuration word5</A><BR>
+  <B><TT>0x00000040: </TT></B>
+  <A id="SECURITY_VERSIONindex" href="#SECURITY_VERSION"><B>INFO0_SECURITY_VERSION</B> - Security version field</A><BR>
+  <B><TT>0x00000044: </TT></B>
+  <A id="SECURITY_SRAM_RESVindex" href="#SECURITY_SRAM_RESV"><B>INFO0_SECURITY_SRAM_RESV</B> - DTCM Reserved for Application Scratch space</A><BR>
+  <B><TT>0x00000048: </TT></B>
+  <A id="SECURITY_RMAOVERRIDEindex" href="#SECURITY_RMAOVERRIDE"><B>INFO0_SECURITY_RMAOVERRIDE</B> - RMA override.</A><BR>
+  <B><TT>0x00000054: </TT></B>
+  <A id="WIRED_TIMEOUTindex" href="#WIRED_TIMEOUT"><B>INFO0_WIRED_TIMEOUT</B> - Wired timeout</A><BR>
+  <B><TT>0x00000058: </TT></B>
+  <A id="SBR_SDCERT_ADDRindex" href="#SBR_SDCERT_ADDR"><B>INFO0_SBR_SDCERT_ADDR</B> - SBR SDCERT ADDR</A><BR>
+  <B><TT>0x00000060: </TT></B>
+  <A id="MAINPTRindex" href="#MAINPTR"><B>INFO0_MAINPTR</B> - Pointer to the main application.</A><BR>
+  <B><TT>0x00000064: </TT></B>
+  <A id="CERTCHAINPTRindex" href="#CERTCHAINPTR"><B>INFO0_CERTCHAINPTR</B> - OEM certificate chain.</A><BR>
+<BR><HR><BR>
+<H2 id="bigpictureINFO0">Register Format Summary</H2>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR valign="top" bgcolor="#888888">
+<TD bgcolor="#E6E8F2"><SMALL><B>Register</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+<TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SIGNATURE0"> INFO0_SIGNATURE0</A><BR>
+    <TT>0x0</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">SIG0<BR><TT>0x00000000</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SIGNATURE1"> INFO0_SIGNATURE1</A><BR>
+    <TT>0x4</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">SIG1<BR><TT>0x00000000</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SIGNATURE2"> INFO0_SIGNATURE2</A><BR>
+    <TT>0x8</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">SIG2<BR><TT>0x00000000</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SIGNATURE3"> INFO0_SIGNATURE3</A><BR>
+    <TT>0xC</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">SIG3<BR><TT>0x00000000</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#CUSTOMER_TRIM"> INFO0_CUSTOMER_TRIM</A><BR>
+    <TT>0x14</TT>
+  </TH>
+  <TD bgcolor="#B2C9E4" colspan="31">RSVD<BR><TT>0x7FFFFFFF</TT></TD>
+  <TD bgcolor="#ffffff" colspan="1">ERR001_MUSTBE_0<BR><TT>0x1</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SECURITY_WIRED_IFC_CFG0"> INFO0_SECURITY_WIRED_IFC_CFG0</A><BR>
+    <TT>0x28</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="2">RSVD30<BR><TT>0x3</TT></TD>
+  <TD bgcolor="#ffffff" colspan="22">BAUDRATE<BR><TT>0x3FFFFF</TT></TD>
+  <TD bgcolor="#ffffff" colspan="2">DATALEN<BR><TT>0x3</TT></TD>
+  <TD bgcolor="#ffffff" colspan="1">2STOP<BR><TT>0x1</TT></TD>
+  <TD bgcolor="#ffffff" colspan="1">EVEN<BR><TT>0x1</TT></TD>
+  <TD bgcolor="#ffffff" colspan="1">PAR<BR><TT>0x1</TT></TD>
+  <TD bgcolor="#ffffff" colspan="1">CTS<BR><TT>0x1</TT></TD>
+  <TD bgcolor="#ffffff" colspan="1">RTS<BR><TT>0x1</TT></TD>
+  <TD bgcolor="#ffffff" colspan="1">RSVD0<BR><TT>0x1</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SECURITY_WIRED_IFC_CFG1"> INFO0_SECURITY_WIRED_IFC_CFG1</A><BR>
+    <TT>0x2C</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="8">PIN3<BR><TT>0xFF</TT></TD>
+  <TD bgcolor="#ffffff" colspan="8">PIN2<BR><TT>0xFF</TT></TD>
+  <TD bgcolor="#ffffff" colspan="8">PIN1<BR><TT>0xFF</TT></TD>
+  <TD bgcolor="#ffffff" colspan="8">PIN0<BR><TT>0xFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SECURITY_WIRED_IFC_CFG2"> INFO0_SECURITY_WIRED_IFC_CFG2</A><BR>
+    <TT>0x30</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">PINCFG<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SECURITY_WIRED_IFC_CFG3"> INFO0_SECURITY_WIRED_IFC_CFG3</A><BR>
+    <TT>0x34</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">PINCFG<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SECURITY_WIRED_IFC_CFG4"> INFO0_SECURITY_WIRED_IFC_CFG4</A><BR>
+    <TT>0x38</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">PINCFG<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SECURITY_WIRED_IFC_CFG5"> INFO0_SECURITY_WIRED_IFC_CFG5</A><BR>
+    <TT>0x3C</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">PINCFG<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SECURITY_VERSION"> INFO0_SECURITY_VERSION</A><BR>
+    <TT>0x40</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">VERSION<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SECURITY_SRAM_RESV"> INFO0_SECURITY_SRAM_RESV</A><BR>
+    <TT>0x44</TT>
+  </TH>
+  <TD bgcolor="#B2C9E4" colspan="12">RSVD<BR><TT>0xFFF</TT></TD>
+  <TD bgcolor="#ffffff" colspan="20">SRAM_RESV<BR><TT>0xFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SECURITY_RMAOVERRIDE"> INFO0_SECURITY_RMAOVERRIDE</A><BR>
+    <TT>0x48</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="29">RSVD_ZERO<BR><TT>0x00000000</TT></TD>
+  <TD bgcolor="#ffffff" colspan="3">OVERRIDE<BR><TT>0x7</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#WIRED_TIMEOUT"> INFO0_WIRED_TIMEOUT</A><BR>
+    <TT>0x54</TT>
+  </TH>
+  <TD bgcolor="#B2C9E4" colspan="16">RSVD<BR><TT>0xFFFF</TT></TD>
+  <TD bgcolor="#ffffff" colspan="16">TIMEOUT<BR><TT>0x0000</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#SBR_SDCERT_ADDR"> INFO0_SBR_SDCERT_ADDR</A><BR>
+    <TT>0x58</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">ICV<BR><TT>0x00000000</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#MAINPTR"> INFO0_MAINPTR</A><BR>
+    <TT>0x60</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">ADDRESS<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+<TR valign="top">
+  <TH align="left" bgcolor="#888888">
+    <A href="#CERTCHAINPTR"> INFO0_CERTCHAINPTR</A><BR>
+    <TT>0x64</TT>
+  </TH>
+  <TD bgcolor="#ffffff" colspan="32">ADDRESS<BR><TT>0xFFFFFFFF</TT></TD>
+</TR>
+</TABLE>
+<BR><HR>
+<H2 id="SIGNATURE0"><A href="#index">INFO0_SIGNATURE0</A></H2>
+<TABLE><TR><TD><B>INFO0 Signature</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x0000 (word offset 0x0000)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO0_SIGNATURE0 ADDRESS:</B></TD>
+<TD><TT>0x42000000</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">SIG0<BR><TT>0x00000000</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>SIG0</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>INFO0 signature word 0 (low 32-bits). The uninitialized value is 0x00000000, the valid programmed value is 0x48EAAD88.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>Word 0 (low word, bits 31:0) of the 128-bit INFO0 signature.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SIGNATURE1"><A href="#index">INFO0_SIGNATURE1</A></H2>
+<TABLE><TR><TD><B>INFO0 Signature</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x0004 (word offset 0x0001)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO0_SIGNATURE1 ADDRESS:</B></TD>
+<TD><TT>0x42000004</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">SIG1<BR><TT>0x00000000</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>SIG1</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>INFO0 signature word 1. The uninitialized value is 0x00000000, the valid programmed value is 0xC9705737.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>Word 1 (bits 63:32) of the 128-bit INFO0 signature.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SIGNATURE2"><A href="#index">INFO0_SIGNATURE2</A></H2>
+<TABLE><TR><TD><B>INFO0 Signature</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x0008 (word offset 0x0002)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO0_SIGNATURE2 ADDRESS:</B></TD>
+<TD><TT>0x42000008</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">SIG2<BR><TT>0x00000000</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>SIG2</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>INFO0 signature word 2. The uninitialized value is 0x00000000, the valid programmed value is 0x0A6B8458.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>Word 2 (bits 95:64) of the 128-bit INFO0 signature.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SIGNATURE3"><A href="#index">INFO0_SIGNATURE3</A></H2>
+<TABLE><TR><TD><B>INFO0 Signature</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x000C (word offset 0x0003)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO0_SIGNATURE3 ADDRESS:</B></TD>
+<TD><TT>0x4200000C</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">SIG3<BR><TT>0x00000000</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>SIG3</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>INFO0 signature word 3 (high 32 bits). The uninitialized value is 0x00000000, the valid programmed value is 0xE41A9D74.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>Word 3 (high word, bits 127:96) of the 128-bit INFO0 signature.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="CUSTOMER_TRIM"><A href="#index">INFO0_CUSTOMER_TRIM</A></H2>
+<TABLE><TR><TD><B>Customer trim values</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x0014 (word offset 0x0005)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO0_CUSTOMER_TRIM ADDRESS:</B></TD>
+<TD><TT>0x42000014</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#B2C9E4" colspan="31">RSVD<BR><TT>0x7FFFFFFF</TT>
+</TD>
+<TD bgcolor="#ffffff" colspan="1">ERR001_MUSTBE_0<BR><TT>0x1</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap>Reserved</TD>
+<TD>Reserved
+  <TABLE>
+  </TABLE>
+</TD>
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>ERR001_MUSTBE_0</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>This bit MUST be programmed to 0. Otherwise the device may become unusable (bricked). See errata ERR001 for further details.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>Customer Programmable trim overrides. Bits in this register are loaded into hardware registers at reset.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SECURITY_WIRED_IFC_CFG0"><A href="#index">INFO0_SECURITY_WIRED_IFC_CFG0</A></H2>
+<TABLE><TR><TD><B>Security Wired Interface configuration word0</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x0028 (word offset 0x000A)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO0_SECURITY_WIRED_IFC_CFG0 ADDRESS:</B></TD>
+<TD><TT>0x42000028</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="2">RSVD30<BR><TT>0x3</TT>
+</TD>
+<TD bgcolor="#ffffff" colspan="22">BAUDRATE<BR><TT>0x3FFFFF</TT>
+</TD>
+<TD bgcolor="#ffffff" colspan="2">DATALEN<BR><TT>0x3</TT>
+</TD>
+<TD bgcolor="#ffffff" colspan="1">2STOP<BR><TT>0x1</TT>
+</TD>
+<TD bgcolor="#ffffff" colspan="1">EVEN<BR><TT>0x1</TT>
+</TD>
+<TD bgcolor="#ffffff" colspan="1">PAR<BR><TT>0x1</TT>
+</TD>
+<TD bgcolor="#ffffff" colspan="1">CTS<BR><TT>0x1</TT>
+</TD>
+<TD bgcolor="#ffffff" colspan="1">RTS<BR><TT>0x1</TT>
+</TD>
+<TD bgcolor="#ffffff" colspan="1">RSVD0<BR><TT>0x1</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:30</TD>
+<TD nowrap>RSVD30</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Reserved
+  <TABLE>
+  </TABLE>
+</TD>
+<TR align="left">
+<TD nowrap>29:8</TD>
+<TD nowrap>BAUDRATE</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>UART Baudrate
+  <TABLE>
+  </TABLE>
+</TD>
+<TR align="left">
+<TD nowrap>7:6</TD>
+<TD nowrap>DATALEN</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Number of Data Bits
+  <TABLE>
+    <TR>
+      <TD><SMALL><TT>5BIT</TT></SMALL></TD>
+      <TD><SMALL><TT>=</TT></SMALL></TD>
+      <TD><SMALL><TT>0x0</TT></SMALL></TD>
+      <TD width="5"><SMALL><TT>-</TT></SMALL></TD>
+      <TD><SMALL><TT>5 bit</TT></SMALL></TD>
+    </TR>
+    <TR>
+      <TD><SMALL><TT>6BIT</TT></SMALL></TD>
+      <TD><SMALL><TT>=</TT></SMALL></TD>
+      <TD><SMALL><TT>0x1</TT></SMALL></TD>
+      <TD width="5"><SMALL><TT>-</TT></SMALL></TD>
+      <TD><SMALL><TT>6 bit</TT></SMALL></TD>
+    </TR>
+    <TR>
+      <TD><SMALL><TT>7BIT</TT></SMALL></TD>
+      <TD><SMALL><TT>=</TT></SMALL></TD>
+      <TD><SMALL><TT>0x2</TT></SMALL></TD>
+      <TD width="5"><SMALL><TT>-</TT></SMALL></TD>
+      <TD><SMALL><TT>7 bit</TT></SMALL></TD>
+    </TR>
+    <TR>
+      <TD><SMALL><TT>8BIT</TT></SMALL></TD>
+      <TD><SMALL><TT>=</TT></SMALL></TD>
+      <TD><SMALL><TT>0x3</TT></SMALL></TD>
+      <TD width="5"><SMALL><TT>-</TT></SMALL></TD>
+      <TD><SMALL><TT>8 bit</TT></SMALL></TD>
+    </TR>
+  </TABLE>
+</TD>
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>2STOP</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>2 Stop Bits
+  <TABLE>
+  </TABLE>
+</TD>
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>EVEN</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Even Parity
+  <TABLE>
+  </TABLE>
+</TD>
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>PAR</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Enable Parity
+  <TABLE>
+  </TABLE>
+</TD>
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>CTS</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Enable CTS
+  <TABLE>
+  </TABLE>
+</TD>
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>RTS</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Enable RTS
+  <TABLE>
+  </TABLE>
+</TD>
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>RSVD0</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Reserved
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>This 32-bit word contains the interface configuration word0 for the UART wired update. This feature is not applicable to Apollo4 revA without pre-installed bootloader.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SECURITY_WIRED_IFC_CFG1"><A href="#index">INFO0_SECURITY_WIRED_IFC_CFG1</A></H2>
+<TABLE><TR><TD><B>Security Wired Interface configuration word1</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x002C (word offset 0x000B)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO0_SECURITY_WIRED_IFC_CFG1 ADDRESS:</B></TD>
+<TD><TT>0x4200002C</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="8">PIN3<BR><TT>0xFF</TT>
+</TD>
+<TD bgcolor="#ffffff" colspan="8">PIN2<BR><TT>0xFF</TT>
+</TD>
+<TD bgcolor="#ffffff" colspan="8">PIN1<BR><TT>0xFF</TT>
+</TD>
+<TD bgcolor="#ffffff" colspan="8">PIN0<BR><TT>0xFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>PIN3</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Pin 3 for UART interface
+  <TABLE>
+  </TABLE>
+</TD>
+<TR align="left">
+<TD nowrap>23:16</TD>
+<TD nowrap>PIN2</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Pin 2 for UART interface
+  <TABLE>
+  </TABLE>
+</TD>
+<TR align="left">
+<TD nowrap>15:8</TD>
+<TD nowrap>PIN1</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Pin 1 for UART interface
+  <TABLE>
+  </TABLE>
+</TD>
+<TR align="left">
+<TD nowrap>7:0</TD>
+<TD nowrap>PIN0</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Pin 0 for UART interface
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>This 32-bit word contains the interface configuration word1 for the UART wired update. This feature is not applicable to Apollo4 revA without pre-installed bootloader.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SECURITY_WIRED_IFC_CFG2"><A href="#index">INFO0_SECURITY_WIRED_IFC_CFG2</A></H2>
+<TABLE><TR><TD><B>Security Wired Interface configuration word2</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x0030 (word offset 0x000C)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO0_SECURITY_WIRED_IFC_CFG2 ADDRESS:</B></TD>
+<TD><TT>0x42000030</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">PINCFG<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>PINCFG</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>32 bit value representing the raw PINCFG value for this pin
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>This 32-bit word contains the raw Pin configuration for the UART wired interface pin 0. This feature is not applicable to Apollo4 revA without pre-installed bootloader.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SECURITY_WIRED_IFC_CFG3"><A href="#index">INFO0_SECURITY_WIRED_IFC_CFG3</A></H2>
+<TABLE><TR><TD><B>Security Wired Interface configuration word3</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x0034 (word offset 0x000D)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO0_SECURITY_WIRED_IFC_CFG3 ADDRESS:</B></TD>
+<TD><TT>0x42000034</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">PINCFG<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>PINCFG</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>32 bit value representing the raw PINCFG value for this pin
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>This 32-bit word contains the raw Pin configuration for the UART wired interface pin 1. This feature is not applicable to Apollo4 revA without pre-installed bootloader.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SECURITY_WIRED_IFC_CFG4"><A href="#index">INFO0_SECURITY_WIRED_IFC_CFG4</A></H2>
+<TABLE><TR><TD><B>Security Wired Interface configuration word4</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x0038 (word offset 0x000E)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO0_SECURITY_WIRED_IFC_CFG4 ADDRESS:</B></TD>
+<TD><TT>0x42000038</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">PINCFG<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>PINCFG</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>32 bit value representing the raw PINCFG value for this pin
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>This 32-bit word contains the raw Pin configuration for the UART wired interface pin 2. This feature is not applicable to Apollo4 revA without pre-installed bootloader.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SECURITY_WIRED_IFC_CFG5"><A href="#index">INFO0_SECURITY_WIRED_IFC_CFG5</A></H2>
+<TABLE><TR><TD><B>Security Wired Interface configuration word5</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x003C (word offset 0x000F)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO0_SECURITY_WIRED_IFC_CFG5 ADDRESS:</B></TD>
+<TD><TT>0x4200003C</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">PINCFG<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>PINCFG</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>32 bit value representing the raw PINCFG value for this pin
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>This 32-bit word contains the raw Pin configuration for the UART wired interface pin 3. This feature is not applicable to Apollo4 revA without pre-installed bootloader.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SECURITY_VERSION"><A href="#index">INFO0_SECURITY_VERSION</A></H2>
+<TABLE><TR><TD><B>Security version field</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x0040 (word offset 0x0010)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO0_SECURITY_VERSION ADDRESS:</B></TD>
+<TD><TT>0x42000040</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">VERSION<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VERSION</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Version ID
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>This 32-bit word contains the version ID used for revision control</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SECURITY_SRAM_RESV"><A href="#index">INFO0_SECURITY_SRAM_RESV</A></H2>
+<TABLE><TR><TD><B>DTCM Reserved for Application Scratch space</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x0044 (word offset 0x0011)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO0_SECURITY_SRAM_RESV ADDRESS:</B></TD>
+<TD><TT>0x42000044</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#B2C9E4" colspan="12">RSVD<BR><TT>0xFFF</TT>
+</TD>
+<TD bgcolor="#ffffff" colspan="20">SRAM_RESV<BR><TT>0xFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:20</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap>Reserved</TD>
+<TD>Reserved
+  <TABLE>
+  </TABLE>
+</TD>
+<TR align="left">
+<TD nowrap>19:0</TD>
+<TD nowrap>SRAM_RESV</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>SRAM Reservation.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>This 32-bit word indicates the amount of DTCM to keep reserved for application scratch space. This reserves the specified memory at the top end of DTCM memory address range. This memory is not disturbed by the Secure Boot Loader. This feature is not applicable to Apollo4 revA without pre-installed bootloader.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SECURITY_RMAOVERRIDE"><A href="#index">INFO0_SECURITY_RMAOVERRIDE</A></H2>
+<TABLE><TR><TD><B>RMA override.</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x0048 (word offset 0x0012)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO0_SECURITY_RMAOVERRIDE ADDRESS:</B></TD>
+<TD><TT>0x42000048</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="29">RSVD_ZERO<BR><TT>0x00000000</TT>
+</TD>
+<TD bgcolor="#ffffff" colspan="3">OVERRIDE<BR><TT>0x7</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:3</TD>
+<TD nowrap>RSVD_ZERO</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>This field is all 0s.
+  <TABLE>
+  </TABLE>
+</TD>
+<TR align="left">
+<TD nowrap>2:0</TD>
+<TD nowrap>OVERRIDE</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Enable Ambiq ability to download Ambiq RMA Certificate after OEM performs its part of RMA.
+  <TABLE>
+    <TR>
+      <TD><SMALL><TT>ENABLE</TT></SMALL></TD>
+      <TD><SMALL><TT>=</TT></SMALL></TD>
+      <TD><SMALL><TT>0x2</TT></SMALL></TD>
+      <TD width="5"><SMALL><TT>-</TT></SMALL></TD>
+      <TD><SMALL><TT>Enables override.</TT></SMALL></TD>
+    </TR>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>Enables Ambiq to have the ability to download Ambiq RMA.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="WIRED_TIMEOUT"><A href="#index">INFO0_WIRED_TIMEOUT</A></H2>
+<TABLE><TR><TD><B>Wired timeout</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x0054 (word offset 0x0015)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO0_WIRED_TIMEOUT ADDRESS:</B></TD>
+<TD><TT>0x42000054</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#B2C9E4" colspan="16">RSVD<BR><TT>0xFFFF</TT>
+</TD>
+<TD bgcolor="#ffffff" colspan="16">TIMEOUT<BR><TT>0x0000</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:16</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap>Reserved</TD>
+<TD>Reserved.
+  <TABLE>
+  </TABLE>
+</TD>
+<TR align="left">
+<TD nowrap>15:0</TD>
+<TD nowrap>TIMEOUT</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Timeout value.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>Holds the timeout value for wired transfers (in milliseconds).</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="SBR_SDCERT_ADDR"><A href="#index">INFO0_SBR_SDCERT_ADDR</A></H2>
+<TABLE><TR><TD><B>SBR SDCERT ADDR</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x0058 (word offset 0x0016)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO0_SBR_SDCERT_ADDR ADDRESS:</B></TD>
+<TD><TT>0x42000058</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">ICV<BR><TT>0x00000000</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>ICV</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Address of the SD certificate.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>Location where bootloader will find SD certificates. Customer configures this based on the memory layout.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="MAINPTR"><A href="#index">INFO0_MAINPTR</A></H2>
+<TABLE><TR><TD><B>Pointer to the main application.</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x0060 (word offset 0x0018)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO0_MAINPTR ADDRESS:</B></TD>
+<TD><TT>0x42000060</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">ADDRESS<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>ADDRESS</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Contains the location of the main application.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>Pointer to the main OEM image when Secure Boot is disabled.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>
+<H2 id="CERTCHAINPTR"><A href="#index">INFO0_CERTCHAINPTR</A></H2>
+<TABLE><TR><TD><B>OEM certificate chain.</B></TD></TR></TABLE><BR>
+<TABLE><TR><TD><B>REGISTER OFFSET:</B></TD><TD><TT>0x0064 (word offset 0x0019)</TT></TD></TR></TABLE><BR>
+<TR><TD><B> INFO0_CERTCHAINPTR ADDRESS:</B></TD>
+<TD><TT>0x42000064</TT></TD></TR><BR>
+<BR></TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+  <TR valign="top" bgcolor="#888888">
+    <TD bgcolor="#E6E8F2"><SMALL><B>31</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>30</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>29</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>28</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>27</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>26</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>25</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>24</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>23</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>22</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>21</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>20</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>19</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>18</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>17</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>16</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>15</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>14</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>13</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>12</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>11</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>10</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>9</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>8</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>7</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>6</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>5</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>4</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>3</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>2</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>1</B></SMALL></TD>
+    <TD bgcolor="#E6E8F2"><SMALL><B>0</B></SMALL></TD>
+  </TR>
+<TR valign="top">
+<TD bgcolor="#ffffff" colspan="32">ADDRESS<BR><TT>0xFFFFFFFF</TT>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+  <TR align="left" bgcolor="#E6E8F2">
+    <TH><U><SMALL>Bits</SMALL></U></TH>
+    <TH><U><SMALL>Name</SMALL></U></TH>
+    <TH><U><SMALL>Type</SMALL></U></TH>
+    <TH><U><SMALL>Flags</SMALL></U></TH>
+    <TH><U><SMALL>Description</SMALL></U></TH>
+  </TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>ADDRESS</TD>
+<TD nowrap>uint32_t</TD>
+<TD nowrap> </TD>
+<TD>Contains the location of the main application.
+  <TABLE>
+  </TABLE>
+</TD>
+</TABLE>
+<BR>
+<TABLE><TR><TD><B>Description:</B></TD></TR><TR><TD><TT>Pointer to OEM certificate chain when Secure Boot is enabled.</TT></TD></TR></TABLE><BR>
+<BR><BR>
+<HR>
+</BODY>
+</HTML>

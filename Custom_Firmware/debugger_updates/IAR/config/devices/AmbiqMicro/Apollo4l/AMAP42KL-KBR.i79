@@ -1,0 +1,30 @@
+[FILEFORMAT]
+rev=1.6
+
+[CHIP]
+name=AMAP42KL-KBR
+endiansupport=le
+thumbsupport=true
+armsupport=false
+fpu=VFPv4
+SIMD=false
+
+DeviceMacros=$TOOLKIT_DIR$\config\debugger\AmbiqMicro\apollo4l.dmac
+JLinkScriptFile=$TOOLKIT_DIR$\config\debugger\AmbiqMicro\AMAP42KK-KBR.JLinkScript
+
+JTAG=false
+SWD=true
+SWO_TraceD0=false
+SWO_clock=96.0
+
+[CORE]
+name=Cortex-M4
+
+[DDF FILE]
+name=AmbiqMicro\AMAP42KL-KBR.ddf
+
+[LINKER FILE]
+name=$TOOLKIT_DIR$\config\linker\AmbiqMicro\apollo4l_2048.icf
+
+[FLASH LOADER]
+little=$TOOLKIT_DIR$\config\flashloader\AmbiqMicro\FlashApollo4l_2048.board

@@ -1,0 +1,112 @@
+// ****************************************************************************
+//
+// jlink-prog-sbl1.txt
+//
+// J-Link Commander script for assisting with programming SBL to slot 1.
+//
+// To use with J-Link Commander from a Command Prompt.
+//  jlink -CommanderScript jlink-prog-sbl1.txt
+//
+// This script is to only be used if current SBL is in slot#0
+//  i.e. at 0x00008000
+//
+// ****************************************************************************
+
+// ****************************************************************************
+//
+//  Copyright (c) 2023, Ambiq Micro, Inc.
+//  All rights reserved.
+//
+//  Redistribution and use in source and binary forms, with or without
+//  modification, are permitted provided that the following conditions are met:
+//
+//  1. Redistributions of source code must retain the above copyright notice,
+//  this list of conditions and the following disclaimer.
+//
+//  2. Redistributions in binary form must reproduce the above copyright
+//  notice, this list of conditions and the following disclaimer in the
+//  documentation and/or other materials provided with the distribution.
+//
+//  3. Neither the name of the copyright holder nor the names of its
+//  contributors may be used to endorse or promote products derived from this
+//  software without specific prior written permission.
+//
+//  Third party software included in this distribution is subject to the
+//  additional license terms as defined in the /docs/licenses directory.
+//
+//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+//  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+//  ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+//  LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+//  CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+//  SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+//  INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+//  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+//  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+//  POSSIBILITY OF SUCH DAMAGE.
+//
+//  This is part of revision release_sdk_4_4_1-7498c7b770 of the AmbiqSuite Development Package.
+//
+// ****************************************************************************
+
+//
+// Connect to the device.
+//
+usb
+
+device AMAP42KL-KBR
+si SWD
+speed 4000
+r
+sleep 10
+h
+
+//
+// As of J-Link v7.70 (8/3/22), by default the loadbin command performs a
+// device reset. Use noreset to avoid (ignored by older J-Link versions).
+//
+loadbin encrypted_sbl0.bin 0x10001000 noreset
+
+//
+// Set the C runtime environment
+//
+wreg MSP, 0x10000100
+setPC 0x0800005D
+
+//
+// Set call parameters. 0: pDst (to 0x00010000, SBL Slot#1), 4: number of words,
+//                      8: key, C: return value.
+// Then execute the function.
+//
+w4 0x10000000 0x00010000 0x00002000 0x12344321 0xFFFFFFFF
+g
+sleep 50
+
+mem32 0x1000000C 1          // dump return value
+
+//
+// **** Change this based on device NVRAM map ****
+//
+loadbin sbl_ota.bin 0x000F0000 noreset  // Load the SBL OTA metadata into temp location in NVRAM
+
+//
+// Set up OTA Descriptor at 0xFE000
+//
+w4 0xFE000 0x000F0003 0xFFFFFFFF
+
+//
+// Set up OTAPointer
+//
+w4 0x40020264 0x000FE003
+
+//
+// Reset. POI-level reset required.
+//
+w4 0x40000004 0x1B
+
+sleep 1000
+
+connect
+mem32 0x000FE000 1
+qc

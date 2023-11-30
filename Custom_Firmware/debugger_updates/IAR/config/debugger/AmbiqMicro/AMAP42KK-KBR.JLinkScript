@@ -1,0 +1,294 @@
+/*********************************************************************
+*               (c) SEGGER Microcontroller GmbH & Co. KG             *
+*                        The Embedded Experts                        *
+*                           www.segger.com                           *
+*********************************************************************/
+
+// ***************************************************************************
+/*
+File    : AMAP42KK-KBR.JLinkScript
+Purpose : Handle reset for AmbiqMicro AMAP42KK and AMA4B2KK series of MCUs
+Literature:
+  [1]  J-Link User Guide (UM08001_JLink.pdf)
+
+Additional information:
+  For more information about public functions that can be implemented
+  in order to customize J-Link actions, please refer to [1]
+*/
+// ***************************************************************************
+
+
+// ***************************************************************************
+// WriteAP()
+// ***************************************************************************
+int WriteAP(int address, int value)
+{
+  int retval;
+  int APnDP;
+  APnDP = 1;    // The second parameter is 0 for DP, 1 for AP.
+
+  // Write the given address of the register (AP index 1)
+  retval = JLINK_CORESIGHT_WriteDAP(1, APnDP, address);
+  if ( retval < 0 )
+  {
+    Report1(" Error writing address in WriteAP(), retval=", retval);
+    return retval;
+  }
+
+  // Write the new value to the data register (AP index 3)
+  retval = JLINK_CORESIGHT_WriteDAP(3, APnDP, value);
+  if ( retval < 0 )
+  {
+    Report1(" Error reading data in WriteAP(), retval=", retval);
+    return retval;
+  }
+  return retval;
+}
+
+// ***************************************************************************
+// ReadAP()
+// ***************************************************************************
+int ReadAP(int address)
+{
+  int retval;
+  int RdVal;
+  int APnDP;
+  APnDP = 1;    // The second parameter is 0 for DP, 1 for AP.
+
+  // Write the given address of the register (AP index 1)
+  retval = JLINK_CORESIGHT_WriteDAP(1, APnDP, address);
+  if ( retval < 0 )
+  {
+    Report1(" Error writing address in ReadAP(), retval=", retval);
+    return 0xFFFFFFFF;
+  }
+
+  // Read data register (index 3)
+  retval = JLINK_CORESIGHT_ReadDAP(3, APnDP, &RdVal);
+  if ( retval < 0 )
+  {
+    Report1(" Error reading data in ReadAP(), retval=", retval);
+    return 0xFFFFFFFF;
+  }
+  return RdVal;
+}
+
+// ***************************************************************************
+// cfg_swd_interface()
+// ***************************************************************************
+void cfg_swd_interface(void)
+{
+  int DP_REG_SELECT;
+  int AHBAP_REG_CTRL;
+  int AHBAP_REG_ADDR;
+  int AHBAP_REG_DATA;
+  int DHCSR_ADDR;
+  int value;
+  int Ctrl;
+
+  AHBAP_REG_CTRL     = 0;
+  AHBAP_REG_ADDR     = 1;
+  AHBAP_REG_DATA     = 3;
+  DP_REG_SELECT      = 2;
+  DHCSR_ADDR         = 0xE000EDF0;
+
+  if (MAIN_ActiveTIF == JLINK_TIF_JTAG)
+  {
+    JLINK_CORESIGHT_Configure("IRPre=0;DRPre=0;IRPost=0;DRPost=0;IRLenDevice=4");
+  }
+  else
+  {
+    JLINK_CORESIGHT_Configure(""); // For SWD, no special setup is needed, just output the switching sequence
+  }
+
+  // Power-up complete DAP
+  Ctrl = 0
+       | (1 << 30)     // System power-up
+       | (1 << 28)     // Debug popwer-up
+       | (1 << 5);     // Clear STICKYERR
+  JLINK_CORESIGHT_WriteDP(1, Ctrl);
+
+  // Select AHB-AP and configure it
+  JLINK_CORESIGHT_WriteDP(DP_REG_SELECT,  (0 << 4) | (0 << 24));                                     // Select AP[0] (AHB-AP) bank 0
+  JLINK_CORESIGHT_WriteAP(AHBAP_REG_CTRL, (1 << 4) | (1 << 24) | (1 << 25) | (1 << 29) | (2 << 0));  // Auto-increment, Private access, HMASTER = DEBUG, Access size: word
+
+  //value = (0 << 4) | (0 << 24);    // Select AP[0] (AHB-AP) bank 0
+
+}
+
+
+/*********************************************************************
+*
+*       ResetTarget()
+* Reset and wait until CPU is halted.
+*********************************************************************/
+int ResetTarget(void)
+{
+
+  // Register Address Values
+  int AIRCR_ADDR;
+  int DHCSR_ADDR;
+  int DEMCR_ADDR;
+  int AHBAP_REG_CTRL;
+  int AHBAP_REG_ADDR;
+  int AHBAP_REG_DATA;
+  int DP_REG_SELECT;
+  int MCUCTRL_SCRATCH0;
+  int MCUCTRL_BOOTLDR;
+  int JDEC_PID;
+
+  // Internal Variables
+  int Ctrl;
+  int demcr;
+  int scratch0;
+  int bootldr;
+  int jdecpid;
+  int v;
+  int Tries;
+  int Done;
+  int nonsecure;
+  int timeout;
+
+  // Initialize the Register Address and Internal vars.
+  AIRCR_ADDR         = 0xE000ED0C;
+  DHCSR_ADDR         = 0xE000EDF0;
+  DEMCR_ADDR         = 0xE000EDFC;
+  MCUCTRL_SCRATCH0   = 0x400201C0;
+  MCUCTRL_BOOTLDR    = 0x400201B8;
+  JDEC_PID           = 0xF0000FE0;
+  AHBAP_REG_CTRL     = 0;
+  AHBAP_REG_ADDR     = 1;
+  AHBAP_REG_DATA     = 3;
+  DP_REG_SELECT      = 2;
+  nonsecure          = 1;
+  timeout            = 0;
+
+
+  Report(" AMAP42KK-KBR.JLinkScript ResetTarget()");
+
+  // Check global variable to detect whether debugger is using JTAG or SWO and configure JTAG is necessary.
+  if (MAIN_ActiveTIF == JLINK_TIF_JTAG)
+  {
+    JLINK_CORESIGHT_Configure("IRPre=0;DRPre=0;IRPost=0;DRPost=0;IRLenDevice=4");
+  }
+  else
+  {
+    JLINK_CORESIGHT_Configure(""); // For SWD, no special setup is needed, just output the switching sequence
+  }
+
+  // Power-up complete DAP
+  Ctrl = 0
+       | (1 << 30)     // System power-up
+       | (1 << 28)     // Debug popwer-up
+       | (1 << 5)      // Clear STICKYERR
+       ;
+  JLINK_CORESIGHT_WriteDP(1, Ctrl);
+
+  // Select AHB-AP and configure it
+  JLINK_CORESIGHT_WriteDP(DP_REG_SELECT,  (0 << 4) | (0 << 24));                                     // Select AP[0] (AHB-AP) bank 0
+  JLINK_CORESIGHT_WriteAP(AHBAP_REG_CTRL, (1 << 4) | (1 << 24) | (1 << 25) | (1 << 29) | (2 << 0));  // Auto-increment, Private access, HMASTER = DEBUG, Access size: word
+
+  // Enable Debug and Halt the MCU Core.
+  v = ReadAP(DHCSR_ADDR);
+  v &= 0x3F;                   // Mask out "debug" bits
+  v |= 0xA05F0000;             // Debug key to make a write to the DHCSR a valid one
+  v |= 0x00000002;             // Halt the core
+  v |= 0x00000001;             // Enable debug functionalities of the core
+  JLINK_CORESIGHT_WriteAP(AHBAP_REG_ADDR, DHCSR_ADDR);
+  JLINK_CORESIGHT_WriteAP(AHBAP_REG_DATA, v);
+
+  // Read the Peripheral ID.
+  jdecpid = ReadAP(JDEC_PID);
+  Report1(" JDEC PID ", jdecpid);
+
+  // Is this Apollo4?
+  if ((jdecpid & 0xF0) == 0xB0)
+  {
+    Report(" Ambiq Apollo4 identified!");
+
+    // Read MCUCTRL_BOOTLDR to determine if it is a secure or non-secure chip
+    bootldr = ReadAP(MCUCTRL_BOOTLDR);
+    Report1(" Bootldr = ", bootldr);
+    if ((bootldr & 0x0C000000) == 0x04000000)
+    {
+        //Report(" Secure device.");
+        nonsecure = 0;
+    }
+  }
+  else
+  {
+    Report(" ERROR: Target is not Apollo4! Assuming non-secure device.");
+  }
+
+  if (nonsecure == 0)
+  {
+      // Set MCUCTRL Scratch0, indicating that the Bootloader needs to run, then halt when it is finished.
+      Report(" Secure device. Bootloader needs to run which will then halt when finish.");
+      scratch0 = ReadAP(MCUCTRL_SCRATCH0);
+      //Report1(" scratch0=",scratch0);
+      WriteAP(MCUCTRL_SCRATCH0, scratch0 | 0x1);
+  }
+  else
+  {
+      // Set VC_CORERESET in the DEMCR.
+      Report(" Non-Secure device. Following normal Reset procedure.");
+      demcr = ReadAP(DEMCR_ADDR);
+      WriteAP(DEMCR_ADDR, demcr | 0x1);
+  }
+
+  // Set the SYSRESETREQ bit in the AIRCR.
+  // This will request the MCU Core to reset.
+  WriteAP(AIRCR_ADDR, 0x05FA0004);
+
+  SYS_Sleep(100);     // Sleep for 100ms
+
+  // Wait until CPU is halted
+  Tries = 0;
+  Done  = 0;
+  do
+  {
+    v = ReadAP(DHCSR_ADDR);
+    //Report1(" DHCSR=", v);
+
+    // Check if CPU is halted. If so, we are done
+//  if (Tries >= 25) // wait for up to 2.5 seconds.
+    if (Tries >= 5) // wait for up to 0.5 seconds.
+    {
+      Report(" Apollo4 (connect): Timeout while waiting for CPU to halt after reset. Manually halting CPU.");
+      Done = 1;
+      timeout = 1;
+    }
+    else if ( (v == 0xFFFFFFFF) || ((v & 0xFFFF0000) == 0x05FA0000) )
+    {
+      Report(" Resetting SWD interface.");
+      Report1(" v=", v);
+      // TP1
+      cfg_swd_interface();
+    }
+    else if ((v != 0xFFFFFFFF) && (v & 0x00020000)) // Bit 17: S_HALT in the DHCSR.
+    {
+      Report1(" CPU halted after reset. Num Tries = ", Tries);
+      Done = 1;
+    }
+    Tries = Tries + 1;
+    SYS_Sleep(100);  // Go to sleep for 100 msec.
+  } while(Done == 0);
+
+  // If non-secure part,...
+  if (nonsecure == 1)
+  {
+      // Clear VC_CORERESET in the DEMCR.
+      demcr = ReadAP(DEMCR_ADDR);
+      WriteAP(DEMCR_ADDR, demcr & 0x1);
+   }
+
+   if ( timeout == 0 )
+   {
+     return 0;
+   }
+   else
+   {
+     return -1;
+   }
+
+}

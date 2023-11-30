@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['data_0',['data',['../structam__sbl__host__msg__data__t.html#a5e5b7b9e089de5b8c82da1db809ade85',1,'am_sbl_host_msg_data_t']]],
+  ['dataend_1',['DataEnd',['../structUSBHAL__Type.html#a4e8d78466b9b95eab0c2341814bdaee3',1,'USBHAL_Type']]],
+  ['dataerror_2',['DataError',['../structUSBHAL__Type.html#a5612a42741956d77da1c0370c30bfc2f',1,'USBHAL_Type']]],
+  ['dcx_3',['dcx',['../structam__hal__iom__state__t.html#aae7c66d981da9d70f4fb4bb1dab9bd45',1,'am_hal_iom_state_t::dcx()'],['../structam__hal__iom__dcx__cfg__t.html#a4cfac84f14987da5e09f89a150d62352',1,'am_hal_iom_dcx_cfg_t::dcx()']]],
+  ['ddroctalce0mspiconfig_4',['DDROctalCE0MSPIConfig',['../group__mspi__psram__12808l.html#ga4a9a815387863fed2c500c810f43f900',1,'am_devices_mspi_psram_aps12808l.c']]],
+  ['ddroctalce1mspiconfig_5',['DDROctalCE1MSPIConfig',['../group__mspi__psram__12808l.html#ga288cb954b3166c4d5dce648f227b4641',1,'am_devices_mspi_psram_aps12808l.c']]],
+  ['deinit_6',['deinit',['../structam__hal__card__host__ops.html#ab1dd96cebbca0c0f51a027fe275f9b56',1,'am_hal_card_host_ops']]],
+  ['dev_5fevt_5fcallback_7',['dev_evt_callback',['../structam__hal__usb__state__t.html#aaaacfd4322f61090c90917609df4b867',1,'am_hal_usb_state_t']]],
+  ['devcfg_8',['devcfg',['../structam__hal__mspi__state__t.html#a3c1dd07a325089c12aa33f92d2ea540b',1,'am_hal_mspi_state_t']]],
+  ['dir_9',['dir',['../structam__hal__usb__ep__xfer__t.html#aa8b296fae908ab819ba0ca87589746a9',1,'am_hal_usb_ep_xfer_t::dir()'],['../structam__hal__card__cmd__data__t.html#a24bf6efed5453acf3126bc23054531d8',1,'am_hal_card_cmd_data_t::dir()']]],
+  ['disnyetpiderror_10',['DisNyetPIDError',['../structUSBHAL__Type.html#ae7c7c77dc58639ef64d847a6efa760e4',1,'USBHAL_Type']]],
+  ['dmachains_11',['DMAChains',['../structUSBHAL__Type.html#a24395b04f320d5187ef333958136afe9',1,'USBHAL_Type']]],
+  ['dmareqenab_12',['DMAReqEnab',['../structUSBHAL__Type.html#a97e0108955cbf8ed234d6b5f1b393998',1,'USBHAL_Type']]],
+  ['dmareqmode_13',['DMAReqMode',['../structUSBHAL__Type.html#aa773c13ef6cc7cf63ac17855882343de',1,'USBHAL_Type']]],
+  ['dmpulldown_14',['DMPULLDOWN',['../structUSBHAL__Type.html#a5200660f5b90380164f37ec6bc70e921',1,'USBHAL_Type']]],
+  ['dpb_15',['DPB',['../structUSBHAL__Type.html#abfc57865f7d16b4296a072bc1f914da2',1,'USBHAL_Type']]],
+  ['dpdmpulldown_16',['DPDMPULLDOWN',['../structUSBHAL__Type.html#ab3617b09c349aa845e88aaf4fc8a65e3',1,'USBHAL_Type']]],
+  ['dpdmpulldown_5fb_17',['DPDMPULLDOWN_b',['../structUSBHAL__Type.html#a66ee6589da52d7a39bcd6d056acacaae',1,'USBHAL_Type::DPDMPULLDOWN_b()'],['../structUSBHAL__Type.html#a18b0c08c5953fa8b04589b00b1a6fd86',1,'USBHAL_Type::DPDMPULLDOWN_b()']]],
+  ['dpktbufdis_18',['DPktBufDis',['../structUSBHAL__Type.html#aa669f38aa2589c623ddfab03c3347eae',1,'USBHAL_Type']]],
+  ['dppulldown_19',['DPPULLDOWN',['../structUSBHAL__Type.html#a36bed163a5ca2fda4f4973e9f1341e79',1,'USBHAL_Type']]],
+  ['dummy_20',['dummy',['../structam__hal__adc__capabilities__t.html#ab24c01981543b57c1ba3d06e7745a47c',1,'am_hal_adc_capabilities_t::dummy()'],['../structam__hal__audadc__capabilities__t.html#a7678ea63126457e32f065efbd0cda1a4',1,'am_hal_audadc_capabilities_t::dummy()']]]
+];

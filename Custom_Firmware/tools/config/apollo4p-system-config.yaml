@@ -1,0 +1,25 @@
+#******************************************************************************
+#
+# Default memory map for Apollo4p
+#
+#******************************************************************************
+MemorySections:
+    MCU_MRAM:
+        start:  0x00018000
+        end:    0x001FFFFF
+
+    MCU_TCM:
+        start:  0x10000000
+        end:    0x1005FFFF
+
+    SHARED_SRAM:
+        start:  0x10060000
+        end:    0x1015FFFF
+
+    EXTENDED_SRAM:
+        start:  0x10160000
+        end:    0x101BFFFF
+
+    SHARED_SRAM2:
+        start:  0x101C0000
+        end:    0x102BFFFF

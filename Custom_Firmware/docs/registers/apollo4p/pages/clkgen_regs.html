@@ -1,0 +1,3327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="AmbiqMicro" />
+    <title>Apollo4p CLKGEN</title>
+    <link href="../resources/tabs.css" rel="stylesheet" type="text/css" />
+    <link href="../resources/bootstrap.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../resources/jquery.js"></script>
+    <script type="text/javascript" src="../resources/dynsections.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css" />
+    <link href="../resources/customdoxygen.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="top">
+        <!-- do not remove this div, it is closed by doxygen! -->
+        <div id="titlearea">
+            <table cellspacing="0" cellpadding="0">
+                <tbody>
+                    <tr style="height: 56px;">
+                        <td id="projectlogo">
+                            <img alt="Logo" src="../resources/am_logo.png" />
+                        </td>
+                        <td style="padding-left: 0.5em;">
+                            <div id="projectname">Apollo4p  Register Documentation &#160;<span id="projectnumber">R4.4.1</span></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- end header part -->
+        <div id="navrow1" class="tabs">
+            <ul class="tablist">
+                <li class="current"><a href="../index.html"><span>Main&#160;Page</span></a>
+                </li>
+        </div>
+        </li>
+        </ul>
+    </div>
+    </div>
+    <!-- top -->
+    <!-- window showing the filter options -->
+    <div class="header">
+        <div class="headertitle">
+            <div class="title">CLKGEN - Clock Generator</div>
+        </div>
+    </div>
+    <!--header-->
+    <body>
+        <br>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> CLKGEN Register Index</h3>
+            </div>
+            <div class="panel-body">
+                <table>
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x0000000C:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#OCTRL" target="_self">OCTRL - Oscillator Control</a>
+                        </td>
+                    </tr>
+
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000010:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#CLKOUT" target="_self">CLKOUT - CLKOUT Frequency Select</a>
+                        </td>
+                    </tr>
+
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000020:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#HFADJ" target="_self">HFADJ - HFRC Adjustment</a>
+                        </td>
+                    </tr>
+
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000030:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#CLOCKENSTAT" target="_self">CLOCKENSTAT - Clock Enable Status</a>
+                        </td>
+                    </tr>
+
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000034:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#CLOCKEN2STAT" target="_self">CLOCKEN2STAT - Clock Enable Status</a>
+                        </td>
+                    </tr>
+
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000038:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#CLOCKEN3STAT" target="_self">CLOCKEN3STAT - Clock Enable Status</a>
+                        </td>
+                    </tr>
+
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000044:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#MISC" target="_self">MISC - Misc Control and Status</a>
+                        </td>
+                    </tr>
+
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000048:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#HF2ADJ0" target="_self">HF2ADJ0 - HF2ADJ Control 0</a>
+                        </td>
+                    </tr>
+
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x0000004C:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#HF2ADJ1" target="_self">HF2ADJ1 - HF2ADJ Control 1</a>
+                        </td>
+                    </tr>
+
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000050:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#HF2ADJ2" target="_self">HF2ADJ2 - HF2ADJ Control 2</a>
+                        </td>
+                    </tr>
+
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000054:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#HF2VAL" target="_self">HF2VAL - HF2ADJ readback</a>
+                        </td>
+                    </tr>
+
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000078:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#LFRCCTRL" target="_self">LFRCCTRL - LFRC control</a>
+                        </td>
+                    </tr>
+
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000084:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#DISPCLKCTRL" target="_self">DISPCLKCTRL - Control for selection and enablement of the DPHY PLL and related clocks</a>
+                        </td>
+                    </tr>
+
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000088:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#CLKGENSPARES" target="_self">CLKGENSPARES - CLK GEN Spare Registers for Future ECO</a>
+                        </td>
+                    </tr>
+
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x0000008C:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#HFRCIDLECOUNTERS" target="_self">HFRCIDLECOUNTERS - Defines Number of consecutive idle cycles for HFRC, HFRC2 clock enable, power down signals deassertion</a>
+                        </td>
+                    </tr>
+
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000100:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#INTRPTEN" target="_self">INTRPTEN - CLKGEN Interrupts: Enable</a>
+                        </td>
+                    </tr>
+
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000104:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#INTRPTSTAT" target="_self">INTRPTSTAT - CLKGEN Interrupts: Status</a>
+                        </td>
+                    </tr>
+
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000108:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#INTRPTCLR" target="_self">INTRPTCLR - CLKGEN Interrupts: Clear</a>
+                        </td>
+                    </tr>
+
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x0000010C:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#INTRPTSET" target="_self">INTRPTSET - CLKGEN Interrupts: Set</a>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="OCTRL" class="panel-title">OCTRL - Oscillator Control</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x4000400C</span>
+                        </td>
+                    </tr>
+
+                </table>
+                <h3>Description:</h3>
+                <p>This register includes controls for autocalibration in addition to the RTC oscillator controls.</p>
+                <h3>Example Macro Usage:</h3>
+                <pre style="margin:10px" class="language-pascal"><span style='color:#3f7f59; '>//
+// Register access is all performed through the standard CMSIS structure-based
+// interface. This includes module-level structure definitions with members and
+// bitfields corresponding to the physical registers and bitfields within each
+// module. In addition, Ambiq has provided instance-level macros for modules
+// that have more than one physical instance and a generic AM_REGVAL() macro
+// for directly accessing memory by address.
+//
+// The following examples show how to use these structures and macros:
+
+// Setting the ADC configuration register...</span>
+AM_REGVAL(0x50010000) = 0x1234;              <span style='color:#3f7f59; '>// by address.</span>
+ADC-&gt;CFG = 0x1234;                           <span style='color:#3f7f59; '>// by structure pointer.</span>
+ADCn(0)-&gt;CFG = 0x1234;                       <span style='color:#3f7f59; '>// by structure pointer (with instance number).</span>
+
+<span style='color:#3f7f59; '>// Changing the ADC clock...</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = 0x2;                 <span style='color:#3f7f59; '>// by raw value.</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = ADC_CFG_CLKSEL_HFRC; <span style='color:#3f7f59; '>// using an enumerated value.</span></pre>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th>
+                            <th>30</th>
+                            <th>29</th>
+                            <th>28</th>
+                            <th>27</th>
+                            <th>26</th>
+                            <th>25</th>
+                            <th>24</th>
+                            <th>23</th>
+                            <th>22</th>
+                            <th>21</th>
+                            <th>20</th>
+                            <th>19</th>
+                            <th>18</th>
+                            <th>17</th>
+                            <th>16</th>
+                            <th>15</th>
+                            <th>14</th>
+                            <th>13</th>
+                            <th>12</th>
+                            <th>11</th>
+                            <th>10</th>
+                            <th>9</th>
+                            <th>8</th>
+                            <th>7</th>
+                            <th>6</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="24">RSVD
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">OSEL
+                                <br>0x0</td>
+
+                            <td align="center" colspan="7">RSVD
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:8</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>RESERVED<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>7</td>
+                            <td>OSEL</td>
+                            <td>RW</td>
+                            <td>Selects the RTC oscillator (1=LFRC, 0=XT)This selection bit and clocking the RTC with the external crystal (XT) are inoperable in silicon revisions A and B0.<br><br>
+                                 RTC_XT               = 0x0 - RTC uses the XT<br>
+                             RTC_LFRC             = 0x1 - RTC uses the LFRC</td>
+                        </tr>
+
+                        <tr>
+                            <td>6:0</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>RESERVED<br><br>
+                                </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="CLKOUT" class="panel-title">CLKOUT - CLKOUT Frequency Select</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x40004010</span>
+                        </td>
+                    </tr>
+
+                </table>
+                <h3>Description:</h3>
+                <p>This register enables the CLKOUT to the GPIOs, and selects the clock source to that.</p>
+                <h3>Example Macro Usage:</h3>
+                <pre style="margin:10px" class="language-pascal"><span style='color:#3f7f59; '>//
+// Register access is all performed through the standard CMSIS structure-based
+// interface. This includes module-level structure definitions with members and
+// bitfields corresponding to the physical registers and bitfields within each
+// module. In addition, Ambiq has provided instance-level macros for modules
+// that have more than one physical instance and a generic AM_REGVAL() macro
+// for directly accessing memory by address.
+//
+// The following examples show how to use these structures and macros:
+
+// Setting the ADC configuration register...</span>
+AM_REGVAL(0x50010000) = 0x1234;              <span style='color:#3f7f59; '>// by address.</span>
+ADC-&gt;CFG = 0x1234;                           <span style='color:#3f7f59; '>// by structure pointer.</span>
+ADCn(0)-&gt;CFG = 0x1234;                       <span style='color:#3f7f59; '>// by structure pointer (with instance number).</span>
+
+<span style='color:#3f7f59; '>// Changing the ADC clock...</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = 0x2;                 <span style='color:#3f7f59; '>// by raw value.</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = ADC_CFG_CLKSEL_HFRC; <span style='color:#3f7f59; '>// using an enumerated value.</span></pre>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th>
+                            <th>30</th>
+                            <th>29</th>
+                            <th>28</th>
+                            <th>27</th>
+                            <th>26</th>
+                            <th>25</th>
+                            <th>24</th>
+                            <th>23</th>
+                            <th>22</th>
+                            <th>21</th>
+                            <th>20</th>
+                            <th>19</th>
+                            <th>18</th>
+                            <th>17</th>
+                            <th>16</th>
+                            <th>15</th>
+                            <th>14</th>
+                            <th>13</th>
+                            <th>12</th>
+                            <th>11</th>
+                            <th>10</th>
+                            <th>9</th>
+                            <th>8</th>
+                            <th>7</th>
+                            <th>6</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="24">RSVD
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">CKEN
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">RSVD
+                                <br>0x0</td>
+
+                            <td align="center" colspan="6">CKSEL
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:8</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>RESERVED<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>7</td>
+                            <td>CKEN</td>
+                            <td>RW</td>
+                            <td>Enable the CLKOUT signal<br><br>
+                                 DIS                  = 0x0 - Disable CLKOUT<br>
+                             EN                   = 0x1 - Enable CLKOUT</td>
+                        </tr>
+
+                        <tr>
+                            <td>6</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>RESERVED<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>5:0</td>
+                            <td>CKSEL</td>
+                            <td>RW</td>
+                            <td>CLKOUT signal select<br><br>
+                                 LFRC                 = 0x0 - LFRC clock source selection<br>
+                             XT_DIV2              = 0x1 - XT / 2 clock source selection<br>
+                             XT_DIV4              = 0x2 - XT / 4 clock source selection<br>
+                             XT_DIV8              = 0x3 - XT / 8 clock source selection<br>
+                             XT_DIV16             = 0x4 - XT / 16 clock source selection<br>
+                             XT_DIV32             = 0x5 - XT / 32 clock source selection<br>
+                             RTC_1Hz              = 0x10 - 1 Hz as selected in RTC<br>
+                             XT_DIV2M             = 0x16 - XT / 2097152 (2^21) clock source selection<br>
+                             XT                   = 0x17 - XT clock source selection<br>
+                             CG_100Hz             = 0x18 - 100 Hz as selected in CLKGEN<br>
+                             HFRC_DIV2            = 0x19 - HFRC / 2 clock source selection<br>
+                             HFRC_DIV8            = 0x1A - HFRC / 8 clock source selection<br>
+                             HFRC_DIV16           = 0x1B - HFRC / 16 clock source selection<br>
+                             HFRC_DIV32           = 0x1C - HFRC / 32 clock source selection<br>
+                             HFRC_DIV128          = 0x1D - HFRC / 128 clock source selection<br>
+                             HFRC_DIV256          = 0x1E - HFRC / 256 clock source selection<br>
+                             HFRC_DIV512          = 0x1F - HFRC / 512 clock source selection<br>
+                             HFRC_DIV1024         = 0x20 - HFRC / 1024 clock source selection<br>
+                             FLASH_CLK            = 0x22 - Flash Clock clock source selection<br>
+                             LFRC_DIV2            = 0x23 - LFRC / 2 clock source selection<br>
+                             LFRC_DIV32           = 0x24 - LFRC / 32 clock source selection<br>
+                             LFRC_DIV512          = 0x25 - LFRC / 512 clock source selection<br>
+                             LFRC_DIV32K          = 0x26 - LFRC / 32768 clock source selection<br>
+                             XT_DIV256            = 0x27 - XT / 256 clock source selection<br>
+                             XT_DIV8K             = 0x28 - XT / 8192 clock source selection<br>
+                             XT_DIV64K            = 0x29 - XT / 65536 (2^16) clock source selection<br>
+                             ULFRC_DIV16          = 0x2A - Uncal LFRC / 16 clock source selection<br>
+                             ULFRC_DIV128         = 0x2B - Uncal LFRC / 128 clock source selection<br>
+                             ULFRC_1Hz            = 0x2C - Uncal LFRC / 1024 clock source selection<br>
+                             ULFRC_DIV4K          = 0x2D - Uncal LFRC / 4096 clock source selection<br>
+                             ULFRC_DIV1M          = 0x2E - Uncal LFRC / 1048576 (2^20) clock source selection<br>
+                             HFRC_DIV256K         = 0x2F - HFRC / 262144 (2^18) clock source selection<br>
+                             HFRC_DIV64M          = 0x30 - HFRC / 67108864 (2^26) clock source selection<br>
+                             LFRC_DIV1M           = 0x31 - LFRC / 1048576 (2^20) clock source selection<br>
+                             HFRCNE               = 0x32 - HFRC (not autoenabled)<br>
+                             HFRCNE_DIV8          = 0x33 - HFRC / 8 (not autoenabled)<br>
+                             XTNE                 = 0x35 - XT (not autoenabled)<br>
+                             XTNE_DIV16           = 0x36 - XT / 16 (not autoenabled)<br>
+                             LFRCNE_DIV32         = 0x37 - LFRC / 32 (not autoenabled)<br>
+                             LFRCNE               = 0x39 - LFRC (not autoenabled) - Default for undefined values<br>
+                             HFRC2_6MHz           = 0x3A - HFRC2 6MHz clock source selection<br>
+                             HFRC2_12MHz          = 0x3B - HFRC2 24MHz clock source selection<br>
+                             HFRC2_24MHz          = 0x3C - HFRC2 24MHz clock source selection</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="HFADJ" class="panel-title">HFADJ - HFRC Adjustment</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x40004020</span>
+                        </td>
+                    </tr>
+
+                </table>
+                <h3>Description:</h3>
+                <p>This register controls the HFRC adjustment. The HFRC clock can change with temperature and process corners, and this register controls the HFRC adjustment logic which reduces the fluctuations to the clock.</p>
+                <h3>Example Macro Usage:</h3>
+                <pre style="margin:10px" class="language-pascal"><span style='color:#3f7f59; '>//
+// Register access is all performed through the standard CMSIS structure-based
+// interface. This includes module-level structure definitions with members and
+// bitfields corresponding to the physical registers and bitfields within each
+// module. In addition, Ambiq has provided instance-level macros for modules
+// that have more than one physical instance and a generic AM_REGVAL() macro
+// for directly accessing memory by address.
+//
+// The following examples show how to use these structures and macros:
+
+// Setting the ADC configuration register...</span>
+AM_REGVAL(0x50010000) = 0x1234;              <span style='color:#3f7f59; '>// by address.</span>
+ADC-&gt;CFG = 0x1234;                           <span style='color:#3f7f59; '>// by structure pointer.</span>
+ADCn(0)-&gt;CFG = 0x1234;                       <span style='color:#3f7f59; '>// by structure pointer (with instance number).</span>
+
+<span style='color:#3f7f59; '>// Changing the ADC clock...</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = 0x2;                 <span style='color:#3f7f59; '>// by raw value.</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = ADC_CFG_CLKSEL_HFRC; <span style='color:#3f7f59; '>// using an enumerated value.</span></pre>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th>
+                            <th>30</th>
+                            <th>29</th>
+                            <th>28</th>
+                            <th>27</th>
+                            <th>26</th>
+                            <th>25</th>
+                            <th>24</th>
+                            <th>23</th>
+                            <th>22</th>
+                            <th>21</th>
+                            <th>20</th>
+                            <th>19</th>
+                            <th>18</th>
+                            <th>17</th>
+                            <th>16</th>
+                            <th>15</th>
+                            <th>14</th>
+                            <th>13</th>
+                            <th>12</th>
+                            <th>11</th>
+                            <th>10</th>
+                            <th>9</th>
+                            <th>8</th>
+                            <th>7</th>
+                            <th>6</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="3">RSVD
+                                <br>0x0</td>
+
+                            <td align="center" colspan="5">HFADJMAXDELTA
+                                <br>0x0</td>
+
+                            <td align="center" colspan="3">HFADJGAIN
+                                <br>0x1</td>
+
+                            <td align="center" colspan="1">HFWARMUP
+                                <br>0x0</td>
+
+                            <td align="center" colspan="12">HFXTADJ
+                                <br>0x5b8</td>
+
+                            <td align="center" colspan="4">RSVD
+                                <br>0x0</td>
+
+                            <td align="center" colspan="3">HFADJCK
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">HFADJEN
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:29</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>RESERVED<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>28:24</td>
+                            <td>HFADJMAXDELTA</td>
+                            <td>RW</td>
+                            <td>Maximum delta for HF Adjustments. 0=Disabled, 1-31=maximum delta step<br><br>
+                                 DISABLED             = 0x0 - Maximum Delta function is disabled<br>
+                             ENABLED              = 0x1 - Maximum Delta function is enabled</td>
+                        </tr>
+
+                        <tr>
+                            <td>23:21</td>
+                            <td>HFADJGAIN</td>
+                            <td>RW</td>
+                            <td>Gain control for HFRC adjustment<br><br>
+                                 Gain_of_1            = 0x0 - HF Adjust with Gain of 1<br>
+                             Gain_of_1_in_2       = 0x1 - HF Adjust with Gain of 0.5<br>
+                             Gain_of_1_in_4       = 0x2 - HF Adjust with Gain of 0.25<br>
+                             Gain_of_1_in_8       = 0x3 - HF Adjust with Gain of 0.125<br>
+                             Gain_of_1_in_16      = 0x4 - HF Adjust with Gain of 0.0625<br>
+                             Gain_of_1_in_32      = 0x5 - HF Adjust with Gain of 0.03125</td>
+                        </tr>
+
+                        <tr>
+                            <td>20</td>
+                            <td>HFWARMUP</td>
+                            <td>RW</td>
+                            <td>XT warmup period for HFRC adjustment<br><br>
+                                 1SEC                 = 0x0 - Autoadjust XT warmup period = 1-2 seconds<br>
+                             2SEC                 = 0x1 - Autoadjust XT warmup period = 2-4 seconds</td>
+                        </tr>
+
+                        <tr>
+                            <td>19:8</td>
+                            <td>HFXTADJ</td>
+                            <td>RW</td>
+                            <td>Target HFRC adjustment value.<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>7:4</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>RESERVED<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>3:1</td>
+                            <td>HFADJCK</td>
+                            <td>RW</td>
+                            <td>Repeat period for HFRC adjustment<br><br>
+                                 4SEC                 = 0x0 - Autoadjust repeat period = 4 seconds<br>
+                             16SEC                = 0x1 - Autoadjust repeat period = 16 seconds<br>
+                             32SEC                = 0x2 - Autoadjust repeat period = 32 seconds<br>
+                             64SEC                = 0x3 - Autoadjust repeat period = 64 seconds<br>
+                             128SEC               = 0x4 - Autoadjust repeat period = 128 seconds<br>
+                             256SEC               = 0x5 - Autoadjust repeat period = 256 seconds<br>
+                             512SEC               = 0x6 - Autoadjust repeat period = 512 seconds<br>
+                             1024SEC              = 0x7 - Autoadjust repeat period = 1024 seconds</td>
+                        </tr>
+
+                        <tr>
+                            <td>0</td>
+                            <td>HFADJEN</td>
+                            <td>RW</td>
+                            <td>HFRC adjustment control<br><br>
+                                 DIS                  = 0x0 - Disable the HFRC adjustment<br>
+                             EN                   = 0x1 - Enable the HFRC adjustment</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="CLOCKENSTAT" class="panel-title">CLOCKENSTAT - Clock Enable Status</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x40004030</span>
+                        </td>
+                    </tr>
+
+                </table>
+                <h3>Description:</h3>
+                <p>This register provides the enable status to all the peripheral clocks.</p>
+                <h3>Example Macro Usage:</h3>
+                <pre style="margin:10px" class="language-pascal"><span style='color:#3f7f59; '>//
+// Register access is all performed through the standard CMSIS structure-based
+// interface. This includes module-level structure definitions with members and
+// bitfields corresponding to the physical registers and bitfields within each
+// module. In addition, Ambiq has provided instance-level macros for modules
+// that have more than one physical instance and a generic AM_REGVAL() macro
+// for directly accessing memory by address.
+//
+// The following examples show how to use these structures and macros:
+
+// Setting the ADC configuration register...</span>
+AM_REGVAL(0x50010000) = 0x1234;              <span style='color:#3f7f59; '>// by address.</span>
+ADC-&gt;CFG = 0x1234;                           <span style='color:#3f7f59; '>// by structure pointer.</span>
+ADCn(0)-&gt;CFG = 0x1234;                       <span style='color:#3f7f59; '>// by structure pointer (with instance number).</span>
+
+<span style='color:#3f7f59; '>// Changing the ADC clock...</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = 0x2;                 <span style='color:#3f7f59; '>// by raw value.</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = ADC_CFG_CLKSEL_HFRC; <span style='color:#3f7f59; '>// using an enumerated value.</span></pre>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th>
+                            <th>30</th>
+                            <th>29</th>
+                            <th>28</th>
+                            <th>27</th>
+                            <th>26</th>
+                            <th>25</th>
+                            <th>24</th>
+                            <th>23</th>
+                            <th>22</th>
+                            <th>21</th>
+                            <th>20</th>
+                            <th>19</th>
+                            <th>18</th>
+                            <th>17</th>
+                            <th>16</th>
+                            <th>15</th>
+                            <th>14</th>
+                            <th>13</th>
+                            <th>12</th>
+                            <th>11</th>
+                            <th>10</th>
+                            <th>9</th>
+                            <th>8</th>
+                            <th>7</th>
+                            <th>6</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="32">CLOCKENSTAT
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:0</td>
+                            <td>CLOCKENSTAT</td>
+                            <td>RO</td>
+                            <td>Clock enable status<br><br>
+                                 PERIPH_ALL_XTAL_EN   = 0x1000000 - [24] Clock enable for PERIPH_ALL_XTAL_EN<br>
+                             PERIPH_ALL_HFRC_EN   = 0x2000000 - [25] Clock enable for PERIPH_ALL_HFRC_EN<br>
+                             HFADJEN              = 0x4000000 - [26] HFRC Adjust enabled<br>
+                             HFRC_EN_HFADJ        = 0x8000000 - [27] HFRC HFADJ enabled<br>
+                             HFRC_EN_HFADJ        = 0x8000000 - [27] HFRC HFADJ enabled<br>
+                             nOSEL                = 0x10000000 - [28] ~OSEL<br>
+                             clkout_xtal_en       = 0x20000000 - [29] XTAL clkout enabled<br>
+                             clkout_hfrc_en       = 0x40000000 - [30] HFRC clkout enabled<br>
+                             RSVD31               = 0x80000000 - [31] Reserved, always low.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="CLOCKEN2STAT" class="panel-title">CLOCKEN2STAT - Clock Enable Status</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x40004034</span>
+                        </td>
+                    </tr>
+
+                </table>
+                <h3>Description:</h3>
+                <p>This is a continuation of the clock enable status.</p>
+                <h3>Example Macro Usage:</h3>
+                <pre style="margin:10px" class="language-pascal"><span style='color:#3f7f59; '>//
+// Register access is all performed through the standard CMSIS structure-based
+// interface. This includes module-level structure definitions with members and
+// bitfields corresponding to the physical registers and bitfields within each
+// module. In addition, Ambiq has provided instance-level macros for modules
+// that have more than one physical instance and a generic AM_REGVAL() macro
+// for directly accessing memory by address.
+//
+// The following examples show how to use these structures and macros:
+
+// Setting the ADC configuration register...</span>
+AM_REGVAL(0x50010000) = 0x1234;              <span style='color:#3f7f59; '>// by address.</span>
+ADC-&gt;CFG = 0x1234;                           <span style='color:#3f7f59; '>// by structure pointer.</span>
+ADCn(0)-&gt;CFG = 0x1234;                       <span style='color:#3f7f59; '>// by structure pointer (with instance number).</span>
+
+<span style='color:#3f7f59; '>// Changing the ADC clock...</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = 0x2;                 <span style='color:#3f7f59; '>// by raw value.</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = ADC_CFG_CLKSEL_HFRC; <span style='color:#3f7f59; '>// using an enumerated value.</span></pre>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th>
+                            <th>30</th>
+                            <th>29</th>
+                            <th>28</th>
+                            <th>27</th>
+                            <th>26</th>
+                            <th>25</th>
+                            <th>24</th>
+                            <th>23</th>
+                            <th>22</th>
+                            <th>21</th>
+                            <th>20</th>
+                            <th>19</th>
+                            <th>18</th>
+                            <th>17</th>
+                            <th>16</th>
+                            <th>15</th>
+                            <th>14</th>
+                            <th>13</th>
+                            <th>12</th>
+                            <th>11</th>
+                            <th>10</th>
+                            <th>9</th>
+                            <th>8</th>
+                            <th>7</th>
+                            <th>6</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="32">CLOCKEN2STAT
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:0</td>
+                            <td>CLOCKEN2STAT</td>
+                            <td>RO</td>
+                            <td>Clock enable status 2<br><br>
+                                 ADC_CLKEN            = 0x1 - [0] Clock enable for the ADC.<br>
+                             APBDMA_ACTIVITY_CLKEN = 0x2 - [1] Clock enable for the APBDMA ACTIVITY<br>
+                             APBDMA_AOH_CLKEN     = 0x4 - [2] Clock enable for the APBDMA AOH DOMAIN<br>
+                             APBDMA_AOL_CLKEN     = 0x8 - [3] Clock enable for the APBDMA AOL DOMAIN<br>
+                             APBDMA_APB_CLKEN     = 0x10 - [4] Clock enable for the APBDMA_APB<br>
+                             APBDMA_AUD_CLKEN     = 0x20 - [5] Clock enable for the APBDMA_AUD<br>
+                             APBDMA_CRYPTO_CLKEN  = 0x40 - [6] Clock enable for the APBDMA_HCPA<br>
+                             APBDMA_DBG_CLKEN     = 0x80 - [7] Clock enable for the APBDMA_DBG<br>
+                             APBDMA_DISP_CLKEN    = 0x100 - [8] Clock enable for the APBDMA_DISP<br>
+                             APBDMA_DISPPHY_CLKEN = 0x200 - [9] Clock enable for the APBDMA_DISPPHY<br>
+                             APBDMA_DSPA_CLKEN    = 0x400 - [10] Clock enable for the APBDMA_DSPA<br>
+                             APBDMA_GFX_CLKEN     = 0x800 - [11] Clock enable for the APBDMA_GFX<br>
+                             APBDMA_HSPA_CLKEN    = 0x1000 - [12] Clock enable for the APBDMA_HSPA<br>
+                             APBDMA_HSPB_CLKEN    = 0x2000 - [13] Clock enable for the APBDMA_HSPB<br>
+                             APBDMA_HSPC_CLKEN    = 0x4000 - [14] Clock enable for the APBDMA_HSPC<br>
+                             APBDMA_IOS_CLKEN     = 0x8000 - [15] Clock enable for the APBDMA_IOS<br>
+                             APBDMA_MSPI0_CLKEN   = 0x10000 - [16] Clock enable for the APBDMA_MSPI0<br>
+                             APBDMA_MSPI1_CLKEN   = 0x20000 - [17] Clock enable for the APBDMA_MSPI1<br>
+                             APBDMA_MSPI2_CLKEN   = 0x40000 - [18] Clock enable for the APBDMA_MSPI2<br>
+                             APBDMA_SDIO_CLKEN    = 0x80000 - [19] Clock enable for the APBDMA_SDIO<br>
+                             APBDMA_USB_CLKEN     = 0x100000 - [20] Clock enable for the APBDMA_USB<br>
+                             AUDADC_CLKEN         = 0x200000 - [21] Clock enable for the AUDADC<br>
+                             CM4_TPIU_CLKEN       = 0x400000 - [22] Clock enable for the CM4_TPIU<br>
+                             DBG_TPIU_CLKEN       = 0x800000 - [23] Clock enable for the DBG_TPIU<br>
+                             DBG_TS_CLKEN         = 0x1000000 - [24] Clock enable for the DBG_TS<br>
+                             DISP_CLK_CLKEN       = 0x2000000 - [25] Clock enable for the DISP_CLK<br>
+                             DPHY_PLL_REF_CLKEN   = 0x4000000 - [26] Clock enable for the DPHY_PLL_REF<br>
+                             DSP_I2S0_CLKEN       = 0x8000000 - [27] Clock enable for the DSP_I2S0<br>
+                             DSP_I2S0_REFCLK_CLKEN = 0x10000000 - [28] Clock enable for the DSP_I2S0_REFCLK<br>
+                             DSP_I2S1_CLKEN       = 0x20000000 - [29] Clock enable for the DSP_I2S1<br>
+                             DSP_I2S1_REFCLK_CLKEN = 0x40000000 - [30] Clock enable for the DSP_I2S1_REFCLK<br>
+                             DSP_MILLI_CLKEN      = 0x80000000 - [31] Clock enable for the DSP_MILLI</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="CLOCKEN3STAT" class="panel-title">CLOCKEN3STAT - Clock Enable Status</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x40004038</span>
+                        </td>
+                    </tr>
+
+                </table>
+                <h3>Description:</h3>
+                <p>This is a continuation of the clock enable status.</p>
+                <h3>Example Macro Usage:</h3>
+                <pre style="margin:10px" class="language-pascal"><span style='color:#3f7f59; '>//
+// Register access is all performed through the standard CMSIS structure-based
+// interface. This includes module-level structure definitions with members and
+// bitfields corresponding to the physical registers and bitfields within each
+// module. In addition, Ambiq has provided instance-level macros for modules
+// that have more than one physical instance and a generic AM_REGVAL() macro
+// for directly accessing memory by address.
+//
+// The following examples show how to use these structures and macros:
+
+// Setting the ADC configuration register...</span>
+AM_REGVAL(0x50010000) = 0x1234;              <span style='color:#3f7f59; '>// by address.</span>
+ADC-&gt;CFG = 0x1234;                           <span style='color:#3f7f59; '>// by structure pointer.</span>
+ADCn(0)-&gt;CFG = 0x1234;                       <span style='color:#3f7f59; '>// by structure pointer (with instance number).</span>
+
+<span style='color:#3f7f59; '>// Changing the ADC clock...</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = 0x2;                 <span style='color:#3f7f59; '>// by raw value.</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = ADC_CFG_CLKSEL_HFRC; <span style='color:#3f7f59; '>// using an enumerated value.</span></pre>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th>
+                            <th>30</th>
+                            <th>29</th>
+                            <th>28</th>
+                            <th>27</th>
+                            <th>26</th>
+                            <th>25</th>
+                            <th>24</th>
+                            <th>23</th>
+                            <th>22</th>
+                            <th>21</th>
+                            <th>20</th>
+                            <th>19</th>
+                            <th>18</th>
+                            <th>17</th>
+                            <th>16</th>
+                            <th>15</th>
+                            <th>14</th>
+                            <th>13</th>
+                            <th>12</th>
+                            <th>11</th>
+                            <th>10</th>
+                            <th>9</th>
+                            <th>8</th>
+                            <th>7</th>
+                            <th>6</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="32">CLOCKEN3STAT
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:0</td>
+                            <td>CLOCKEN3STAT</td>
+                            <td>RO</td>
+                            <td>Clock enable status 3<br><br>
+                                 DSP_PDM0_CLKEN       = 0x1 - [0] Clock enable for the DSP_PDM0<br>
+                             DSP_PDM1_CLKEN       = 0x2 - [1] Clock enable for the DSP_PDM1<br>
+                             DSP_PDM2_CLKEN       = 0x4 - [2] Clock enable for the DSP_PDM2<br>
+                             DSP_PDM3_CLKEN       = 0x8 - [3] Clock enable for the DSP_PDM3<br>
+                             I3C0_REFCLK_CLKEN    = 0x10 - [4] Clock enable for the I3C0_REFCLK<br>
+                             I3C1_REFCLK_CLKEN    = 0x20 - [5] Clock enable for the I3C1_REFCLK<br>
+                             IOMSTRIFC0_CLKEN     = 0x40 - [6] Clock enable for the IOMSTRIFC0<br>
+                             IOMSTRIFC1_CLKEN     = 0x80 - [7] Clock enable for the IO MASTER 1 IFC INTERFACE<br>
+                             IOMSTRIFC2_CLKEN     = 0x100 - [8] Clock enable for the IO MASTER 2 IFC INTERFACE<br>
+                             IOMSTRIFC3_CLKEN     = 0x200 - [9] Clock enable for the IO MASTER 3 IFC INTERFACE<br>
+                             IOMSTRIFC4_CLKEN     = 0x400 - [10] Clock enable for the IO MASTER 4 IFC INTERFACE<br>
+                             IOMSTRIFC5_CLKEN     = 0x800 - [11] Clock enable for the IO MASTER 5 IFC INTERFACE<br>
+                             IOMSTRIFC6_CLKEN     = 0x1000 - [12] Clock enable for the IO MASTER 6 IFC INTERFACE<br>
+                             IOMSTRIFC7_CLKEN     = 0x2000 - [13] Clock enable for the IO MASTER 7 IFC INTERFACE<br>
+                             RSTGEN_CLKEN         = 0x4000 - [14] Clock enable for the RSTGEN<br>
+                             RSTGEN_POS_CLKEN     = 0x8000 - [15] Clock enable for the RSTGEN<br>
+                             RTC_CLKEN            = 0x10000 - [16] Clock enable for the RTC<br>
+                             SDIO_XIN_CLKEN       = 0x20000 - [17] Clock enable for the SDIO_XIN<br>
+                             UART0HF_CLKEN        = 0x40000 - [18] Clock enable for the UART0 HF<br>
+                             UART1HF_CLKEN        = 0x80000 - [19] Clock enable for the UART1 HF<br>
+                             UART2HF_CLKEN        = 0x100000 - [20] Clock enable for the UART2 HF<br>
+                             UART3HF_CLKEN        = 0x200000 - [21] Clock enable for the UART3 HF<br>
+                             USB_REFCLK_CLKEN     = 0x400000 - [22] Clock enable for the USB_REFCLK<br>
+                             WDT_CLKEN            = 0x800000 - [23] Clock enable for the WDT</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="MISC" class="panel-title">MISC - Misc Control and Status</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x40004044</span>
+                        </td>
+                    </tr>
+
+                </table>
+                <h3>Description:</h3>
+                <p>This register controls a 'safe' mode for burst, which disables the clock when burst transition is happening. It also includes a register to force the HFRC during deep sleep. It is mainly used for debug and testing.</p>
+                <h3>Example Macro Usage:</h3>
+                <pre style="margin:10px" class="language-pascal"><span style='color:#3f7f59; '>//
+// Register access is all performed through the standard CMSIS structure-based
+// interface. This includes module-level structure definitions with members and
+// bitfields corresponding to the physical registers and bitfields within each
+// module. In addition, Ambiq has provided instance-level macros for modules
+// that have more than one physical instance and a generic AM_REGVAL() macro
+// for directly accessing memory by address.
+//
+// The following examples show how to use these structures and macros:
+
+// Setting the ADC configuration register...</span>
+AM_REGVAL(0x50010000) = 0x1234;              <span style='color:#3f7f59; '>// by address.</span>
+ADC-&gt;CFG = 0x1234;                           <span style='color:#3f7f59; '>// by structure pointer.</span>
+ADCn(0)-&gt;CFG = 0x1234;                       <span style='color:#3f7f59; '>// by structure pointer (with instance number).</span>
+
+<span style='color:#3f7f59; '>// Changing the ADC clock...</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = 0x2;                 <span style='color:#3f7f59; '>// by raw value.</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = ADC_CFG_CLKSEL_HFRC; <span style='color:#3f7f59; '>// using an enumerated value.</span></pre>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th>
+                            <th>30</th>
+                            <th>29</th>
+                            <th>28</th>
+                            <th>27</th>
+                            <th>26</th>
+                            <th>25</th>
+                            <th>24</th>
+                            <th>23</th>
+                            <th>22</th>
+                            <th>21</th>
+                            <th>20</th>
+                            <th>19</th>
+                            <th>18</th>
+                            <th>17</th>
+                            <th>16</th>
+                            <th>15</th>
+                            <th>14</th>
+                            <th>13</th>
+                            <th>12</th>
+                            <th>11</th>
+                            <th>10</th>
+                            <th>9</th>
+                            <th>8</th>
+                            <th>7</th>
+                            <th>6</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="6">RSVD
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">CLKGENMISCSPARE
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">HFRC96TRUNKGATE
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">HFRCFUNCCLKGATEEN
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">ETMTRACECLKCLKGATEEN
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">APBDMACPUCLKCLKGATEEN
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">GFXAXICLKCLKGATEEN
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">GFXCLKCLKGATEEN
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">CM4DAXICLKGATEEN
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">PWRONCLKENUSBREFCLK
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">PWRONCLKENI2S1REFCLK
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">PWRONCLKENI2S0REFCLK
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">AXIXACLKENOVRRIDE
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">PWRONCLKENI2S1
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">PWRONCLKENI2S0
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">PWRONCLKENCRYPTO
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">PWRONCLKENSDIO
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">PWRONCLKENUSB
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">PWRONCLKENGFX
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">PWRONCLKENDISPPHY
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">PWRONCLKENDISP
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">FRCHFRC2
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">USEHFRC2FQ192MHZ
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">USEHFRC2FQ96MHZ
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">USEHFRC2FQ48MHZ
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">FRCBURSTOFF
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">FRCHFRC
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:26</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>RESERVED<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>25</td>
+                            <td>CLKGENMISCSPARE</td>
+                            <td>RW</td>
+                            <td>Spare/Unused Chicken Bit<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>24</td>
+                            <td>HFRC96TRUNKGATE</td>
+                            <td>RW</td>
+                            <td>DO NOT USE. HFRC96_TRUNK_GATE. Setting this bit when BIT23=0, will kill HFRC root clock.<br><br>
+                                 DIS                  = 0x0 - Disable HFRC96_TRUNK_GATE<br>
+                             EN                   = 0x1 - DO NOT USE. HFRC96_TRUNK_GATE. Setting this bit when BIT23=0, will kill HFRC root clock.</td>
+                        </tr>
+
+                        <tr>
+                            <td>23</td>
+                            <td>HFRCFUNCCLKGATEEN</td>
+                            <td>RW</td>
+                            <td>Chicken bit to enable clock gating on HFRC_FUNC_CLK<br><br>
+                                 DIS                  = 0x0 - Disable clock gate<br>
+                             EN                   = 0x1 - Enable clock gate</td>
+                        </tr>
+
+                        <tr>
+                            <td>22</td>
+                            <td>ETMTRACECLKCLKGATEEN</td>
+                            <td>RW</td>
+                            <td>Chicken bit to enable clock gating on ETM TRACE CLK<br><br>
+                                 DIS                  = 0x0 - Disable clock gate<br>
+                             EN                   = 0x1 - Enable clock gate</td>
+                        </tr>
+
+                        <tr>
+                            <td>21</td>
+                            <td>APBDMACPUCLKCLKGATEEN</td>
+                            <td>RW</td>
+                            <td>Chicken bit to enable clock gating on APB DMA CPU CLK<br><br>
+                                 DIS                  = 0x0 - Disable clock gate<br>
+                             EN                   = 0x1 - Enable clock gate</td>
+                        </tr>
+
+                        <tr>
+                            <td>20</td>
+                            <td>GFXAXICLKCLKGATEEN</td>
+                            <td>RW</td>
+                            <td>Chicken bit to enable clock gating on GFX AXI CLK<br><br>
+                                 DIS                  = 0x0 - Disable clock gate<br>
+                             EN                   = 0x1 - Enable clock gate</td>
+                        </tr>
+
+                        <tr>
+                            <td>19</td>
+                            <td>GFXCLKCLKGATEEN</td>
+                            <td>RW</td>
+                            <td>Chicken bit to enable clock gating on GFX CLK<br><br>
+                                 DIS                  = 0x0 - Disable clock gate<br>
+                             EN                   = 0x1 - Enable clock gate</td>
+                        </tr>
+
+                        <tr>
+                            <td>18</td>
+                            <td>CM4DAXICLKGATEEN</td>
+                            <td>RW</td>
+                            <td>Chicken bit to enable clock gating on CM4 DAXI CLK<br><br>
+                                 DIS                  = 0x0 - Disable clock gate<br>
+                             EN                   = 0x1 - Enable clock gate</td>
+                        </tr>
+
+                        <tr>
+                            <td>17</td>
+                            <td>PWRONCLKENUSBREFCLK</td>
+                            <td>RW</td>
+                            <td>Chicken bit to disable Rev B clock enable during reset<br><br>
+                                 USBREFCLKENRST       = 0x0 - Enable USB REF Clock to run during reset<br>
+                             DEFEATURE            = 0x1 - Chicken bit to revert to rev A</td>
+                        </tr>
+
+                        <tr>
+                            <td>16</td>
+                            <td>PWRONCLKENI2S1REFCLK</td>
+                            <td>RW</td>
+                            <td>Chicken bit to disable Rev B clock enable during reset<br><br>
+                                 I2S1REFCLKENRST      = 0x0 - Enable I2S instance 1  Clock to run during reset<br>
+                             DEFEATURE            = 0x1 - Chicken bit to revert to rev A</td>
+                        </tr>
+
+                        <tr>
+                            <td>15</td>
+                            <td>PWRONCLKENI2S0REFCLK</td>
+                            <td>RW</td>
+                            <td>Chicken bit to disable Rev B clock enable during reset<br><br>
+                                 I2S0REFCLKENRST      = 0x0 - Enable I2S instance 0  Clock to run during reset<br>
+                             DEFEATURE            = 0x1 - Chicken bit to revert to rev A</td>
+                        </tr>
+
+                        <tr>
+                            <td>14</td>
+                            <td>AXIXACLKENOVRRIDE</td>
+                            <td>RW</td>
+                            <td>Chicken bit to disable Rev B added clock gating<br><br>
+                                 DEFEATURE_DISABLED   = 0x0 - Fine grain clock gating enabled<br>
+                             DEFEATURE            = 0x1 - AXI Clock enabled when core is not in Sleep mode</td>
+                        </tr>
+
+                        <tr>
+                            <td>13</td>
+                            <td>PWRONCLKENI2S1</td>
+                            <td>RW</td>
+                            <td>Chicken bit to disable Rev B clock enable during reset<br><br>
+                                 I2S1CLKENRST         = 0x0 - Enable I2S instance 1 engine Clock to run during reset<br>
+                             DEFEATURE            = 0x1 - Chicken bit to revert to rev A</td>
+                        </tr>
+
+                        <tr>
+                            <td>12</td>
+                            <td>PWRONCLKENI2S0</td>
+                            <td>RW</td>
+                            <td>Chicken bit to disable Rev B clock enable during reset<br><br>
+                                 I2S0CLKENRST         = 0x0 - Enable I2S instance 0 engine Clock to run during reset<br>
+                             DEFEATURE            = 0x1 - Chicken bit to revert to rev A</td>
+                        </tr>
+
+                        <tr>
+                            <td>11</td>
+                            <td>PWRONCLKENCRYPTO</td>
+                            <td>RW</td>
+                            <td>Chicken bit to disable Rev B clock enable during reset<br><br>
+                                 CRYPTOCLKENRST       = 0x0 - Enable Cryto engine Clock to run during reset<br>
+                             DEFEATURE            = 0x1 - Chicken bit to revert to rev A</td>
+                        </tr>
+
+                        <tr>
+                            <td>10</td>
+                            <td>PWRONCLKENSDIO</td>
+                            <td>RW</td>
+                            <td>Chicken bit to disable Rev B clock enable during reset<br><br>
+                                 SDIOCLKENRST         = 0x0 - Enable SDIO  Clock to run during reset<br>
+                             DEFEATURE            = 0x1 - Chicken bit to revert to rev A</td>
+                        </tr>
+
+                        <tr>
+                            <td>9</td>
+                            <td>PWRONCLKENUSB</td>
+                            <td>RW</td>
+                            <td>Chicken bit to disable Rev B clock enable during reset<br><br>
+                                 USBCLKENRST          = 0x0 - Enable USB Clock to run during reset<br>
+                             DEFEATURE            = 0x1 - Chicken bit to revert to rev A</td>
+                        </tr>
+
+                        <tr>
+                            <td>8</td>
+                            <td>PWRONCLKENGFX</td>
+                            <td>RW</td>
+                            <td>Chicken bit to disable Rev B clock enable during reset<br><br>
+                                 GFXCLKENRST          = 0x0 - Enable GFX Clock to run during reset<br>
+                             DEFEATURE            = 0x1 - Chicken bit to revert to rev A</td>
+                        </tr>
+
+                        <tr>
+                            <td>7</td>
+                            <td>PWRONCLKENDISPPHY</td>
+                            <td>RW</td>
+                            <td>Chicken bit to disable Rev B clock enable during reset<br><br>
+                                 DISPPHYCLKENRST      = 0x0 - Enable Display Phy Clock to run during reset<br>
+                             DEFEATURE            = 0x1 - Chicken bit to revert to rev A</td>
+                        </tr>
+
+                        <tr>
+                            <td>6</td>
+                            <td>PWRONCLKENDISP</td>
+                            <td>RW</td>
+                            <td>Chicken bit to disable Rev B clock enable during reset<br><br>
+                                 DISPCLKENRST         = 0x0 - Enable Display Clock to run during reset<br>
+                             DEFEATURE            = 0x1 - Chicken bit to revert to rev A</td>
+                        </tr>
+
+                        <tr>
+                            <td>5</td>
+                            <td>FRCHFRC2</td>
+                            <td>RW</td>
+                            <td>Force HFRC2 On.Setting this bit forces HFRC2 to remain on, including in deep sleep. When changing a module's clock source to HFRC2, this bit must be set and remain set when any module is using HFRC2 as its clock.<br><br>
+                                 NOFRC                = 0x0 - Do not force HFRC2 on; stops in deep sleep mode.<br>
+                             FRC                  = 0x1 - Force HFRC2 on; runs in deep sleep mode.</td>
+                        </tr>
+
+                        <tr>
+                            <td>4</td>
+                            <td>USEHFRC2FQ192MHZ</td>
+                            <td>RW</td>
+                            <td>Use HFRC-192MHz or HFRC2-192MHz for MCU<br><br>
+                                 HFRCFQ192MHz         = 0x0 - Use HFRC-192MHz<br>
+                             HFRC2FQ192MHz        = 0x1 - Use HFRC2-192MHz</td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>USEHFRC2FQ96MHZ</td>
+                            <td>RW</td>
+                            <td>Use HFRC-96MHz or HFRC2-96MHz for DSP<br><br>
+                                 HFRCFQ96MHz          = 0x0 - Use HFRC-96MHz<br>
+                             HFRC2FQ96MHz         = 0x1 - Use HFRC2-96MHz</td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>USEHFRC2FQ48MHZ</td>
+                            <td>RW</td>
+                            <td>Use HFRC-48MHz or HFRC2-48MHz for DSP<br><br>
+                                 HFRCFQ48MHz          = 0x0 - Use HFRC-48MHz<br>
+                             HFRC2FQ48MHz         = 0x1 - Use HFRC2-48MHz</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>FRCBURSTOFF</td>
+                            <td>RW</td>
+                            <td>Force fclk, hclk, fclk_wic and fclk_pmu to be turned off during burst transition.<br><br>
+                                 BURSTCLKON           = 0x0 - fclk, hclk and fclk_wic are turned on during the burst transition<br>
+                             BURSTCLKOFF          = 0x1 - fclk, hclk and fclk are turned off during burst transition</td>
+                        </tr>
+
+                        <tr>
+                            <td>0</td>
+                            <td>FRCHFRC</td>
+                            <td>RW</td>
+                            <td>Force HFRC On .<br><br>
+                                 NOFRC                = 0x0 - HFRC stops in deep sleep mode<br>
+                             FRC                  = 0x1 - HFRC runs in deep sleep mode</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="HF2ADJ0" class="panel-title">HF2ADJ0 - HF2ADJ Control 0</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x40004048</span>
+                        </td>
+                    </tr>
+
+                </table>
+                <h3>Description:</h3>
+                <p>This register controls hf2adj enable, fast_start enable, fast_start_delay setting and counter input offset.</p>
+                <h3>Example Macro Usage:</h3>
+                <pre style="margin:10px" class="language-pascal"><span style='color:#3f7f59; '>//
+// Register access is all performed through the standard CMSIS structure-based
+// interface. This includes module-level structure definitions with members and
+// bitfields corresponding to the physical registers and bitfields within each
+// module. In addition, Ambiq has provided instance-level macros for modules
+// that have more than one physical instance and a generic AM_REGVAL() macro
+// for directly accessing memory by address.
+//
+// The following examples show how to use these structures and macros:
+
+// Setting the ADC configuration register...</span>
+AM_REGVAL(0x50010000) = 0x1234;              <span style='color:#3f7f59; '>// by address.</span>
+ADC-&gt;CFG = 0x1234;                           <span style='color:#3f7f59; '>// by structure pointer.</span>
+ADCn(0)-&gt;CFG = 0x1234;                       <span style='color:#3f7f59; '>// by structure pointer (with instance number).</span>
+
+<span style='color:#3f7f59; '>// Changing the ADC clock...</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = 0x2;                 <span style='color:#3f7f59; '>// by raw value.</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = ADC_CFG_CLKSEL_HFRC; <span style='color:#3f7f59; '>// using an enumerated value.</span></pre>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th>
+                            <th>30</th>
+                            <th>29</th>
+                            <th>28</th>
+                            <th>27</th>
+                            <th>26</th>
+                            <th>25</th>
+                            <th>24</th>
+                            <th>23</th>
+                            <th>22</th>
+                            <th>21</th>
+                            <th>20</th>
+                            <th>19</th>
+                            <th>18</th>
+                            <th>17</th>
+                            <th>16</th>
+                            <th>15</th>
+                            <th>14</th>
+                            <th>13</th>
+                            <th>12</th>
+                            <th>11</th>
+                            <th>10</th>
+                            <th>9</th>
+                            <th>8</th>
+                            <th>7</th>
+                            <th>6</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="2">RESERVED
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">HF2ADJXTHSMUXSEL
+                                <br>0x0</td>
+
+                            <td align="center" colspan="14">HF2ADJCNTINOFFSET
+                                <br>0x0</td>
+
+                            <td align="center" colspan="13">HF2ADJFASTSTRDLY
+                                <br>0xfff</td>
+
+                            <td align="center" colspan="1">HF2ADJFASTSTREN
+                                <br>0x1</td>
+
+                            <td align="center" colspan="1">HF2ADJEN
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:30</td>
+                            <td>RESERVED</td>
+                            <td>RO</td>
+                            <td>Reserved<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>29</td>
+                            <td>HF2ADJXTHSMUXSEL</td>
+                            <td>RW</td>
+                            <td>0=XTHS 1=EXTREF select<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>28:15</td>
+                            <td>HF2ADJCNTINOFFSET</td>
+                            <td>RW</td>
+                            <td>Counter input offset<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>14:2</td>
+                            <td>HF2ADJFASTSTRDLY</td>
+                            <td>RW</td>
+                            <td>Fast_start_delay value setting<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>HF2ADJFASTSTREN</td>
+                            <td>RW</td>
+                            <td>Fast_start_delay control<br><br>
+                                 DIS                  = 0x0 - Fast_start_delay disable<br>
+                             EN                   = 0x1 - Fast_start_delay enable</td>
+                        </tr>
+
+                        <tr>
+                            <td>0</td>
+                            <td>HF2ADJEN</td>
+                            <td>RW</td>
+                            <td>HF2ADJ control<br><br>
+                                 DIS                  = 0x0 - HF2ADJ disable<br>
+                             EN                   = 0x1 - HF2ADJ enable</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="HF2ADJ1" class="panel-title">HF2ADJ1 - HF2ADJ Control 1</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x4000404C</span>
+                        </td>
+                    </tr>
+
+                </table>
+                <h3>Description:</h3>
+                <p>This register controls hf2adj trimming enable and trimming offset.</p>
+                <h3>Example Macro Usage:</h3>
+                <pre style="margin:10px" class="language-pascal"><span style='color:#3f7f59; '>//
+// Register access is all performed through the standard CMSIS structure-based
+// interface. This includes module-level structure definitions with members and
+// bitfields corresponding to the physical registers and bitfields within each
+// module. In addition, Ambiq has provided instance-level macros for modules
+// that have more than one physical instance and a generic AM_REGVAL() macro
+// for directly accessing memory by address.
+//
+// The following examples show how to use these structures and macros:
+
+// Setting the ADC configuration register...</span>
+AM_REGVAL(0x50010000) = 0x1234;              <span style='color:#3f7f59; '>// by address.</span>
+ADC-&gt;CFG = 0x1234;                           <span style='color:#3f7f59; '>// by structure pointer.</span>
+ADCn(0)-&gt;CFG = 0x1234;                       <span style='color:#3f7f59; '>// by structure pointer (with instance number).</span>
+
+<span style='color:#3f7f59; '>// Changing the ADC clock...</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = 0x2;                 <span style='color:#3f7f59; '>// by raw value.</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = ADC_CFG_CLKSEL_HFRC; <span style='color:#3f7f59; '>// using an enumerated value.</span></pre>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th>
+                            <th>30</th>
+                            <th>29</th>
+                            <th>28</th>
+                            <th>27</th>
+                            <th>26</th>
+                            <th>25</th>
+                            <th>24</th>
+                            <th>23</th>
+                            <th>22</th>
+                            <th>21</th>
+                            <th>20</th>
+                            <th>19</th>
+                            <th>18</th>
+                            <th>17</th>
+                            <th>16</th>
+                            <th>15</th>
+                            <th>14</th>
+                            <th>13</th>
+                            <th>12</th>
+                            <th>11</th>
+                            <th>10</th>
+                            <th>9</th>
+                            <th>8</th>
+                            <th>7</th>
+                            <th>6</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="18">RESERVED
+                                <br>0x0</td>
+
+                            <td align="center" colspan="11">HF2ADJTRIMOFFSET
+                                <br>0x0</td>
+
+                            <td align="center" colspan="3">HF2ADJTRIMEN
+                                <br>0x7</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:14</td>
+                            <td>RESERVED</td>
+                            <td>RO</td>
+                            <td>Reserved<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>13:3</td>
+                            <td>HF2ADJTRIMOFFSET</td>
+                            <td>RW</td>
+                            <td>HF2ADJ trimming offset. (signed number)<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>2:0</td>
+                            <td>HF2ADJTRIMEN</td>
+                            <td>RW</td>
+                            <td>HF2ADJ output selection<br><br>
+                                 TRIM_EN0             = 0x0 - 0<br>
+                             TRIM_EN1             = 0x1 - HF2ADJTRIMOUT<br>
+                             TRIM_EN2             = 0x2 - HF2ADJTRIMOFFSET<br>
+                             TRIM_EN3             = 0x3 - HF2ADJTRIMOUT + HF2ADJTRIMOFFSET<br>
+                             TRIM_EN4             = 0x4 - HF2TUNE<br>
+                             TRIM_EN5             = 0x5 - HF2ADJTRIMOUT + HF2TUNE<br>
+                             TRIM_EN6             = 0x6 - HF2ADJTRIMOFFSET + HF2TUNE<br>
+                             TRIM_EN7             = 0x7 - HF2ADJTRIMOUT + HF2ADJTRIMOFFSET + HF2TUNE</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="HF2ADJ2" class="panel-title">HF2ADJ2 - HF2ADJ Control 2</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x40004050</span>
+                        </td>
+                    </tr>
+
+                </table>
+                <h3>Description:</h3>
+                <p>This register controls xtal32m divider ratio and HF2ADJ ration setting.</p>
+                <h3>Example Macro Usage:</h3>
+                <pre style="margin:10px" class="language-pascal"><span style='color:#3f7f59; '>//
+// Register access is all performed through the standard CMSIS structure-based
+// interface. This includes module-level structure definitions with members and
+// bitfields corresponding to the physical registers and bitfields within each
+// module. In addition, Ambiq has provided instance-level macros for modules
+// that have more than one physical instance and a generic AM_REGVAL() macro
+// for directly accessing memory by address.
+//
+// The following examples show how to use these structures and macros:
+
+// Setting the ADC configuration register...</span>
+AM_REGVAL(0x50010000) = 0x1234;              <span style='color:#3f7f59; '>// by address.</span>
+ADC-&gt;CFG = 0x1234;                           <span style='color:#3f7f59; '>// by structure pointer.</span>
+ADCn(0)-&gt;CFG = 0x1234;                       <span style='color:#3f7f59; '>// by structure pointer (with instance number).</span>
+
+<span style='color:#3f7f59; '>// Changing the ADC clock...</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = 0x2;                 <span style='color:#3f7f59; '>// by raw value.</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = ADC_CFG_CLKSEL_HFRC; <span style='color:#3f7f59; '>// using an enumerated value.</span></pre>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th>
+                            <th>30</th>
+                            <th>29</th>
+                            <th>28</th>
+                            <th>27</th>
+                            <th>26</th>
+                            <th>25</th>
+                            <th>24</th>
+                            <th>23</th>
+                            <th>22</th>
+                            <th>21</th>
+                            <th>20</th>
+                            <th>19</th>
+                            <th>18</th>
+                            <th>17</th>
+                            <th>16</th>
+                            <th>15</th>
+                            <th>14</th>
+                            <th>13</th>
+                            <th>12</th>
+                            <th>11</th>
+                            <th>10</th>
+                            <th>9</th>
+                            <th>8</th>
+                            <th>7</th>
+                            <th>6</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="1">RESERVED
+                                <br>0x0</td>
+
+                            <td align="center" colspan="29">HF2ADJRATIO
+                                <br>0x624dd</td>
+
+                            <td align="center" colspan="2">HF2ADJXTALDIVRATIO
+                                <br>0x2</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31</td>
+                            <td>RESERVED</td>
+                            <td>RO</td>
+                            <td>Reserved<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>30:2</td>
+                            <td>HF2ADJRATIO</td>
+                            <td>RW</td>
+                            <td>HF2ADJ ratio setting.<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>1:0</td>
+                            <td>HF2ADJXTALDIVRATIO</td>
+                            <td>RW</td>
+                            <td>XTAL32MHz divider ratio for HF2ADJ.<br><br>
+                                 XTAL32M              = 0x0 - XTAL32MHz<br>
+                             XTAL32M_DIV2         = 0x1 - XTAL32MHz / 2<br>
+                             XTAL32M_DIV4         = 0x2 - XTAL32MHz / 4<br>
+                             XTAL32M_DIV8         = 0x3 - XTAL32MHz / 8</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="HF2VAL" class="panel-title">HF2VAL - HF2ADJ readback</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x40004054</span>
+                        </td>
+                    </tr>
+
+                </table>
+                <h3>Description:</h3>
+                <p>This register provides the read back of the HF2TUNE</p>
+                <h3>Example Macro Usage:</h3>
+                <pre style="margin:10px" class="language-pascal"><span style='color:#3f7f59; '>//
+// Register access is all performed through the standard CMSIS structure-based
+// interface. This includes module-level structure definitions with members and
+// bitfields corresponding to the physical registers and bitfields within each
+// module. In addition, Ambiq has provided instance-level macros for modules
+// that have more than one physical instance and a generic AM_REGVAL() macro
+// for directly accessing memory by address.
+//
+// The following examples show how to use these structures and macros:
+
+// Setting the ADC configuration register...</span>
+AM_REGVAL(0x50010000) = 0x1234;              <span style='color:#3f7f59; '>// by address.</span>
+ADC-&gt;CFG = 0x1234;                           <span style='color:#3f7f59; '>// by structure pointer.</span>
+ADCn(0)-&gt;CFG = 0x1234;                       <span style='color:#3f7f59; '>// by structure pointer (with instance number).</span>
+
+<span style='color:#3f7f59; '>// Changing the ADC clock...</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = 0x2;                 <span style='color:#3f7f59; '>// by raw value.</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = ADC_CFG_CLKSEL_HFRC; <span style='color:#3f7f59; '>// using an enumerated value.</span></pre>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th>
+                            <th>30</th>
+                            <th>29</th>
+                            <th>28</th>
+                            <th>27</th>
+                            <th>26</th>
+                            <th>25</th>
+                            <th>24</th>
+                            <th>23</th>
+                            <th>22</th>
+                            <th>21</th>
+                            <th>20</th>
+                            <th>19</th>
+                            <th>18</th>
+                            <th>17</th>
+                            <th>16</th>
+                            <th>15</th>
+                            <th>14</th>
+                            <th>13</th>
+                            <th>12</th>
+                            <th>11</th>
+                            <th>10</th>
+                            <th>9</th>
+                            <th>8</th>
+                            <th>7</th>
+                            <th>6</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="21">RESERVED
+                                <br>0x0</td>
+
+                            <td align="center" colspan="11">HF2ADJTRIMOUT
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:11</td>
+                            <td>RESERVED</td>
+                            <td>RO</td>
+                            <td>Reserved<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>10:0</td>
+                            <td>HF2ADJTRIMOUT</td>
+                            <td>RO</td>
+                            <td>HF2ADJ trimming output<br><br>
+                                </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="LFRCCTRL" class="panel-title">LFRCCTRL - LFRC control</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x40004078</span>
+                        </td>
+                    </tr>
+
+                </table>
+                <h3>Description:</h3>
+                <p>LFRC control</p>
+                <h3>Example Macro Usage:</h3>
+                <pre style="margin:10px" class="language-pascal"><span style='color:#3f7f59; '>//
+// Register access is all performed through the standard CMSIS structure-based
+// interface. This includes module-level structure definitions with members and
+// bitfields corresponding to the physical registers and bitfields within each
+// module. In addition, Ambiq has provided instance-level macros for modules
+// that have more than one physical instance and a generic AM_REGVAL() macro
+// for directly accessing memory by address.
+//
+// The following examples show how to use these structures and macros:
+
+// Setting the ADC configuration register...</span>
+AM_REGVAL(0x50010000) = 0x1234;              <span style='color:#3f7f59; '>// by address.</span>
+ADC-&gt;CFG = 0x1234;                           <span style='color:#3f7f59; '>// by structure pointer.</span>
+ADCn(0)-&gt;CFG = 0x1234;                       <span style='color:#3f7f59; '>// by structure pointer (with instance number).</span>
+
+<span style='color:#3f7f59; '>// Changing the ADC clock...</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = 0x2;                 <span style='color:#3f7f59; '>// by raw value.</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = ADC_CFG_CLKSEL_HFRC; <span style='color:#3f7f59; '>// using an enumerated value.</span></pre>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th>
+                            <th>30</th>
+                            <th>29</th>
+                            <th>28</th>
+                            <th>27</th>
+                            <th>26</th>
+                            <th>25</th>
+                            <th>24</th>
+                            <th>23</th>
+                            <th>22</th>
+                            <th>21</th>
+                            <th>20</th>
+                            <th>19</th>
+                            <th>18</th>
+                            <th>17</th>
+                            <th>16</th>
+                            <th>15</th>
+                            <th>14</th>
+                            <th>13</th>
+                            <th>12</th>
+                            <th>11</th>
+                            <th>10</th>
+                            <th>9</th>
+                            <th>8</th>
+                            <th>7</th>
+                            <th>6</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="30">RESERVED
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">LFRCPWD
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">LFRCOUT
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:2</td>
+                            <td>RESERVED</td>
+                            <td>RO</td>
+                            <td>Reserved<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>LFRCPWD</td>
+                            <td>RW</td>
+                            <td>Power down LFRC<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>0</td>
+                            <td>LFRCOUT</td>
+                            <td>RW</td>
+                            <td>Disable LFRC output<br><br>
+                                </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="DISPCLKCTRL" class="panel-title">DISPCLKCTRL - Control for selection and enablement of the DPHY PLL and related clocks</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x40004084</span>
+                        </td>
+                    </tr>
+
+                </table>
+                <h3>Description:</h3>
+                <p>Provides ability to select the PLL reference clock, and derivative of the display clock</p>
+                <h3>Example Macro Usage:</h3>
+                <pre style="margin:10px" class="language-pascal"><span style='color:#3f7f59; '>//
+// Register access is all performed through the standard CMSIS structure-based
+// interface. This includes module-level structure definitions with members and
+// bitfields corresponding to the physical registers and bitfields within each
+// module. In addition, Ambiq has provided instance-level macros for modules
+// that have more than one physical instance and a generic AM_REGVAL() macro
+// for directly accessing memory by address.
+//
+// The following examples show how to use these structures and macros:
+
+// Setting the ADC configuration register...</span>
+AM_REGVAL(0x50010000) = 0x1234;              <span style='color:#3f7f59; '>// by address.</span>
+ADC-&gt;CFG = 0x1234;                           <span style='color:#3f7f59; '>// by structure pointer.</span>
+ADCn(0)-&gt;CFG = 0x1234;                       <span style='color:#3f7f59; '>// by structure pointer (with instance number).</span>
+
+<span style='color:#3f7f59; '>// Changing the ADC clock...</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = 0x2;                 <span style='color:#3f7f59; '>// by raw value.</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = ADC_CFG_CLKSEL_HFRC; <span style='color:#3f7f59; '>// using an enumerated value.</span></pre>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th>
+                            <th>30</th>
+                            <th>29</th>
+                            <th>28</th>
+                            <th>27</th>
+                            <th>26</th>
+                            <th>25</th>
+                            <th>24</th>
+                            <th>23</th>
+                            <th>22</th>
+                            <th>21</th>
+                            <th>20</th>
+                            <th>19</th>
+                            <th>18</th>
+                            <th>17</th>
+                            <th>16</th>
+                            <th>15</th>
+                            <th>14</th>
+                            <th>13</th>
+                            <th>12</th>
+                            <th>11</th>
+                            <th>10</th>
+                            <th>9</th>
+                            <th>8</th>
+                            <th>7</th>
+                            <th>6</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="24">RSVD
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">DCCLKEN
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">RSVD
+                                <br>0x0</td>
+
+                            <td align="center" colspan="2">DISPCLKSEL
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">PLLCLKEN
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">RSVD
+                                <br>0x0</td>
+
+                            <td align="center" colspan="2">PLLCLKSEL
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:8</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>RESERVED<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>7</td>
+                            <td>DCCLKEN</td>
+                            <td>RW</td>
+                            <td>Enable for the PLL clock through clkgen<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>6</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>RESERVED<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>5:4</td>
+                            <td>DISPCLKSEL</td>
+                            <td>RW</td>
+                            <td>Selection for PLL reference clock.<br><br>
+                                 OFF                  = 0x0 - Static value of 0 selected for DPHY clock input<br>
+                             HFRC48               = 0x1 - 48MHz sourced from the HFRC<br>
+                             HFRC96               = 0x2 - 96MHz sourced from the HFRC<br>
+                             DPHYPLL              = 0x3 - DPHY PLL</td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>PLLCLKEN</td>
+                            <td>RW</td>
+                            <td>Enable for the PLL clock through clkgen<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>RESERVED<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>1:0</td>
+                            <td>PLLCLKSEL</td>
+                            <td>RW</td>
+                            <td>Selection for PLL reference clock.<br><br>
+                                 OFF                  = 0x0 - Static value of 0 selected for DPHY clock input<br>
+                             HFRC12               = 0x1 - 12MHz sourced from the HFRC<br>
+                             HFRC6                = 0x2 - 6MHz sourced from the HFRC<br>
+                             HFXT_16              = 0x3 - High Frequency XTAL input (16MHz)</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="CLKGENSPARES" class="panel-title">CLKGENSPARES - CLK GEN Spare Registers for Future ECO</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x40004088</span>
+                        </td>
+                    </tr>
+
+                </table>
+                <h3>Description:</h3>
+                <p>CLKGEN Spare Regs</p>
+                <h3>Example Macro Usage:</h3>
+                <pre style="margin:10px" class="language-pascal"><span style='color:#3f7f59; '>//
+// Register access is all performed through the standard CMSIS structure-based
+// interface. This includes module-level structure definitions with members and
+// bitfields corresponding to the physical registers and bitfields within each
+// module. In addition, Ambiq has provided instance-level macros for modules
+// that have more than one physical instance and a generic AM_REGVAL() macro
+// for directly accessing memory by address.
+//
+// The following examples show how to use these structures and macros:
+
+// Setting the ADC configuration register...</span>
+AM_REGVAL(0x50010000) = 0x1234;              <span style='color:#3f7f59; '>// by address.</span>
+ADC-&gt;CFG = 0x1234;                           <span style='color:#3f7f59; '>// by structure pointer.</span>
+ADCn(0)-&gt;CFG = 0x1234;                       <span style='color:#3f7f59; '>// by structure pointer (with instance number).</span>
+
+<span style='color:#3f7f59; '>// Changing the ADC clock...</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = 0x2;                 <span style='color:#3f7f59; '>// by raw value.</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = ADC_CFG_CLKSEL_HFRC; <span style='color:#3f7f59; '>// using an enumerated value.</span></pre>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th>
+                            <th>30</th>
+                            <th>29</th>
+                            <th>28</th>
+                            <th>27</th>
+                            <th>26</th>
+                            <th>25</th>
+                            <th>24</th>
+                            <th>23</th>
+                            <th>22</th>
+                            <th>21</th>
+                            <th>20</th>
+                            <th>19</th>
+                            <th>18</th>
+                            <th>17</th>
+                            <th>16</th>
+                            <th>15</th>
+                            <th>14</th>
+                            <th>13</th>
+                            <th>12</th>
+                            <th>11</th>
+                            <th>10</th>
+                            <th>9</th>
+                            <th>8</th>
+                            <th>7</th>
+                            <th>6</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="32">CLKGENSPARES
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:0</td>
+                            <td>CLKGENSPARES</td>
+                            <td>RW</td>
+                            <td>Placeholer spare registes that can be used as needed for future use<br><br>
+                                </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="HFRCIDLECOUNTERS" class="panel-title">HFRCIDLECOUNTERS - Defines Number of consecutive idle cycles for HFRC, HFRC2 clock enable, power down signals deassertion</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x4000408C</span>
+                        </td>
+                    </tr>
+
+                </table>
+                <h3>Description:</h3>
+                <p>Provides SW controlled # idle cycles before powering down HFRC, HFRC2., core clock enable(s)</p>
+                <h3>Example Macro Usage:</h3>
+                <pre style="margin:10px" class="language-pascal"><span style='color:#3f7f59; '>//
+// Register access is all performed through the standard CMSIS structure-based
+// interface. This includes module-level structure definitions with members and
+// bitfields corresponding to the physical registers and bitfields within each
+// module. In addition, Ambiq has provided instance-level macros for modules
+// that have more than one physical instance and a generic AM_REGVAL() macro
+// for directly accessing memory by address.
+//
+// The following examples show how to use these structures and macros:
+
+// Setting the ADC configuration register...</span>
+AM_REGVAL(0x50010000) = 0x1234;              <span style='color:#3f7f59; '>// by address.</span>
+ADC-&gt;CFG = 0x1234;                           <span style='color:#3f7f59; '>// by structure pointer.</span>
+ADCn(0)-&gt;CFG = 0x1234;                       <span style='color:#3f7f59; '>// by structure pointer (with instance number).</span>
+
+<span style='color:#3f7f59; '>// Changing the ADC clock...</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = 0x2;                 <span style='color:#3f7f59; '>// by raw value.</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = ADC_CFG_CLKSEL_HFRC; <span style='color:#3f7f59; '>// using an enumerated value.</span></pre>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th>
+                            <th>30</th>
+                            <th>29</th>
+                            <th>28</th>
+                            <th>27</th>
+                            <th>26</th>
+                            <th>25</th>
+                            <th>24</th>
+                            <th>23</th>
+                            <th>22</th>
+                            <th>21</th>
+                            <th>20</th>
+                            <th>19</th>
+                            <th>18</th>
+                            <th>17</th>
+                            <th>16</th>
+                            <th>15</th>
+                            <th>14</th>
+                            <th>13</th>
+                            <th>12</th>
+                            <th>11</th>
+                            <th>10</th>
+                            <th>9</th>
+                            <th>8</th>
+                            <th>7</th>
+                            <th>6</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="1">UPDATEENABLE
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">RSVD
+                                <br>0x0</td>
+
+                            <td align="center" colspan="6">HFRC2CLKREQDELAY
+                                <br>0x4</td>
+
+                            <td align="center" colspan="2">RSVD
+                                <br>0x0</td>
+
+                            <td align="center" colspan="6">HFRC2PWRDOWNDELAY
+                                <br>0x5</td>
+
+                            <td align="center" colspan="2">RSVD
+                                <br>0x0</td>
+
+                            <td align="center" colspan="6">HFRCCLKREQDELAY
+                                <br>0x4</td>
+
+                            <td align="center" colspan="2">RSVD
+                                <br>0x0</td>
+
+                            <td align="center" colspan="6">HFRCPWRDOWNDELAY
+                                <br>0x5</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31</td>
+                            <td>UPDATEENABLE</td>
+                            <td>RW</td>
+                            <td>usage : Clear UPDATEENABLE or 1'b0; Update other bits fields of this register. Set this register to 1'b1 for HW to update.<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>30</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>RESERVED<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>29:24</td>
+                            <td>HFRC2CLKREQDELAY</td>
+                            <td>RW</td>
+                            <td>Enable for the PLL clock through clkgen<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>23:22</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>RESERVED<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>21:16</td>
+                            <td>HFRC2PWRDOWNDELAY</td>
+                            <td>RW</td>
+                            <td>Idle counter for HFRC2 POWER DOWN DELAY<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>15:14</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>RESERVED<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>13:8</td>
+                            <td>HFRCCLKREQDELAY</td>
+                            <td>RW</td>
+                            <td>Idle counter for HFRC CLK REQ DELAY<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>7:6</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>RESERVED<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>5:0</td>
+                            <td>HFRCPWRDOWNDELAY</td>
+                            <td>RW</td>
+                            <td>Idle counter for HFRC POWER DOWN DELAY<br><br>
+                                </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="INTRPTEN" class="panel-title">INTRPTEN - CLKGEN Interrupts: Enable</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x40004100</span>
+                        </td>
+                    </tr>
+
+                </table>
+                <h3>Description:</h3>
+                <p>Set bits in this register to allow this module to generate the corresponding interrupt.</p>
+                <h3>Example Macro Usage:</h3>
+                <pre style="margin:10px" class="language-pascal"><span style='color:#3f7f59; '>//
+// Register access is all performed through the standard CMSIS structure-based
+// interface. This includes module-level structure definitions with members and
+// bitfields corresponding to the physical registers and bitfields within each
+// module. In addition, Ambiq has provided instance-level macros for modules
+// that have more than one physical instance and a generic AM_REGVAL() macro
+// for directly accessing memory by address.
+//
+// The following examples show how to use these structures and macros:
+
+// Setting the ADC configuration register...</span>
+AM_REGVAL(0x50010000) = 0x1234;              <span style='color:#3f7f59; '>// by address.</span>
+ADC-&gt;CFG = 0x1234;                           <span style='color:#3f7f59; '>// by structure pointer.</span>
+ADCn(0)-&gt;CFG = 0x1234;                       <span style='color:#3f7f59; '>// by structure pointer (with instance number).</span>
+
+<span style='color:#3f7f59; '>// Changing the ADC clock...</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = 0x2;                 <span style='color:#3f7f59; '>// by raw value.</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = ADC_CFG_CLKSEL_HFRC; <span style='color:#3f7f59; '>// using an enumerated value.</span></pre>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th>
+                            <th>30</th>
+                            <th>29</th>
+                            <th>28</th>
+                            <th>27</th>
+                            <th>26</th>
+                            <th>25</th>
+                            <th>24</th>
+                            <th>23</th>
+                            <th>22</th>
+                            <th>21</th>
+                            <th>20</th>
+                            <th>19</th>
+                            <th>18</th>
+                            <th>17</th>
+                            <th>16</th>
+                            <th>15</th>
+                            <th>14</th>
+                            <th>13</th>
+                            <th>12</th>
+                            <th>11</th>
+                            <th>10</th>
+                            <th>9</th>
+                            <th>8</th>
+                            <th>7</th>
+                            <th>6</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="31">RSVD
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">OF
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:1</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>RESERVED<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>0</td>
+                            <td>OF</td>
+                            <td>RW</td>
+                            <td>XT Oscillator Fail interrupt<br><br>
+                                </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="INTRPTSTAT" class="panel-title">INTRPTSTAT - CLKGEN Interrupts: Status</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x40004104</span>
+                        </td>
+                    </tr>
+
+                </table>
+                <h3>Description:</h3>
+                <p>Read bits from this register to discover the cause of a recent interrupt.</p>
+                <h3>Example Macro Usage:</h3>
+                <pre style="margin:10px" class="language-pascal"><span style='color:#3f7f59; '>//
+// Register access is all performed through the standard CMSIS structure-based
+// interface. This includes module-level structure definitions with members and
+// bitfields corresponding to the physical registers and bitfields within each
+// module. In addition, Ambiq has provided instance-level macros for modules
+// that have more than one physical instance and a generic AM_REGVAL() macro
+// for directly accessing memory by address.
+//
+// The following examples show how to use these structures and macros:
+
+// Setting the ADC configuration register...</span>
+AM_REGVAL(0x50010000) = 0x1234;              <span style='color:#3f7f59; '>// by address.</span>
+ADC-&gt;CFG = 0x1234;                           <span style='color:#3f7f59; '>// by structure pointer.</span>
+ADCn(0)-&gt;CFG = 0x1234;                       <span style='color:#3f7f59; '>// by structure pointer (with instance number).</span>
+
+<span style='color:#3f7f59; '>// Changing the ADC clock...</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = 0x2;                 <span style='color:#3f7f59; '>// by raw value.</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = ADC_CFG_CLKSEL_HFRC; <span style='color:#3f7f59; '>// using an enumerated value.</span></pre>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th>
+                            <th>30</th>
+                            <th>29</th>
+                            <th>28</th>
+                            <th>27</th>
+                            <th>26</th>
+                            <th>25</th>
+                            <th>24</th>
+                            <th>23</th>
+                            <th>22</th>
+                            <th>21</th>
+                            <th>20</th>
+                            <th>19</th>
+                            <th>18</th>
+                            <th>17</th>
+                            <th>16</th>
+                            <th>15</th>
+                            <th>14</th>
+                            <th>13</th>
+                            <th>12</th>
+                            <th>11</th>
+                            <th>10</th>
+                            <th>9</th>
+                            <th>8</th>
+                            <th>7</th>
+                            <th>6</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="31">RSVD
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">OF
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:1</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>RESERVED<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>0</td>
+                            <td>OF</td>
+                            <td>RW</td>
+                            <td>XT Oscillator Fail interrupt<br><br>
+                                </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="INTRPTCLR" class="panel-title">INTRPTCLR - CLKGEN Interrupts: Clear</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x40004108</span>
+                        </td>
+                    </tr>
+
+                </table>
+                <h3>Description:</h3>
+                <p>Write a 1 to a bit in this register to clear the interrupt status associated with that bit.</p>
+                <h3>Example Macro Usage:</h3>
+                <pre style="margin:10px" class="language-pascal"><span style='color:#3f7f59; '>//
+// Register access is all performed through the standard CMSIS structure-based
+// interface. This includes module-level structure definitions with members and
+// bitfields corresponding to the physical registers and bitfields within each
+// module. In addition, Ambiq has provided instance-level macros for modules
+// that have more than one physical instance and a generic AM_REGVAL() macro
+// for directly accessing memory by address.
+//
+// The following examples show how to use these structures and macros:
+
+// Setting the ADC configuration register...</span>
+AM_REGVAL(0x50010000) = 0x1234;              <span style='color:#3f7f59; '>// by address.</span>
+ADC-&gt;CFG = 0x1234;                           <span style='color:#3f7f59; '>// by structure pointer.</span>
+ADCn(0)-&gt;CFG = 0x1234;                       <span style='color:#3f7f59; '>// by structure pointer (with instance number).</span>
+
+<span style='color:#3f7f59; '>// Changing the ADC clock...</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = 0x2;                 <span style='color:#3f7f59; '>// by raw value.</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = ADC_CFG_CLKSEL_HFRC; <span style='color:#3f7f59; '>// using an enumerated value.</span></pre>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th>
+                            <th>30</th>
+                            <th>29</th>
+                            <th>28</th>
+                            <th>27</th>
+                            <th>26</th>
+                            <th>25</th>
+                            <th>24</th>
+                            <th>23</th>
+                            <th>22</th>
+                            <th>21</th>
+                            <th>20</th>
+                            <th>19</th>
+                            <th>18</th>
+                            <th>17</th>
+                            <th>16</th>
+                            <th>15</th>
+                            <th>14</th>
+                            <th>13</th>
+                            <th>12</th>
+                            <th>11</th>
+                            <th>10</th>
+                            <th>9</th>
+                            <th>8</th>
+                            <th>7</th>
+                            <th>6</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="31">RSVD
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">OF
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:1</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>RESERVED<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>0</td>
+                            <td>OF</td>
+                            <td>RW</td>
+                            <td>XT Oscillator Fail interrupt<br><br>
+                                </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="INTRPTSET" class="panel-title">INTRPTSET - CLKGEN Interrupts: Set</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x4000410C</span>
+                        </td>
+                    </tr>
+
+                </table>
+                <h3>Description:</h3>
+                <p>Write a 1 to a bit in this register to instantly generate an interrupt from this module. (Generally used for testing purposes).</p>
+                <h3>Example Macro Usage:</h3>
+                <pre style="margin:10px" class="language-pascal"><span style='color:#3f7f59; '>//
+// Register access is all performed through the standard CMSIS structure-based
+// interface. This includes module-level structure definitions with members and
+// bitfields corresponding to the physical registers and bitfields within each
+// module. In addition, Ambiq has provided instance-level macros for modules
+// that have more than one physical instance and a generic AM_REGVAL() macro
+// for directly accessing memory by address.
+//
+// The following examples show how to use these structures and macros:
+
+// Setting the ADC configuration register...</span>
+AM_REGVAL(0x50010000) = 0x1234;              <span style='color:#3f7f59; '>// by address.</span>
+ADC-&gt;CFG = 0x1234;                           <span style='color:#3f7f59; '>// by structure pointer.</span>
+ADCn(0)-&gt;CFG = 0x1234;                       <span style='color:#3f7f59; '>// by structure pointer (with instance number).</span>
+
+<span style='color:#3f7f59; '>// Changing the ADC clock...</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = 0x2;                 <span style='color:#3f7f59; '>// by raw value.</span>
+ADCn(0)-&gt;CFG_b.CLKSEL = ADC_CFG_CLKSEL_HFRC; <span style='color:#3f7f59; '>// using an enumerated value.</span></pre>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th>
+                            <th>30</th>
+                            <th>29</th>
+                            <th>28</th>
+                            <th>27</th>
+                            <th>26</th>
+                            <th>25</th>
+                            <th>24</th>
+                            <th>23</th>
+                            <th>22</th>
+                            <th>21</th>
+                            <th>20</th>
+                            <th>19</th>
+                            <th>18</th>
+                            <th>17</th>
+                            <th>16</th>
+                            <th>15</th>
+                            <th>14</th>
+                            <th>13</th>
+                            <th>12</th>
+                            <th>11</th>
+                            <th>10</th>
+                            <th>9</th>
+                            <th>8</th>
+                            <th>7</th>
+                            <th>6</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                            <th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="31">RSVD
+                                <br>0x0</td>
+
+                            <td align="center" colspan="1">OF
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:1</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>RESERVED<br><br>
+                                </td>
+                        </tr>
+
+                        <tr>
+                            <td>0</td>
+                            <td>OF</td>
+                            <td>RW</td>
+                            <td>XT Oscillator Fail interrupt<br><br>
+                                </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+    </body>
+
+    <hr size="1">
+    <body>
+        <div id="footer" align="right">
+            <small>
+                AmbiqSuite Register Documentation&nbsp;
+                <a href="http://www.ambiqmicro.com">
+                <img class="footer" src="../resources/ambiqmicro_logo.png" alt="Ambiq Micro"/></a>&nbsp&nbsp Copyright &copy; 2023&nbsp&nbsp<br />
+                This documentation is licensed and distributed under the <a rel="license" href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause License</a>.&nbsp&nbsp<br/>
+            </small>
+        </div>
+    </body>
+</html>
+

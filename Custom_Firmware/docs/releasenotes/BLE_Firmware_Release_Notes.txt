@@ -1,0 +1,88 @@
+											Apollo4 SIP BLE Controller Firmware release notes
+V1.21.2.0 / 11-Apr-2023
+1. Optimize 2M PHY AGC algorithm to fix the compatible issue that the throughput between some phones and device is very low when working on 2M PHY.
+2. Implement vendor specific HCI command to control if reporting NOP(no opcode) event to MCU, the NOP event is reporting to MCU when Cooper awakens by default.
+3. Increase the voltage of the XO32M module to resolve potential issues with XO32M not working in certain cases.
+
+V1.21.1.0 / 8-Dec-2022
+1. Define the vendor specific command 0xFC79 to read the RSSI of current received packet in DTM mode (the last two bytes of the command complete event indicate the status and 8-bit signed rssi value). Before sending this command, the host needs to send the receiver test start command.
+    host->controller (command): 01 79 FC 00
+    controller->host (ack complete event): 04 0E 05 05 79 FC 00 XX (00: success, XX: rssi value)
+    controller->host (nack complete event): 04 0E 05 05 79 FC 0C 7F (0C: command disallowed, 7F: invalid rssi value)
+2. Fix the maximum sleep duration value defintion to LP clock cycles number instead of half slot counter (maximum external wakeup sleep duration to 10s from unexpected 0.976s).
+
+V1.21.0.0 / 21-Jan-2022
+1. Integrated CEVA rw-ble-sw-v10.0.12 patches
+(1) Do not apply slave latency when missing synchronization with master.
+(2) Schedule more programming margin for wakeup activity. This will shorten the sleep time and cause a little higher average power consumption.
+(3) Optimize the instant passed identification for PHY update and channel map update procedures.
+(4) Minor change to prevent corruption of last transmitted packet when direct test mode is disabled.
+(5) Do not report error when trying to disable one advertising activitiy which is already disabled.
+(6) Fix to correctly report the high duty cycle directed advertising timeout failure.
+(7) Update the ADI DID to make sure it is not the same as the previous one.
+(8) Correctly initialize IP core driver before BLE stack and scheduler initialization.
+(9) Do not enable assert reporting before kernel initialization to prevent kernel crashes.
+(10) Correctly adjust the RX window size of connection and scanning activites based on the PHY in use.
+(11) Correctly adjust the RX window size of auxiliary packets based on the PHY in use.
+(12) Discard the long extended advertising packet if it needs more transmitting time than advertising interval.
+(13) Optimize parameters checking in PHY update command handler.
+(14) Optimize parameters checking in TX/RX data length change handler.
+(15) Relax the channel assessment duration and fix to correctly identify the good channel calculation error. Note this is only for the host requesting the channel map update.
+2. Free the released ACL RX buffer directly instead of assigning it to the RX descriptor to prevent memory leakage.
+
+V1.20.2.0 / 20-Dec-2021
+1. Adjust the the wakeup voltage to address the controller wakeup failure in the usage scenario of TX power lower than 6dBm.
+2. Fix the sync error & crc error debug counters clear process.
+
+V1.20.1.0 / 28-Sept-2021
+1. Fix the PLL lock loss issue.
+
+V1.20.0.0 / 30-Aug-2021
+1. Generate a command complete event with no operation code to address the issue that AP4 doesn't get interrupt after waking up Cooper due to too short of IRQ pulse's width or other reason.
+2. Add custom debug log to to get the information of error caused disconnection event.
+3. Restructure the firmware version: higher 16-bit used for the major and minor release version, lower 16-bit used for the RC version based on the latest release.
+
+V1.19.0 / 13-Aug-2021
+1. Revert "Set LDOSys2 to 1.1V".
+
+V1.18.0 / 10-Aug-2021
+1. Apply trim code increase by 3 only for 1M Phy mode.
+2. Set LDOSys2 to 1.1V.
+
+V1.16.0 / 15-July-2021
+1. Increase the LDO retention voltage to expected 0.85V to avoid Cooper wake up failure.
+2. Revert the commit "Power Saving Optimization by: 1. Disable DCDC trim when there's no radio activity; 2. Enable DCDC trim for correponding tx power level right before radio acitivity event start" raised in V1.14.0.
+3. Turn off the macro PKT_LOST_DEBUG_ON to disable the HCI packet loss debug code by default.
+
+V1.15.0 / 29-May-2021
+1. Modify the lowest DCDC output from 1.05V (AFEC->TRIMR4 = 0) to 1.15V (AFEC->TRIMR4 = 0x400) to avoid the Cooper wakeup failure in the usage scenario of VDDB=1.8V.
+
+V1.14.0 / 30-Apr-2021
+1. Removed Segger RTT files since it's not used anymore;
+2. Undefined RW_SWDIAG and KE_PROFILING for production and save code size by around 6K bytes;
+3. Removed SpisSetUserData(SPIS_SPACE_PATTN | SPIS_SAR_EN_Msk); to prevent host to read out the signature while it's in process of going to sleep;
+4. Integrated the latest finding that packet from host gets lost where packet transfer is done while Cooper's interrupts are disabled to check for sleep;
+5. Increased stablization time for 32K clock as the crystal on new QFN board needs more time to stable;
+6. Outputed connection timeout reason to HOST;
+7. Added debug pins for SIP, enabled STATUS port for debug use and optimized diagport API;
+8. Disable Macros CFG_WLAN_COEX & SCH_PLAN_UT, AP4 does not support them;
+9. Optimized latency mechanism: If slave received error packet or not received sync packet, slave will not apply latency immediately, to avoid missing some LLCP like map update/connection update;
+10. Made all BLE interrupts have same priority as the one from CEVA's release;
+11. Added NVDS para to enable memory write for SIP on EVB;
+12. Recorded last rx timestamp due to IO wakeup or received packet, for IO wakeup, it won't go to sleep if the last rx timestamp is less than RWIP_MINIMUM_SLEEP_TIME;
+13. Did some register definition error corrections such as IORETCR and CORESYSMODECR;
+14. Code cleaned up such as deleting unused and empty interfaces in RF_API.c, deleting global_val.c and consolidating all clock related APIs by creating ClkDrv.c/.h;
+15. Merged PwrSel into pmu_init, it's designed for AP3 patching, no need to call separately for cooper;
+16. Moved flash write disable from driver to dbg_task to let AP4 able to write signature;
+17. Fixed the sync error caused by early switching of RC32M before entering sleep;
+18. Fixed the issue that latency flow caused 0x08 disconnect on MI6/MI10;
+19. Added rf trim_code function for extended and periodic advertising;
+20. Put max/min limit on the trim slope, to workaround the ATE algorithm bug;
+21. Power Saving Optimization by: a) Disable DCDC trim when there's no radio activity; b) Enable DCDC trim for correponding tx power level right before radio acitivity event start;
+22. Initialized Local RPA random number generation LFSR after wakeing up;
+23. Added cs detection in pmu_sleep to decrease the duration of CS assertion, and separated baseband wakeup process from pmu_wakeup;
+24. Turn off rentention for the "bad" 4KB memory；
+25. Correct RSSI value calculating algorithm according to test results;
+26. DCDC output current setting: while TX power is below 3dBm, use lowest output setting(30mA peak current & 2/3 output), while TX power is 3 ~ 4 dBm, use middle output setting(30mA peak current & Full output).otherwise use full output setting (6dBm)(42mA peak current & full output).
+27. Improve cooper's low temperature performance by increasing the retension voltage(increase around 0.05V).
+
