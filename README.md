@@ -10,6 +10,12 @@ https://youtu.be/L2ugXV0ao3Q
 [![YoutubeVideo](https://img.youtube.com/vi/L2ugXV0ao3Q/0.jpg)](https://www.youtube.com/watch?v=L2ugXV0ao3Q)
 
 
+## DOOM
+You can find a precompiled DOOM Port here: [ATCmiBand8Doom.bin](ATCmiBand8Doom.bin)
+
+[![YoutubeVideo](https://img.youtube.com/vi/iqyR_LNp9vc/0.jpg)](https://www.youtube.com/watch?v=iqyR_LNp9vc)
+
+
 To build each example you need to enter the "gcc" folder of the choosen one and enter make, with an Segger flasher connected you can also use "flash.bat" and it will directly flash the firmware to the device. (Change the directy to the correct one in the file "jlink_auto_file.jlink" beforehand)
 
 
